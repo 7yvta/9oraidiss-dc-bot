@@ -1,6 +1,8 @@
 ﻿node_modules/
 .env
-.env.*
+.env.local
+.env.*.local
+!.env.example
 .tmp-emoji-import/
 *.log
 tmp-start.*
