@@ -1,0 +1,3660 @@
+{
+  "__selftest__": {},
+  "guild-1778019225375-63068": {
+    "9596d5f6": {
+      "id": "9596d5f6",
+      "userId": "user-1778019225375-64047",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-05T22:13:45.377Z",
+      "reviewedAt": "2026-05-05T22:13:45.381Z",
+      "reviewedBy": "reviewer-1778019225375-3499",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "315c12dd",
+          "type": "submitted",
+          "actorId": "user-1778019225375-64047",
+          "note": "Appeal submitted",
+          "at": "2026-05-05T22:13:45.377Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "8c6d5373",
+          "type": "note",
+          "actorId": "reviewer-1778019225375-3499",
+          "note": "Investigating",
+          "at": "2026-05-05T22:13:45.379Z",
+          "meta": {}
+        },
+        {
+          "id": "c9633d1b",
+          "type": "approved",
+          "actorId": "reviewer-1778019225375-3499",
+          "note": "Approved for test",
+          "at": "2026-05-05T22:13:45.381Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "2a7d6ffc",
+          "authorId": "reviewer-1778019225375-3499",
+          "note": "Investigating",
+          "createdAt": "2026-05-05T22:13:45.379Z"
+        }
+      ]
+    }
+  },
+  "guild-1778024702876-64348": {
+    "76e10324": {
+      "id": "76e10324",
+      "userId": "user-1778024702876-39220",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-05T23:45:02.877Z",
+      "reviewedAt": "2026-05-05T23:45:02.881Z",
+      "reviewedBy": "reviewer-1778024702876-17309",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "67c10172",
+          "type": "submitted",
+          "actorId": "user-1778024702876-39220",
+          "note": "Appeal submitted",
+          "at": "2026-05-05T23:45:02.877Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "ea87ae55",
+          "type": "note",
+          "actorId": "reviewer-1778024702876-17309",
+          "note": "Investigating",
+          "at": "2026-05-05T23:45:02.879Z",
+          "meta": {}
+        },
+        {
+          "id": "55c16518",
+          "type": "approved",
+          "actorId": "reviewer-1778024702876-17309",
+          "note": "Approved for test",
+          "at": "2026-05-05T23:45:02.882Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "3f2f165f",
+          "authorId": "reviewer-1778024702876-17309",
+          "note": "Investigating",
+          "createdAt": "2026-05-05T23:45:02.879Z"
+        }
+      ]
+    }
+  },
+  "guild-1778026671802-18938": {
+    "059ddb67": {
+      "id": "059ddb67",
+      "userId": "user-1778026671802-54113",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-06T00:17:51.804Z",
+      "reviewedAt": "2026-05-06T00:17:51.808Z",
+      "reviewedBy": "reviewer-1778026671802-92350",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "73c253dd",
+          "type": "submitted",
+          "actorId": "user-1778026671802-54113",
+          "note": "Appeal submitted",
+          "at": "2026-05-06T00:17:51.804Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "e00c96c1",
+          "type": "note",
+          "actorId": "reviewer-1778026671802-92350",
+          "note": "Investigating",
+          "at": "2026-05-06T00:17:51.807Z",
+          "meta": {}
+        },
+        {
+          "id": "1ffe86e8",
+          "type": "approved",
+          "actorId": "reviewer-1778026671802-92350",
+          "note": "Approved for test",
+          "at": "2026-05-06T00:17:51.809Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "05680bf7",
+          "authorId": "reviewer-1778026671802-92350",
+          "note": "Investigating",
+          "createdAt": "2026-05-06T00:17:51.807Z"
+        }
+      ]
+    }
+  },
+  "guild-1778027113441-722": {
+    "26b9ab70": {
+      "id": "26b9ab70",
+      "userId": "user-1778027113441-92308",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-06T00:25:13.442Z",
+      "reviewedAt": "2026-05-06T00:25:13.446Z",
+      "reviewedBy": "reviewer-1778027113441-37222",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "35bc99d5",
+          "type": "submitted",
+          "actorId": "user-1778027113441-92308",
+          "note": "Appeal submitted",
+          "at": "2026-05-06T00:25:13.442Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "1f007c32",
+          "type": "note",
+          "actorId": "reviewer-1778027113441-37222",
+          "note": "Investigating",
+          "at": "2026-05-06T00:25:13.444Z",
+          "meta": {}
+        },
+        {
+          "id": "a15f2bd5",
+          "type": "approved",
+          "actorId": "reviewer-1778027113441-37222",
+          "note": "Approved for test",
+          "at": "2026-05-06T00:25:13.447Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "ea9e08b5",
+          "authorId": "reviewer-1778027113441-37222",
+          "note": "Investigating",
+          "createdAt": "2026-05-06T00:25:13.444Z"
+        }
+      ]
+    }
+  },
+  "guild-1778027144159-66989": {
+    "17682445": {
+      "id": "17682445",
+      "userId": "user-1778027144159-40419",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-06T00:25:44.161Z",
+      "reviewedAt": "2026-05-06T00:25:44.164Z",
+      "reviewedBy": "reviewer-1778027144159-91883",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "0c64e733",
+          "type": "submitted",
+          "actorId": "user-1778027144159-40419",
+          "note": "Appeal submitted",
+          "at": "2026-05-06T00:25:44.161Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "8765ddb3",
+          "type": "note",
+          "actorId": "reviewer-1778027144159-91883",
+          "note": "Investigating",
+          "at": "2026-05-06T00:25:44.163Z",
+          "meta": {}
+        },
+        {
+          "id": "b70e7984",
+          "type": "approved",
+          "actorId": "reviewer-1778027144159-91883",
+          "note": "Approved for test",
+          "at": "2026-05-06T00:25:44.165Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "b288a2ed",
+          "authorId": "reviewer-1778027144159-91883",
+          "note": "Investigating",
+          "createdAt": "2026-05-06T00:25:44.163Z"
+        }
+      ]
+    }
+  },
+  "guild-1778027373944-86801": {
+    "19c61263": {
+      "id": "19c61263",
+      "userId": "user-1778027373944-49761",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-06T00:29:33.946Z",
+      "reviewedAt": "2026-05-06T00:29:33.950Z",
+      "reviewedBy": "reviewer-1778027373944-69610",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "f6a665d8",
+          "type": "submitted",
+          "actorId": "user-1778027373944-49761",
+          "note": "Appeal submitted",
+          "at": "2026-05-06T00:29:33.946Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "8e8f5de4",
+          "type": "note",
+          "actorId": "reviewer-1778027373944-69610",
+          "note": "Investigating",
+          "at": "2026-05-06T00:29:33.948Z",
+          "meta": {}
+        },
+        {
+          "id": "2790b7a3",
+          "type": "approved",
+          "actorId": "reviewer-1778027373944-69610",
+          "note": "Approved for test",
+          "at": "2026-05-06T00:29:33.950Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "781e40b9",
+          "authorId": "reviewer-1778027373944-69610",
+          "note": "Investigating",
+          "createdAt": "2026-05-06T00:29:33.948Z"
+        }
+      ]
+    }
+  },
+  "guild-1778027404819-12302": {
+    "162202a2": {
+      "id": "162202a2",
+      "userId": "user-1778027404819-41280",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-06T00:30:04.820Z",
+      "reviewedAt": "2026-05-06T00:30:04.824Z",
+      "reviewedBy": "reviewer-1778027404819-70046",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "e12847b9",
+          "type": "submitted",
+          "actorId": "user-1778027404819-41280",
+          "note": "Appeal submitted",
+          "at": "2026-05-06T00:30:04.820Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "9a205ba4",
+          "type": "note",
+          "actorId": "reviewer-1778027404819-70046",
+          "note": "Investigating",
+          "at": "2026-05-06T00:30:04.823Z",
+          "meta": {}
+        },
+        {
+          "id": "386487b7",
+          "type": "approved",
+          "actorId": "reviewer-1778027404819-70046",
+          "note": "Approved for test",
+          "at": "2026-05-06T00:30:04.825Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "8119ce1d",
+          "authorId": "reviewer-1778027404819-70046",
+          "note": "Investigating",
+          "createdAt": "2026-05-06T00:30:04.823Z"
+        }
+      ]
+    }
+  },
+  "guild-1778028874791-99743": {
+    "5bcbe9c4": {
+      "id": "5bcbe9c4",
+      "userId": "user-1778028874791-62585",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-06T00:54:34.793Z",
+      "reviewedAt": "2026-05-06T00:54:34.799Z",
+      "reviewedBy": "reviewer-1778028874791-53922",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "ba914ed8",
+          "type": "submitted",
+          "actorId": "user-1778028874791-62585",
+          "note": "Appeal submitted",
+          "at": "2026-05-06T00:54:34.793Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "371781df",
+          "type": "note",
+          "actorId": "reviewer-1778028874791-53922",
+          "note": "Investigating",
+          "at": "2026-05-06T00:54:34.797Z",
+          "meta": {}
+        },
+        {
+          "id": "af5d2590",
+          "type": "approved",
+          "actorId": "reviewer-1778028874791-53922",
+          "note": "Approved for test",
+          "at": "2026-05-06T00:54:34.800Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "07ccf076",
+          "authorId": "reviewer-1778028874791-53922",
+          "note": "Investigating",
+          "createdAt": "2026-05-06T00:54:34.797Z"
+        }
+      ]
+    }
+  },
+  "guild-1778029070285-50839": {
+    "f5de7b91": {
+      "id": "f5de7b91",
+      "userId": "user-1778029070285-4696",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-06T00:57:50.287Z",
+      "reviewedAt": "2026-05-06T00:57:50.293Z",
+      "reviewedBy": "reviewer-1778029070285-78224",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "b5bbc7a0",
+          "type": "submitted",
+          "actorId": "user-1778029070285-4696",
+          "note": "Appeal submitted",
+          "at": "2026-05-06T00:57:50.287Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "bd2ed34d",
+          "type": "note",
+          "actorId": "reviewer-1778029070285-78224",
+          "note": "Investigating",
+          "at": "2026-05-06T00:57:50.291Z",
+          "meta": {}
+        },
+        {
+          "id": "ec730582",
+          "type": "approved",
+          "actorId": "reviewer-1778029070285-78224",
+          "note": "Approved for test",
+          "at": "2026-05-06T00:57:50.294Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "8efacfc7",
+          "authorId": "reviewer-1778029070285-78224",
+          "note": "Investigating",
+          "createdAt": "2026-05-06T00:57:50.290Z"
+        }
+      ]
+    }
+  },
+  "guild-1778030369449-29060": {
+    "96e07079": {
+      "id": "96e07079",
+      "userId": "user-1778030369449-85599",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-06T01:19:29.451Z",
+      "reviewedAt": "2026-05-06T01:19:29.455Z",
+      "reviewedBy": "reviewer-1778030369449-92809",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "63badc4e",
+          "type": "submitted",
+          "actorId": "user-1778030369449-85599",
+          "note": "Appeal submitted",
+          "at": "2026-05-06T01:19:29.451Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "016063f2",
+          "type": "note",
+          "actorId": "reviewer-1778030369449-92809",
+          "note": "Investigating",
+          "at": "2026-05-06T01:19:29.453Z",
+          "meta": {}
+        },
+        {
+          "id": "55e3baca",
+          "type": "approved",
+          "actorId": "reviewer-1778030369449-92809",
+          "note": "Approved for test",
+          "at": "2026-05-06T01:19:29.456Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "4b82ee72",
+          "authorId": "reviewer-1778030369449-92809",
+          "note": "Investigating",
+          "createdAt": "2026-05-06T01:19:29.453Z"
+        }
+      ]
+    }
+  },
+  "guild-1778032857358-43965": {
+    "3c0a3c34": {
+      "id": "3c0a3c34",
+      "userId": "user-1778032857358-93542",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-06T02:00:57.360Z",
+      "reviewedAt": "2026-05-06T02:00:57.364Z",
+      "reviewedBy": "reviewer-1778032857358-13405",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "39632534",
+          "type": "submitted",
+          "actorId": "user-1778032857358-93542",
+          "note": "Appeal submitted",
+          "at": "2026-05-06T02:00:57.360Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "838e6e81",
+          "type": "note",
+          "actorId": "reviewer-1778032857358-13405",
+          "note": "Investigating",
+          "at": "2026-05-06T02:00:57.362Z",
+          "meta": {}
+        },
+        {
+          "id": "d2118228",
+          "type": "approved",
+          "actorId": "reviewer-1778032857358-13405",
+          "note": "Approved for test",
+          "at": "2026-05-06T02:00:57.365Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "6d958b7b",
+          "authorId": "reviewer-1778032857358-13405",
+          "note": "Investigating",
+          "createdAt": "2026-05-06T02:00:57.362Z"
+        }
+      ]
+    }
+  },
+  "guild-1778034782580-46548": {
+    "ef0acbcd": {
+      "id": "ef0acbcd",
+      "userId": "user-1778034782580-45421",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-06T02:33:02.581Z",
+      "reviewedAt": "2026-05-06T02:33:02.586Z",
+      "reviewedBy": "reviewer-1778034782580-55696",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "a416b19b",
+          "type": "submitted",
+          "actorId": "user-1778034782580-45421",
+          "note": "Appeal submitted",
+          "at": "2026-05-06T02:33:02.581Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "c46e8fed",
+          "type": "note",
+          "actorId": "reviewer-1778034782580-55696",
+          "note": "Investigating",
+          "at": "2026-05-06T02:33:02.584Z",
+          "meta": {}
+        },
+        {
+          "id": "32549c4e",
+          "type": "approved",
+          "actorId": "reviewer-1778034782580-55696",
+          "note": "Approved for test",
+          "at": "2026-05-06T02:33:02.586Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "514e1575",
+          "authorId": "reviewer-1778034782580-55696",
+          "note": "Investigating",
+          "createdAt": "2026-05-06T02:33:02.584Z"
+        }
+      ]
+    }
+  },
+  "guild-1778035861565-62819": {
+    "ef24372b": {
+      "id": "ef24372b",
+      "userId": "user-1778035861565-29191",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-06T02:51:01.567Z",
+      "reviewedAt": "2026-05-06T02:51:01.573Z",
+      "reviewedBy": "reviewer-1778035861565-98208",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "95425f26",
+          "type": "submitted",
+          "actorId": "user-1778035861565-29191",
+          "note": "Appeal submitted",
+          "at": "2026-05-06T02:51:01.567Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "ac8b6e81",
+          "type": "note",
+          "actorId": "reviewer-1778035861565-98208",
+          "note": "Investigating",
+          "at": "2026-05-06T02:51:01.569Z",
+          "meta": {}
+        },
+        {
+          "id": "0f61f78e",
+          "type": "approved",
+          "actorId": "reviewer-1778035861565-98208",
+          "note": "Approved for test",
+          "at": "2026-05-06T02:51:01.573Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "bea4086a",
+          "authorId": "reviewer-1778035861565-98208",
+          "note": "Investigating",
+          "createdAt": "2026-05-06T02:51:01.569Z"
+        }
+      ]
+    }
+  },
+  "guild-1778036190412-79024": {
+    "ffdb4220": {
+      "id": "ffdb4220",
+      "userId": "user-1778036190412-76491",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-06T02:56:30.414Z",
+      "reviewedAt": "2026-05-06T02:56:30.417Z",
+      "reviewedBy": "reviewer-1778036190412-96623",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "41b8c570",
+          "type": "submitted",
+          "actorId": "user-1778036190412-76491",
+          "note": "Appeal submitted",
+          "at": "2026-05-06T02:56:30.414Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "5faf7654",
+          "type": "note",
+          "actorId": "reviewer-1778036190412-96623",
+          "note": "Investigating",
+          "at": "2026-05-06T02:56:30.416Z",
+          "meta": {}
+        },
+        {
+          "id": "15825eb1",
+          "type": "approved",
+          "actorId": "reviewer-1778036190412-96623",
+          "note": "Approved for test",
+          "at": "2026-05-06T02:56:30.418Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "2d5ecd88",
+          "authorId": "reviewer-1778036190412-96623",
+          "note": "Investigating",
+          "createdAt": "2026-05-06T02:56:30.416Z"
+        }
+      ]
+    }
+  },
+  "guild-1778036555946-84079": {
+    "286e7f01": {
+      "id": "286e7f01",
+      "userId": "user-1778036555946-50360",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-06T03:02:35.948Z",
+      "reviewedAt": "2026-05-06T03:02:35.953Z",
+      "reviewedBy": "reviewer-1778036555946-37527",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "558cbb82",
+          "type": "submitted",
+          "actorId": "user-1778036555946-50360",
+          "note": "Appeal submitted",
+          "at": "2026-05-06T03:02:35.948Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "7903449c",
+          "type": "note",
+          "actorId": "reviewer-1778036555946-37527",
+          "note": "Investigating",
+          "at": "2026-05-06T03:02:35.951Z",
+          "meta": {}
+        },
+        {
+          "id": "e68f64a0",
+          "type": "approved",
+          "actorId": "reviewer-1778036555946-37527",
+          "note": "Approved for test",
+          "at": "2026-05-06T03:02:35.954Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "821d853e",
+          "authorId": "reviewer-1778036555946-37527",
+          "note": "Investigating",
+          "createdAt": "2026-05-06T03:02:35.951Z"
+        }
+      ]
+    }
+  },
+  "guild-1778036756847-63124": {
+    "35738c9e": {
+      "id": "35738c9e",
+      "userId": "user-1778036756847-29216",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-06T03:05:56.848Z",
+      "reviewedAt": "2026-05-06T03:05:56.852Z",
+      "reviewedBy": "reviewer-1778036756847-34272",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "f86ea082",
+          "type": "submitted",
+          "actorId": "user-1778036756847-29216",
+          "note": "Appeal submitted",
+          "at": "2026-05-06T03:05:56.848Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "3a78511b",
+          "type": "note",
+          "actorId": "reviewer-1778036756847-34272",
+          "note": "Investigating",
+          "at": "2026-05-06T03:05:56.851Z",
+          "meta": {}
+        },
+        {
+          "id": "839b6cd5",
+          "type": "approved",
+          "actorId": "reviewer-1778036756847-34272",
+          "note": "Approved for test",
+          "at": "2026-05-06T03:05:56.853Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "b5b9cabd",
+          "authorId": "reviewer-1778036756847-34272",
+          "note": "Investigating",
+          "createdAt": "2026-05-06T03:05:56.851Z"
+        }
+      ]
+    }
+  },
+  "guild-1778095903392-56892": {
+    "68ba00ce": {
+      "id": "68ba00ce",
+      "userId": "user-1778095903392-5037",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-06T19:31:43.393Z",
+      "reviewedAt": "2026-05-06T19:31:43.398Z",
+      "reviewedBy": "reviewer-1778095903392-55195",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "33f90bb5",
+          "type": "submitted",
+          "actorId": "user-1778095903392-5037",
+          "note": "Appeal submitted",
+          "at": "2026-05-06T19:31:43.393Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "b8b6baf2",
+          "type": "note",
+          "actorId": "reviewer-1778095903392-55195",
+          "note": "Investigating",
+          "at": "2026-05-06T19:31:43.397Z",
+          "meta": {}
+        },
+        {
+          "id": "bc36c0cf",
+          "type": "approved",
+          "actorId": "reviewer-1778095903392-55195",
+          "note": "Approved for test",
+          "at": "2026-05-06T19:31:43.399Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "13d1bee9",
+          "authorId": "reviewer-1778095903392-55195",
+          "note": "Investigating",
+          "createdAt": "2026-05-06T19:31:43.396Z"
+        }
+      ]
+    }
+  },
+  "guild-1778095968535-72172": {
+    "53728651": {
+      "id": "53728651",
+      "userId": "user-1778095968535-99839",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-06T19:32:48.537Z",
+      "reviewedAt": "2026-05-06T19:32:48.541Z",
+      "reviewedBy": "reviewer-1778095968535-76659",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "b4c3da3f",
+          "type": "submitted",
+          "actorId": "user-1778095968535-99839",
+          "note": "Appeal submitted",
+          "at": "2026-05-06T19:32:48.537Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "0285efc4",
+          "type": "note",
+          "actorId": "reviewer-1778095968535-76659",
+          "note": "Investigating",
+          "at": "2026-05-06T19:32:48.539Z",
+          "meta": {}
+        },
+        {
+          "id": "87ebe79f",
+          "type": "approved",
+          "actorId": "reviewer-1778095968535-76659",
+          "note": "Approved for test",
+          "at": "2026-05-06T19:32:48.541Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "bb2cdc0d",
+          "authorId": "reviewer-1778095968535-76659",
+          "note": "Investigating",
+          "createdAt": "2026-05-06T19:32:48.539Z"
+        }
+      ]
+    }
+  },
+  "guild-1778096876539-65481": {
+    "c05c6762": {
+      "id": "c05c6762",
+      "userId": "user-1778096876539-67581",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-06T19:47:56.540Z",
+      "reviewedAt": "2026-05-06T19:47:56.544Z",
+      "reviewedBy": "reviewer-1778096876539-59434",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "0ab6f365",
+          "type": "submitted",
+          "actorId": "user-1778096876539-67581",
+          "note": "Appeal submitted",
+          "at": "2026-05-06T19:47:56.540Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "42486b6e",
+          "type": "note",
+          "actorId": "reviewer-1778096876539-59434",
+          "note": "Investigating",
+          "at": "2026-05-06T19:47:56.543Z",
+          "meta": {}
+        },
+        {
+          "id": "432fe6df",
+          "type": "approved",
+          "actorId": "reviewer-1778096876539-59434",
+          "note": "Approved for test",
+          "at": "2026-05-06T19:47:56.545Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "2052adf7",
+          "authorId": "reviewer-1778096876539-59434",
+          "note": "Investigating",
+          "createdAt": "2026-05-06T19:47:56.543Z"
+        }
+      ]
+    }
+  },
+  "guild-1778098349013-4202": {
+    "a109ecd6": {
+      "id": "a109ecd6",
+      "userId": "user-1778098349013-22896",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-06T20:12:29.014Z",
+      "reviewedAt": "2026-05-06T20:12:29.018Z",
+      "reviewedBy": "reviewer-1778098349013-18115",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "cee2cde1",
+          "type": "submitted",
+          "actorId": "user-1778098349013-22896",
+          "note": "Appeal submitted",
+          "at": "2026-05-06T20:12:29.014Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "2f20eee2",
+          "type": "note",
+          "actorId": "reviewer-1778098349013-18115",
+          "note": "Investigating",
+          "at": "2026-05-06T20:12:29.016Z",
+          "meta": {}
+        },
+        {
+          "id": "a37442e9",
+          "type": "approved",
+          "actorId": "reviewer-1778098349013-18115",
+          "note": "Approved for test",
+          "at": "2026-05-06T20:12:29.019Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "dee35512",
+          "authorId": "reviewer-1778098349013-18115",
+          "note": "Investigating",
+          "createdAt": "2026-05-06T20:12:29.016Z"
+        }
+      ]
+    }
+  },
+  "guild-1778098643298-22670": {
+    "7295c98e": {
+      "id": "7295c98e",
+      "userId": "user-1778098643298-3767",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-06T20:17:23.300Z",
+      "reviewedAt": "2026-05-06T20:17:23.304Z",
+      "reviewedBy": "reviewer-1778098643298-18131",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "9e951fdb",
+          "type": "submitted",
+          "actorId": "user-1778098643298-3767",
+          "note": "Appeal submitted",
+          "at": "2026-05-06T20:17:23.300Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "18fb51e1",
+          "type": "note",
+          "actorId": "reviewer-1778098643298-18131",
+          "note": "Investigating",
+          "at": "2026-05-06T20:17:23.302Z",
+          "meta": {}
+        },
+        {
+          "id": "93c1bc6a",
+          "type": "approved",
+          "actorId": "reviewer-1778098643298-18131",
+          "note": "Approved for test",
+          "at": "2026-05-06T20:17:23.305Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "a29c903a",
+          "authorId": "reviewer-1778098643298-18131",
+          "note": "Investigating",
+          "createdAt": "2026-05-06T20:17:23.302Z"
+        }
+      ]
+    }
+  },
+  "guild-1778100366518-38837": {
+    "645a55b0": {
+      "id": "645a55b0",
+      "userId": "user-1778100366518-39792",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-06T20:46:06.519Z",
+      "reviewedAt": "2026-05-06T20:46:06.523Z",
+      "reviewedBy": "reviewer-1778100366518-22312",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "8fbba34b",
+          "type": "submitted",
+          "actorId": "user-1778100366518-39792",
+          "note": "Appeal submitted",
+          "at": "2026-05-06T20:46:06.519Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "9cc33f10",
+          "type": "note",
+          "actorId": "reviewer-1778100366518-22312",
+          "note": "Investigating",
+          "at": "2026-05-06T20:46:06.521Z",
+          "meta": {}
+        },
+        {
+          "id": "035c0772",
+          "type": "approved",
+          "actorId": "reviewer-1778100366518-22312",
+          "note": "Approved for test",
+          "at": "2026-05-06T20:46:06.524Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "345582c2",
+          "authorId": "reviewer-1778100366518-22312",
+          "note": "Investigating",
+          "createdAt": "2026-05-06T20:46:06.521Z"
+        }
+      ]
+    }
+  },
+  "guild-1778100863422-69111": {
+    "6babd26b": {
+      "id": "6babd26b",
+      "userId": "user-1778100863422-43658",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-06T20:54:23.423Z",
+      "reviewedAt": "2026-05-06T20:54:23.427Z",
+      "reviewedBy": "reviewer-1778100863422-18050",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "8f4e496c",
+          "type": "submitted",
+          "actorId": "user-1778100863422-43658",
+          "note": "Appeal submitted",
+          "at": "2026-05-06T20:54:23.424Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "ca8a59f8",
+          "type": "note",
+          "actorId": "reviewer-1778100863422-18050",
+          "note": "Investigating",
+          "at": "2026-05-06T20:54:23.426Z",
+          "meta": {}
+        },
+        {
+          "id": "cdcdae64",
+          "type": "approved",
+          "actorId": "reviewer-1778100863422-18050",
+          "note": "Approved for test",
+          "at": "2026-05-06T20:54:23.428Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "369ae556",
+          "authorId": "reviewer-1778100863422-18050",
+          "note": "Investigating",
+          "createdAt": "2026-05-06T20:54:23.426Z"
+        }
+      ]
+    }
+  },
+  "guild-1778101146719-64081": {
+    "57615611": {
+      "id": "57615611",
+      "userId": "user-1778101146719-46196",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-06T20:59:06.720Z",
+      "reviewedAt": "2026-05-06T20:59:06.724Z",
+      "reviewedBy": "reviewer-1778101146719-91048",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "40fe19d4",
+          "type": "submitted",
+          "actorId": "user-1778101146719-46196",
+          "note": "Appeal submitted",
+          "at": "2026-05-06T20:59:06.720Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "a64f92df",
+          "type": "note",
+          "actorId": "reviewer-1778101146719-91048",
+          "note": "Investigating",
+          "at": "2026-05-06T20:59:06.723Z",
+          "meta": {}
+        },
+        {
+          "id": "942c509f",
+          "type": "approved",
+          "actorId": "reviewer-1778101146719-91048",
+          "note": "Approved for test",
+          "at": "2026-05-06T20:59:06.725Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "01df73b6",
+          "authorId": "reviewer-1778101146719-91048",
+          "note": "Investigating",
+          "createdAt": "2026-05-06T20:59:06.723Z"
+        }
+      ]
+    }
+  },
+  "guild-1778101750369-75599": {
+    "ede86799": {
+      "id": "ede86799",
+      "userId": "user-1778101750369-56239",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-06T21:09:10.370Z",
+      "reviewedAt": "2026-05-06T21:09:10.374Z",
+      "reviewedBy": "reviewer-1778101750369-28170",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "405afffd",
+          "type": "submitted",
+          "actorId": "user-1778101750369-56239",
+          "note": "Appeal submitted",
+          "at": "2026-05-06T21:09:10.370Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "4cc567ce",
+          "type": "note",
+          "actorId": "reviewer-1778101750369-28170",
+          "note": "Investigating",
+          "at": "2026-05-06T21:09:10.373Z",
+          "meta": {}
+        },
+        {
+          "id": "dd91e3e1",
+          "type": "approved",
+          "actorId": "reviewer-1778101750369-28170",
+          "note": "Approved for test",
+          "at": "2026-05-06T21:09:10.375Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "c7e5ac2f",
+          "authorId": "reviewer-1778101750369-28170",
+          "note": "Investigating",
+          "createdAt": "2026-05-06T21:09:10.373Z"
+        }
+      ]
+    }
+  },
+  "guild-1778102673295-77261": {
+    "4a69a6cd": {
+      "id": "4a69a6cd",
+      "userId": "user-1778102673295-73900",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-06T21:24:33.297Z",
+      "reviewedAt": "2026-05-06T21:24:33.301Z",
+      "reviewedBy": "reviewer-1778102673295-58237",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "cecee6a5",
+          "type": "submitted",
+          "actorId": "user-1778102673295-73900",
+          "note": "Appeal submitted",
+          "at": "2026-05-06T21:24:33.297Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "dfae785f",
+          "type": "note",
+          "actorId": "reviewer-1778102673295-58237",
+          "note": "Investigating",
+          "at": "2026-05-06T21:24:33.300Z",
+          "meta": {}
+        },
+        {
+          "id": "877a2179",
+          "type": "approved",
+          "actorId": "reviewer-1778102673295-58237",
+          "note": "Approved for test",
+          "at": "2026-05-06T21:24:33.302Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "2038ab45",
+          "authorId": "reviewer-1778102673295-58237",
+          "note": "Investigating",
+          "createdAt": "2026-05-06T21:24:33.300Z"
+        }
+      ]
+    }
+  },
+  "guild-1778102826814-29429": {
+    "845eb287": {
+      "id": "845eb287",
+      "userId": "user-1778102826814-53114",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-06T21:27:06.815Z",
+      "reviewedAt": "2026-05-06T21:27:06.819Z",
+      "reviewedBy": "reviewer-1778102826814-5821",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "1a86be07",
+          "type": "submitted",
+          "actorId": "user-1778102826814-53114",
+          "note": "Appeal submitted",
+          "at": "2026-05-06T21:27:06.815Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "62d74bd3",
+          "type": "note",
+          "actorId": "reviewer-1778102826814-5821",
+          "note": "Investigating",
+          "at": "2026-05-06T21:27:06.818Z",
+          "meta": {}
+        },
+        {
+          "id": "bb598180",
+          "type": "approved",
+          "actorId": "reviewer-1778102826814-5821",
+          "note": "Approved for test",
+          "at": "2026-05-06T21:27:06.820Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "84f4c832",
+          "authorId": "reviewer-1778102826814-5821",
+          "note": "Investigating",
+          "createdAt": "2026-05-06T21:27:06.818Z"
+        }
+      ]
+    }
+  },
+  "guild-1778105418879-94776": {
+    "da3a4b92": {
+      "id": "da3a4b92",
+      "userId": "user-1778105418879-26572",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-06T22:10:18.880Z",
+      "reviewedAt": "2026-05-06T22:10:18.884Z",
+      "reviewedBy": "reviewer-1778105418879-24174",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "4832e417",
+          "type": "submitted",
+          "actorId": "user-1778105418879-26572",
+          "note": "Appeal submitted",
+          "at": "2026-05-06T22:10:18.880Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "86cad23e",
+          "type": "note",
+          "actorId": "reviewer-1778105418879-24174",
+          "note": "Investigating",
+          "at": "2026-05-06T22:10:18.883Z",
+          "meta": {}
+        },
+        {
+          "id": "0021a29e",
+          "type": "approved",
+          "actorId": "reviewer-1778105418879-24174",
+          "note": "Approved for test",
+          "at": "2026-05-06T22:10:18.885Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "e2e06bdd",
+          "authorId": "reviewer-1778105418879-24174",
+          "note": "Investigating",
+          "createdAt": "2026-05-06T22:10:18.883Z"
+        }
+      ]
+    }
+  },
+  "guild-1778105910644-26631": {
+    "97a2521c": {
+      "id": "97a2521c",
+      "userId": "user-1778105910644-56989",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-06T22:18:30.646Z",
+      "reviewedAt": "2026-05-06T22:18:30.650Z",
+      "reviewedBy": "reviewer-1778105910644-63153",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "86ceb479",
+          "type": "submitted",
+          "actorId": "user-1778105910644-56989",
+          "note": "Appeal submitted",
+          "at": "2026-05-06T22:18:30.646Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "e69d0b61",
+          "type": "note",
+          "actorId": "reviewer-1778105910644-63153",
+          "note": "Investigating",
+          "at": "2026-05-06T22:18:30.648Z",
+          "meta": {}
+        },
+        {
+          "id": "0d7c6c6e",
+          "type": "approved",
+          "actorId": "reviewer-1778105910644-63153",
+          "note": "Approved for test",
+          "at": "2026-05-06T22:18:30.651Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "c6c6bfae",
+          "authorId": "reviewer-1778105910644-63153",
+          "note": "Investigating",
+          "createdAt": "2026-05-06T22:18:30.648Z"
+        }
+      ]
+    }
+  },
+  "guild-1778106379579-57953": {
+    "6dbb3b57": {
+      "id": "6dbb3b57",
+      "userId": "user-1778106379579-70082",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-06T22:26:19.580Z",
+      "reviewedAt": "2026-05-06T22:26:19.585Z",
+      "reviewedBy": "reviewer-1778106379579-95312",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "184ce013",
+          "type": "submitted",
+          "actorId": "user-1778106379579-70082",
+          "note": "Appeal submitted",
+          "at": "2026-05-06T22:26:19.580Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "14bc1f26",
+          "type": "note",
+          "actorId": "reviewer-1778106379579-95312",
+          "note": "Investigating",
+          "at": "2026-05-06T22:26:19.583Z",
+          "meta": {}
+        },
+        {
+          "id": "4ee75922",
+          "type": "approved",
+          "actorId": "reviewer-1778106379579-95312",
+          "note": "Approved for test",
+          "at": "2026-05-06T22:26:19.586Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "65d302de",
+          "authorId": "reviewer-1778106379579-95312",
+          "note": "Investigating",
+          "createdAt": "2026-05-06T22:26:19.583Z"
+        }
+      ]
+    }
+  },
+  "guild-1778154165506-60214": {
+    "c5173336": {
+      "id": "c5173336",
+      "userId": "user-1778154165506-68598",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-07T11:42:45.509Z",
+      "reviewedAt": "2026-05-07T11:42:45.514Z",
+      "reviewedBy": "reviewer-1778154165506-45426",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "52f03e05",
+          "type": "submitted",
+          "actorId": "user-1778154165506-68598",
+          "note": "Appeal submitted",
+          "at": "2026-05-07T11:42:45.510Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "3a5d3bf3",
+          "type": "note",
+          "actorId": "reviewer-1778154165506-45426",
+          "note": "Investigating",
+          "at": "2026-05-07T11:42:45.513Z",
+          "meta": {}
+        },
+        {
+          "id": "54155aae",
+          "type": "approved",
+          "actorId": "reviewer-1778154165506-45426",
+          "note": "Approved for test",
+          "at": "2026-05-07T11:42:45.515Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "9fda79c5",
+          "authorId": "reviewer-1778154165506-45426",
+          "note": "Investigating",
+          "createdAt": "2026-05-07T11:42:45.513Z"
+        }
+      ]
+    }
+  },
+  "guild-1778157226663-34819": {
+    "6d1ca6b3": {
+      "id": "6d1ca6b3",
+      "userId": "user-1778157226663-63983",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-07T12:33:46.664Z",
+      "reviewedAt": "2026-05-07T12:33:46.668Z",
+      "reviewedBy": "reviewer-1778157226663-21580",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "15026d86",
+          "type": "submitted",
+          "actorId": "user-1778157226663-63983",
+          "note": "Appeal submitted",
+          "at": "2026-05-07T12:33:46.664Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "a15aae17",
+          "type": "note",
+          "actorId": "reviewer-1778157226663-21580",
+          "note": "Investigating",
+          "at": "2026-05-07T12:33:46.667Z",
+          "meta": {}
+        },
+        {
+          "id": "4e31d001",
+          "type": "approved",
+          "actorId": "reviewer-1778157226663-21580",
+          "note": "Approved for test",
+          "at": "2026-05-07T12:33:46.669Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "da83a309",
+          "authorId": "reviewer-1778157226663-21580",
+          "note": "Investigating",
+          "createdAt": "2026-05-07T12:33:46.667Z"
+        }
+      ]
+    }
+  },
+  "guild-1778158393349-52963": {
+    "279d29ce": {
+      "id": "279d29ce",
+      "userId": "user-1778158393349-26340",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-07T12:53:13.350Z",
+      "reviewedAt": "2026-05-07T12:53:13.354Z",
+      "reviewedBy": "reviewer-1778158393349-89755",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "32473148",
+          "type": "submitted",
+          "actorId": "user-1778158393349-26340",
+          "note": "Appeal submitted",
+          "at": "2026-05-07T12:53:13.350Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "a356ce76",
+          "type": "note",
+          "actorId": "reviewer-1778158393349-89755",
+          "note": "Investigating",
+          "at": "2026-05-07T12:53:13.352Z",
+          "meta": {}
+        },
+        {
+          "id": "d184d996",
+          "type": "approved",
+          "actorId": "reviewer-1778158393349-89755",
+          "note": "Approved for test",
+          "at": "2026-05-07T12:53:13.355Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "ed7ae8aa",
+          "authorId": "reviewer-1778158393349-89755",
+          "note": "Investigating",
+          "createdAt": "2026-05-07T12:53:13.352Z"
+        }
+      ]
+    }
+  },
+  "guild-1778161576852-14957": {
+    "268108ff": {
+      "id": "268108ff",
+      "userId": "user-1778161576852-84122",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-07T13:46:16.854Z",
+      "reviewedAt": "2026-05-07T13:46:16.858Z",
+      "reviewedBy": "reviewer-1778161576852-46598",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "8c65e36c",
+          "type": "submitted",
+          "actorId": "user-1778161576852-84122",
+          "note": "Appeal submitted",
+          "at": "2026-05-07T13:46:16.854Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "643f0c54",
+          "type": "note",
+          "actorId": "reviewer-1778161576852-46598",
+          "note": "Investigating",
+          "at": "2026-05-07T13:46:16.856Z",
+          "meta": {}
+        },
+        {
+          "id": "f3a11924",
+          "type": "approved",
+          "actorId": "reviewer-1778161576852-46598",
+          "note": "Approved for test",
+          "at": "2026-05-07T13:46:16.858Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "22ad6caa",
+          "authorId": "reviewer-1778161576852-46598",
+          "note": "Investigating",
+          "createdAt": "2026-05-07T13:46:16.856Z"
+        }
+      ]
+    }
+  },
+  "guild-1778162285246-80413": {
+    "c92b09bd": {
+      "id": "c92b09bd",
+      "userId": "user-1778162285246-38526",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-07T13:58:05.247Z",
+      "reviewedAt": "2026-05-07T13:58:05.251Z",
+      "reviewedBy": "reviewer-1778162285246-74302",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "a392169c",
+          "type": "submitted",
+          "actorId": "user-1778162285246-38526",
+          "note": "Appeal submitted",
+          "at": "2026-05-07T13:58:05.247Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "eb24b5ec",
+          "type": "note",
+          "actorId": "reviewer-1778162285246-74302",
+          "note": "Investigating",
+          "at": "2026-05-07T13:58:05.249Z",
+          "meta": {}
+        },
+        {
+          "id": "44ab542f",
+          "type": "approved",
+          "actorId": "reviewer-1778162285246-74302",
+          "note": "Approved for test",
+          "at": "2026-05-07T13:58:05.252Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "1979bfc2",
+          "authorId": "reviewer-1778162285246-74302",
+          "note": "Investigating",
+          "createdAt": "2026-05-07T13:58:05.249Z"
+        }
+      ]
+    }
+  },
+  "guild-1778163391161-64295": {
+    "990a139e": {
+      "id": "990a139e",
+      "userId": "user-1778163391161-71610",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-07T14:16:31.163Z",
+      "reviewedAt": "2026-05-07T14:16:31.167Z",
+      "reviewedBy": "reviewer-1778163391161-82221",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "de017068",
+          "type": "submitted",
+          "actorId": "user-1778163391161-71610",
+          "note": "Appeal submitted",
+          "at": "2026-05-07T14:16:31.163Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "d71b1c00",
+          "type": "note",
+          "actorId": "reviewer-1778163391161-82221",
+          "note": "Investigating",
+          "at": "2026-05-07T14:16:31.166Z",
+          "meta": {}
+        },
+        {
+          "id": "a25b9a75",
+          "type": "approved",
+          "actorId": "reviewer-1778163391161-82221",
+          "note": "Approved for test",
+          "at": "2026-05-07T14:16:31.168Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "651f0204",
+          "authorId": "reviewer-1778163391161-82221",
+          "note": "Investigating",
+          "createdAt": "2026-05-07T14:16:31.166Z"
+        }
+      ]
+    }
+  },
+  "guild-1778166233634-43842": {
+    "1777d95d": {
+      "id": "1777d95d",
+      "userId": "user-1778166233634-46247",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-07T15:03:53.636Z",
+      "reviewedAt": "2026-05-07T15:03:53.640Z",
+      "reviewedBy": "reviewer-1778166233634-67699",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "87695957",
+          "type": "submitted",
+          "actorId": "user-1778166233634-46247",
+          "note": "Appeal submitted",
+          "at": "2026-05-07T15:03:53.636Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "8d5aa96c",
+          "type": "note",
+          "actorId": "reviewer-1778166233634-67699",
+          "note": "Investigating",
+          "at": "2026-05-07T15:03:53.638Z",
+          "meta": {}
+        },
+        {
+          "id": "478ae34f",
+          "type": "approved",
+          "actorId": "reviewer-1778166233634-67699",
+          "note": "Approved for test",
+          "at": "2026-05-07T15:03:53.641Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "64e66cfe",
+          "authorId": "reviewer-1778166233634-67699",
+          "note": "Investigating",
+          "createdAt": "2026-05-07T15:03:53.638Z"
+        }
+      ]
+    }
+  },
+  "guild-1778166429104-83424": {
+    "2c097d09": {
+      "id": "2c097d09",
+      "userId": "user-1778166429104-63053",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-07T15:07:09.106Z",
+      "reviewedAt": "2026-05-07T15:07:09.110Z",
+      "reviewedBy": "reviewer-1778166429104-18023",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "1a63a603",
+          "type": "submitted",
+          "actorId": "user-1778166429104-63053",
+          "note": "Appeal submitted",
+          "at": "2026-05-07T15:07:09.106Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "c6a8ea05",
+          "type": "note",
+          "actorId": "reviewer-1778166429104-18023",
+          "note": "Investigating",
+          "at": "2026-05-07T15:07:09.109Z",
+          "meta": {}
+        },
+        {
+          "id": "86fce33d",
+          "type": "approved",
+          "actorId": "reviewer-1778166429104-18023",
+          "note": "Approved for test",
+          "at": "2026-05-07T15:07:09.111Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "3c96abdf",
+          "authorId": "reviewer-1778166429104-18023",
+          "note": "Investigating",
+          "createdAt": "2026-05-07T15:07:09.109Z"
+        }
+      ]
+    }
+  },
+  "guild-1778175862786-931": {
+    "5bac48e6": {
+      "id": "5bac48e6",
+      "userId": "user-1778175862786-583",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-07T17:44:22.788Z",
+      "reviewedAt": "2026-05-07T17:44:22.792Z",
+      "reviewedBy": "reviewer-1778175862786-96847",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "d0b174f5",
+          "type": "submitted",
+          "actorId": "user-1778175862786-583",
+          "note": "Appeal submitted",
+          "at": "2026-05-07T17:44:22.788Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "c1d4b717",
+          "type": "note",
+          "actorId": "reviewer-1778175862786-96847",
+          "note": "Investigating",
+          "at": "2026-05-07T17:44:22.791Z",
+          "meta": {}
+        },
+        {
+          "id": "88167b72",
+          "type": "approved",
+          "actorId": "reviewer-1778175862786-96847",
+          "note": "Approved for test",
+          "at": "2026-05-07T17:44:22.793Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "261189f9",
+          "authorId": "reviewer-1778175862786-96847",
+          "note": "Investigating",
+          "createdAt": "2026-05-07T17:44:22.791Z"
+        }
+      ]
+    }
+  },
+  "guild-1778177957392-9830": {
+    "37ea6d1b": {
+      "id": "37ea6d1b",
+      "userId": "user-1778177957392-11193",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-07T18:19:17.393Z",
+      "reviewedAt": "2026-05-07T18:19:17.398Z",
+      "reviewedBy": "reviewer-1778177957392-53021",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "5b4119e0",
+          "type": "submitted",
+          "actorId": "user-1778177957392-11193",
+          "note": "Appeal submitted",
+          "at": "2026-05-07T18:19:17.394Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "ef751844",
+          "type": "note",
+          "actorId": "reviewer-1778177957392-53021",
+          "note": "Investigating",
+          "at": "2026-05-07T18:19:17.397Z",
+          "meta": {}
+        },
+        {
+          "id": "aa52c8e6",
+          "type": "approved",
+          "actorId": "reviewer-1778177957392-53021",
+          "note": "Approved for test",
+          "at": "2026-05-07T18:19:17.399Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "529e176f",
+          "authorId": "reviewer-1778177957392-53021",
+          "note": "Investigating",
+          "createdAt": "2026-05-07T18:19:17.396Z"
+        }
+      ]
+    }
+  },
+  "guild-1778180680513-30662": {
+    "220cf7cd": {
+      "id": "220cf7cd",
+      "userId": "user-1778180680513-84663",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-07T19:04:40.515Z",
+      "reviewedAt": "2026-05-07T19:04:40.519Z",
+      "reviewedBy": "reviewer-1778180680513-42008",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "32b7bb97",
+          "type": "submitted",
+          "actorId": "user-1778180680513-84663",
+          "note": "Appeal submitted",
+          "at": "2026-05-07T19:04:40.515Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "cf43788c",
+          "type": "note",
+          "actorId": "reviewer-1778180680513-42008",
+          "note": "Investigating",
+          "at": "2026-05-07T19:04:40.518Z",
+          "meta": {}
+        },
+        {
+          "id": "2ea55424",
+          "type": "approved",
+          "actorId": "reviewer-1778180680513-42008",
+          "note": "Approved for test",
+          "at": "2026-05-07T19:04:40.520Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "a5594d0e",
+          "authorId": "reviewer-1778180680513-42008",
+          "note": "Investigating",
+          "createdAt": "2026-05-07T19:04:40.518Z"
+        }
+      ]
+    }
+  },
+  "guild-1778218556858-38199": {
+    "3c2dc187": {
+      "id": "3c2dc187",
+      "userId": "user-1778218556858-72332",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-08T05:35:56.859Z",
+      "reviewedAt": "2026-05-08T05:35:56.864Z",
+      "reviewedBy": "reviewer-1778218556858-41126",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "883630e4",
+          "type": "submitted",
+          "actorId": "user-1778218556858-72332",
+          "note": "Appeal submitted",
+          "at": "2026-05-08T05:35:56.859Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "c2b8bfd9",
+          "type": "note",
+          "actorId": "reviewer-1778218556858-41126",
+          "note": "Investigating",
+          "at": "2026-05-08T05:35:56.862Z",
+          "meta": {}
+        },
+        {
+          "id": "4de13f59",
+          "type": "approved",
+          "actorId": "reviewer-1778218556858-41126",
+          "note": "Approved for test",
+          "at": "2026-05-08T05:35:56.864Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "473f9151",
+          "authorId": "reviewer-1778218556858-41126",
+          "note": "Investigating",
+          "createdAt": "2026-05-08T05:35:56.862Z"
+        }
+      ]
+    }
+  },
+  "guild-1778341889326-98815": {
+    "65104b10": {
+      "id": "65104b10",
+      "userId": "user-1778341889326-43918",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-09T15:51:29.329Z",
+      "reviewedAt": "2026-05-09T15:51:29.333Z",
+      "reviewedBy": "reviewer-1778341889326-51425",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "b4764b0b",
+          "type": "submitted",
+          "actorId": "user-1778341889326-43918",
+          "note": "Appeal submitted",
+          "at": "2026-05-09T15:51:29.329Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "dbbfd53f",
+          "type": "note",
+          "actorId": "reviewer-1778341889326-51425",
+          "note": "Investigating",
+          "at": "2026-05-09T15:51:29.331Z",
+          "meta": {}
+        },
+        {
+          "id": "ad94061b",
+          "type": "approved",
+          "actorId": "reviewer-1778341889326-51425",
+          "note": "Approved for test",
+          "at": "2026-05-09T15:51:29.334Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "6cc21a9b",
+          "authorId": "reviewer-1778341889326-51425",
+          "note": "Investigating",
+          "createdAt": "2026-05-09T15:51:29.331Z"
+        }
+      ]
+    }
+  },
+  "guild-1778444363713-27673": {
+    "5ddd93d2": {
+      "id": "5ddd93d2",
+      "userId": "user-1778444363713-52687",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-10T20:19:23.716Z",
+      "reviewedAt": "2026-05-10T20:19:23.720Z",
+      "reviewedBy": "reviewer-1778444363713-59104",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "13e08da8",
+          "type": "submitted",
+          "actorId": "user-1778444363713-52687",
+          "note": "Appeal submitted",
+          "at": "2026-05-10T20:19:23.716Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "cc732458",
+          "type": "note",
+          "actorId": "reviewer-1778444363713-59104",
+          "note": "Investigating",
+          "at": "2026-05-10T20:19:23.718Z",
+          "meta": {}
+        },
+        {
+          "id": "b8095637",
+          "type": "approved",
+          "actorId": "reviewer-1778444363713-59104",
+          "note": "Approved for test",
+          "at": "2026-05-10T20:19:23.721Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "35cd7605",
+          "authorId": "reviewer-1778444363713-59104",
+          "note": "Investigating",
+          "createdAt": "2026-05-10T20:19:23.718Z"
+        }
+      ]
+    }
+  },
+  "guild-1778516831167-66501": {
+    "8c001c67": {
+      "id": "8c001c67",
+      "userId": "user-1778516831167-35511",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-11T16:27:11.169Z",
+      "reviewedAt": "2026-05-11T16:27:11.174Z",
+      "reviewedBy": "reviewer-1778516831167-87388",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "5553670b",
+          "type": "submitted",
+          "actorId": "user-1778516831167-35511",
+          "note": "Appeal submitted",
+          "at": "2026-05-11T16:27:11.169Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "0f4aca89",
+          "type": "note",
+          "actorId": "reviewer-1778516831167-87388",
+          "note": "Investigating",
+          "at": "2026-05-11T16:27:11.172Z",
+          "meta": {}
+        },
+        {
+          "id": "5deb6008",
+          "type": "approved",
+          "actorId": "reviewer-1778516831167-87388",
+          "note": "Approved for test",
+          "at": "2026-05-11T16:27:11.174Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "3801bd30",
+          "authorId": "reviewer-1778516831167-87388",
+          "note": "Investigating",
+          "createdAt": "2026-05-11T16:27:11.172Z"
+        }
+      ]
+    }
+  },
+  "guild-1778610911245-45261": {
+    "8f555a5b": {
+      "id": "8f555a5b",
+      "userId": "user-1778610911245-66126",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-12T18:35:11.248Z",
+      "reviewedAt": "2026-05-12T18:35:11.253Z",
+      "reviewedBy": "reviewer-1778610911245-49675",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "4f3fcc39",
+          "type": "submitted",
+          "actorId": "user-1778610911245-66126",
+          "note": "Appeal submitted",
+          "at": "2026-05-12T18:35:11.248Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "041e0956",
+          "type": "note",
+          "actorId": "reviewer-1778610911245-49675",
+          "note": "Investigating",
+          "at": "2026-05-12T18:35:11.251Z",
+          "meta": {}
+        },
+        {
+          "id": "39f0b9bf",
+          "type": "approved",
+          "actorId": "reviewer-1778610911245-49675",
+          "note": "Approved for test",
+          "at": "2026-05-12T18:35:11.254Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "442a738f",
+          "authorId": "reviewer-1778610911245-49675",
+          "note": "Investigating",
+          "createdAt": "2026-05-12T18:35:11.251Z"
+        }
+      ]
+    }
+  },
+  "guild-1778956382648-61758": {
+    "96a457ab": {
+      "id": "96a457ab",
+      "userId": "user-1778956382648-36264",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-16T18:33:02.651Z",
+      "reviewedAt": "2026-05-16T18:33:02.656Z",
+      "reviewedBy": "reviewer-1778956382648-75121",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "57348780",
+          "type": "submitted",
+          "actorId": "user-1778956382648-36264",
+          "note": "Appeal submitted",
+          "at": "2026-05-16T18:33:02.651Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "dcf882cb",
+          "type": "note",
+          "actorId": "reviewer-1778956382648-75121",
+          "note": "Investigating",
+          "at": "2026-05-16T18:33:02.654Z",
+          "meta": {}
+        },
+        {
+          "id": "a037cb6c",
+          "type": "approved",
+          "actorId": "reviewer-1778956382648-75121",
+          "note": "Approved for test",
+          "at": "2026-05-16T18:33:02.657Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "7fba4d7e",
+          "authorId": "reviewer-1778956382648-75121",
+          "note": "Investigating",
+          "createdAt": "2026-05-16T18:33:02.654Z"
+        }
+      ]
+    }
+  },
+  "guild-1778957644569-42924": {
+    "e6110ca8": {
+      "id": "e6110ca8",
+      "userId": "user-1778957644569-82890",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-16T18:54:04.572Z",
+      "reviewedAt": "2026-05-16T18:54:04.577Z",
+      "reviewedBy": "reviewer-1778957644569-49311",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "72a806e9",
+          "type": "submitted",
+          "actorId": "user-1778957644569-82890",
+          "note": "Appeal submitted",
+          "at": "2026-05-16T18:54:04.572Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "bd3b5cb0",
+          "type": "note",
+          "actorId": "reviewer-1778957644569-49311",
+          "note": "Investigating",
+          "at": "2026-05-16T18:54:04.575Z",
+          "meta": {}
+        },
+        {
+          "id": "a196e0c3",
+          "type": "approved",
+          "actorId": "reviewer-1778957644569-49311",
+          "note": "Approved for test",
+          "at": "2026-05-16T18:54:04.578Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "aa248614",
+          "authorId": "reviewer-1778957644569-49311",
+          "note": "Investigating",
+          "createdAt": "2026-05-16T18:54:04.575Z"
+        }
+      ]
+    }
+  },
+  "guild-1778964712086-10411": {
+    "5d7c4494": {
+      "id": "5d7c4494",
+      "userId": "user-1778964712086-89552",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-16T20:51:52.089Z",
+      "reviewedAt": "2026-05-16T20:51:52.094Z",
+      "reviewedBy": "reviewer-1778964712086-75439",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "98ececb1",
+          "type": "submitted",
+          "actorId": "user-1778964712086-89552",
+          "note": "Appeal submitted",
+          "at": "2026-05-16T20:51:52.089Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "fe943055",
+          "type": "note",
+          "actorId": "reviewer-1778964712086-75439",
+          "note": "Investigating",
+          "at": "2026-05-16T20:51:52.092Z",
+          "meta": {}
+        },
+        {
+          "id": "6859647c",
+          "type": "approved",
+          "actorId": "reviewer-1778964712086-75439",
+          "note": "Approved for test",
+          "at": "2026-05-16T20:51:52.095Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "b8d2bfa1",
+          "authorId": "reviewer-1778964712086-75439",
+          "note": "Investigating",
+          "createdAt": "2026-05-16T20:51:52.092Z"
+        }
+      ]
+    }
+  },
+  "guild-1778964863030-89076": {
+    "beab41a2": {
+      "id": "beab41a2",
+      "userId": "user-1778964863030-39731",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-16T20:54:23.032Z",
+      "reviewedAt": "2026-05-16T20:54:23.037Z",
+      "reviewedBy": "reviewer-1778964863030-85818",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "73e80ffc",
+          "type": "submitted",
+          "actorId": "user-1778964863030-39731",
+          "note": "Appeal submitted",
+          "at": "2026-05-16T20:54:23.032Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "dfd24a04",
+          "type": "note",
+          "actorId": "reviewer-1778964863030-85818",
+          "note": "Investigating",
+          "at": "2026-05-16T20:54:23.035Z",
+          "meta": {}
+        },
+        {
+          "id": "47acca54",
+          "type": "approved",
+          "actorId": "reviewer-1778964863030-85818",
+          "note": "Approved for test",
+          "at": "2026-05-16T20:54:23.038Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "7c7bf2ca",
+          "authorId": "reviewer-1778964863030-85818",
+          "note": "Investigating",
+          "createdAt": "2026-05-16T20:54:23.035Z"
+        }
+      ]
+    }
+  },
+  "guild-1778965565063-81441": {
+    "2bb3780c": {
+      "id": "2bb3780c",
+      "userId": "user-1778965565063-47839",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-16T21:06:05.066Z",
+      "reviewedAt": "2026-05-16T21:06:05.072Z",
+      "reviewedBy": "reviewer-1778965565063-90163",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "b2f4a7e2",
+          "type": "submitted",
+          "actorId": "user-1778965565063-47839",
+          "note": "Appeal submitted",
+          "at": "2026-05-16T21:06:05.067Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "1b497f50",
+          "type": "note",
+          "actorId": "reviewer-1778965565063-90163",
+          "note": "Investigating",
+          "at": "2026-05-16T21:06:05.070Z",
+          "meta": {}
+        },
+        {
+          "id": "c46adf52",
+          "type": "approved",
+          "actorId": "reviewer-1778965565063-90163",
+          "note": "Approved for test",
+          "at": "2026-05-16T21:06:05.073Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "7427449a",
+          "authorId": "reviewer-1778965565063-90163",
+          "note": "Investigating",
+          "createdAt": "2026-05-16T21:06:05.070Z"
+        }
+      ]
+    }
+  },
+  "guild-1778969928959-41692": {
+    "1ace04d4": {
+      "id": "1ace04d4",
+      "userId": "user-1778969928959-60887",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-16T22:18:48.961Z",
+      "reviewedAt": "2026-05-16T22:18:48.966Z",
+      "reviewedBy": "reviewer-1778969928959-31238",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "bfdd234e",
+          "type": "submitted",
+          "actorId": "user-1778969928959-60887",
+          "note": "Appeal submitted",
+          "at": "2026-05-16T22:18:48.961Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "9c107889",
+          "type": "note",
+          "actorId": "reviewer-1778969928959-31238",
+          "note": "Investigating",
+          "at": "2026-05-16T22:18:48.964Z",
+          "meta": {}
+        },
+        {
+          "id": "d168e108",
+          "type": "approved",
+          "actorId": "reviewer-1778969928959-31238",
+          "note": "Approved for test",
+          "at": "2026-05-16T22:18:48.967Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "b96e6222",
+          "authorId": "reviewer-1778969928959-31238",
+          "note": "Investigating",
+          "createdAt": "2026-05-16T22:18:48.964Z"
+        }
+      ]
+    }
+  },
+  "guild-1778970172052-7422": {
+    "328f323c": {
+      "id": "328f323c",
+      "userId": "user-1778970172052-22727",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-16T22:22:52.055Z",
+      "reviewedAt": "2026-05-16T22:22:52.061Z",
+      "reviewedBy": "reviewer-1778970172052-81865",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "f8406194",
+          "type": "submitted",
+          "actorId": "user-1778970172052-22727",
+          "note": "Appeal submitted",
+          "at": "2026-05-16T22:22:52.055Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "5ccae0ed",
+          "type": "note",
+          "actorId": "reviewer-1778970172052-81865",
+          "note": "Investigating",
+          "at": "2026-05-16T22:22:52.059Z",
+          "meta": {}
+        },
+        {
+          "id": "751ba9e0",
+          "type": "approved",
+          "actorId": "reviewer-1778970172052-81865",
+          "note": "Approved for test",
+          "at": "2026-05-16T22:22:52.062Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "d78461bb",
+          "authorId": "reviewer-1778970172052-81865",
+          "note": "Investigating",
+          "createdAt": "2026-05-16T22:22:52.059Z"
+        }
+      ]
+    }
+  },
+  "guild-1778974346279-20223": {
+    "b4dc64bd": {
+      "id": "b4dc64bd",
+      "userId": "user-1778974346279-24972",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-16T23:32:26.283Z",
+      "reviewedAt": "2026-05-16T23:32:26.289Z",
+      "reviewedBy": "reviewer-1778974346279-66894",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "8c8c0980",
+          "type": "submitted",
+          "actorId": "user-1778974346279-24972",
+          "note": "Appeal submitted",
+          "at": "2026-05-16T23:32:26.283Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "a6ad0d88",
+          "type": "note",
+          "actorId": "reviewer-1778974346279-66894",
+          "note": "Investigating",
+          "at": "2026-05-16T23:32:26.287Z",
+          "meta": {}
+        },
+        {
+          "id": "bef76465",
+          "type": "approved",
+          "actorId": "reviewer-1778974346279-66894",
+          "note": "Approved for test",
+          "at": "2026-05-16T23:32:26.291Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "47ff94b8",
+          "authorId": "reviewer-1778974346279-66894",
+          "note": "Investigating",
+          "createdAt": "2026-05-16T23:32:26.287Z"
+        }
+      ]
+    }
+  },
+  "guild-1778976112222-10614": {
+    "463bd54b": {
+      "id": "463bd54b",
+      "userId": "user-1778976112222-76",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-17T00:01:52.225Z",
+      "reviewedAt": "2026-05-17T00:01:52.231Z",
+      "reviewedBy": "reviewer-1778976112222-4649",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "5ea4bd27",
+          "type": "submitted",
+          "actorId": "user-1778976112222-76",
+          "note": "Appeal submitted",
+          "at": "2026-05-17T00:01:52.225Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "5c165c22",
+          "type": "note",
+          "actorId": "reviewer-1778976112222-4649",
+          "note": "Investigating",
+          "at": "2026-05-17T00:01:52.229Z",
+          "meta": {}
+        },
+        {
+          "id": "79e8d44c",
+          "type": "approved",
+          "actorId": "reviewer-1778976112222-4649",
+          "note": "Approved for test",
+          "at": "2026-05-17T00:01:52.232Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "ca3dc216",
+          "authorId": "reviewer-1778976112222-4649",
+          "note": "Investigating",
+          "createdAt": "2026-05-17T00:01:52.229Z"
+        }
+      ]
+    }
+  },
+  "guild-1778981899119-43405": {
+    "b9e621fd": {
+      "id": "b9e621fd",
+      "userId": "user-1778981899119-59777",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-17T01:38:19.120Z",
+      "reviewedAt": "2026-05-17T01:38:19.125Z",
+      "reviewedBy": "reviewer-1778981899119-15123",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "259b264a",
+          "type": "submitted",
+          "actorId": "user-1778981899119-59777",
+          "note": "Appeal submitted",
+          "at": "2026-05-17T01:38:19.120Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "b8341315",
+          "type": "note",
+          "actorId": "reviewer-1778981899119-15123",
+          "note": "Investigating",
+          "at": "2026-05-17T01:38:19.123Z",
+          "meta": {}
+        },
+        {
+          "id": "aa8eee7e",
+          "type": "approved",
+          "actorId": "reviewer-1778981899119-15123",
+          "note": "Approved for test",
+          "at": "2026-05-17T01:38:19.126Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "f74192a2",
+          "authorId": "reviewer-1778981899119-15123",
+          "note": "Investigating",
+          "createdAt": "2026-05-17T01:38:19.123Z"
+        }
+      ]
+    }
+  },
+  "guild-1779014516186-12325": {
+    "07ccc1f4": {
+      "id": "07ccc1f4",
+      "userId": "user-1779014516186-76534",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-17T10:41:56.189Z",
+      "reviewedAt": "2026-05-17T10:41:56.195Z",
+      "reviewedBy": "reviewer-1779014516186-66637",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "a48e788b",
+          "type": "submitted",
+          "actorId": "user-1779014516186-76534",
+          "note": "Appeal submitted",
+          "at": "2026-05-17T10:41:56.189Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "8a3ac04b",
+          "type": "note",
+          "actorId": "reviewer-1779014516186-66637",
+          "note": "Investigating",
+          "at": "2026-05-17T10:41:56.193Z",
+          "meta": {}
+        },
+        {
+          "id": "040483d6",
+          "type": "approved",
+          "actorId": "reviewer-1779014516186-66637",
+          "note": "Approved for test",
+          "at": "2026-05-17T10:41:56.196Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "e2d72b73",
+          "authorId": "reviewer-1779014516186-66637",
+          "note": "Investigating",
+          "createdAt": "2026-05-17T10:41:56.193Z"
+        }
+      ]
+    }
+  },
+  "guild-1779015685836-7934": {
+    "1f99581a": {
+      "id": "1f99581a",
+      "userId": "user-1779015685836-52779",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-17T11:01:25.838Z",
+      "reviewedAt": "2026-05-17T11:01:25.843Z",
+      "reviewedBy": "reviewer-1779015685836-93501",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "43362333",
+          "type": "submitted",
+          "actorId": "user-1779015685836-52779",
+          "note": "Appeal submitted",
+          "at": "2026-05-17T11:01:25.838Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "868267e6",
+          "type": "note",
+          "actorId": "reviewer-1779015685836-93501",
+          "note": "Investigating",
+          "at": "2026-05-17T11:01:25.841Z",
+          "meta": {}
+        },
+        {
+          "id": "cf67f499",
+          "type": "approved",
+          "actorId": "reviewer-1779015685836-93501",
+          "note": "Approved for test",
+          "at": "2026-05-17T11:01:25.844Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "677334ae",
+          "authorId": "reviewer-1779015685836-93501",
+          "note": "Investigating",
+          "createdAt": "2026-05-17T11:01:25.841Z"
+        }
+      ]
+    }
+  },
+  "guild-1779017667841-19467": {
+    "ef754907": {
+      "id": "ef754907",
+      "userId": "user-1779017667841-59681",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-17T11:34:27.844Z",
+      "reviewedAt": "2026-05-17T11:34:27.849Z",
+      "reviewedBy": "reviewer-1779017667841-48594",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "37b9698a",
+          "type": "submitted",
+          "actorId": "user-1779017667841-59681",
+          "note": "Appeal submitted",
+          "at": "2026-05-17T11:34:27.844Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "90a40f1a",
+          "type": "note",
+          "actorId": "reviewer-1779017667841-48594",
+          "note": "Investigating",
+          "at": "2026-05-17T11:34:27.847Z",
+          "meta": {}
+        },
+        {
+          "id": "91518289",
+          "type": "approved",
+          "actorId": "reviewer-1779017667841-48594",
+          "note": "Approved for test",
+          "at": "2026-05-17T11:34:27.850Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "b68039e8",
+          "authorId": "reviewer-1779017667841-48594",
+          "note": "Investigating",
+          "createdAt": "2026-05-17T11:34:27.847Z"
+        }
+      ]
+    }
+  },
+  "guild-1779018432325-9374": {
+    "e4db8f55": {
+      "id": "e4db8f55",
+      "userId": "user-1779018432325-39940",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-17T11:47:12.328Z",
+      "reviewedAt": "2026-05-17T11:47:12.333Z",
+      "reviewedBy": "reviewer-1779018432325-30669",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "6207c179",
+          "type": "submitted",
+          "actorId": "user-1779018432325-39940",
+          "note": "Appeal submitted",
+          "at": "2026-05-17T11:47:12.328Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "88ba89ac",
+          "type": "note",
+          "actorId": "reviewer-1779018432325-30669",
+          "note": "Investigating",
+          "at": "2026-05-17T11:47:12.331Z",
+          "meta": {}
+        },
+        {
+          "id": "5423017d",
+          "type": "approved",
+          "actorId": "reviewer-1779018432325-30669",
+          "note": "Approved for test",
+          "at": "2026-05-17T11:47:12.334Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "b5b9b4dd",
+          "authorId": "reviewer-1779018432325-30669",
+          "note": "Investigating",
+          "createdAt": "2026-05-17T11:47:12.331Z"
+        }
+      ]
+    }
+  },
+  "guild-1779036200366-36659": {
+    "f4361f55": {
+      "id": "f4361f55",
+      "userId": "user-1779036200366-31405",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-17T16:43:20.368Z",
+      "reviewedAt": "2026-05-17T16:43:20.373Z",
+      "reviewedBy": "reviewer-1779036200366-10679",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "623da7a8",
+          "type": "submitted",
+          "actorId": "user-1779036200366-31405",
+          "note": "Appeal submitted",
+          "at": "2026-05-17T16:43:20.368Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "f2d1c908",
+          "type": "note",
+          "actorId": "reviewer-1779036200366-10679",
+          "note": "Investigating",
+          "at": "2026-05-17T16:43:20.371Z",
+          "meta": {}
+        },
+        {
+          "id": "45ac5871",
+          "type": "approved",
+          "actorId": "reviewer-1779036200366-10679",
+          "note": "Approved for test",
+          "at": "2026-05-17T16:43:20.374Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "2fc6e4bc",
+          "authorId": "reviewer-1779036200366-10679",
+          "note": "Investigating",
+          "createdAt": "2026-05-17T16:43:20.371Z"
+        }
+      ]
+    }
+  },
+  "guild-1779036500957-57612": {
+    "d1baff6e": {
+      "id": "d1baff6e",
+      "userId": "user-1779036500957-40016",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-17T16:48:20.959Z",
+      "reviewedAt": "2026-05-17T16:48:20.965Z",
+      "reviewedBy": "reviewer-1779036500957-55617",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "6f91397f",
+          "type": "submitted",
+          "actorId": "user-1779036500957-40016",
+          "note": "Appeal submitted",
+          "at": "2026-05-17T16:48:20.959Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "e15ccbec",
+          "type": "note",
+          "actorId": "reviewer-1779036500957-55617",
+          "note": "Investigating",
+          "at": "2026-05-17T16:48:20.962Z",
+          "meta": {}
+        },
+        {
+          "id": "8f241389",
+          "type": "approved",
+          "actorId": "reviewer-1779036500957-55617",
+          "note": "Approved for test",
+          "at": "2026-05-17T16:48:20.966Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "63ffc502",
+          "authorId": "reviewer-1779036500957-55617",
+          "note": "Investigating",
+          "createdAt": "2026-05-17T16:48:20.962Z"
+        }
+      ]
+    }
+  },
+  "guild-1779036792203-76301": {
+    "9be3181b": {
+      "id": "9be3181b",
+      "userId": "user-1779036792203-98493",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-17T16:53:12.206Z",
+      "reviewedAt": "2026-05-17T16:53:12.211Z",
+      "reviewedBy": "reviewer-1779036792203-78456",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "2c27cf76",
+          "type": "submitted",
+          "actorId": "user-1779036792203-98493",
+          "note": "Appeal submitted",
+          "at": "2026-05-17T16:53:12.206Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "678858b1",
+          "type": "note",
+          "actorId": "reviewer-1779036792203-78456",
+          "note": "Investigating",
+          "at": "2026-05-17T16:53:12.209Z",
+          "meta": {}
+        },
+        {
+          "id": "4a092fc4",
+          "type": "approved",
+          "actorId": "reviewer-1779036792203-78456",
+          "note": "Approved for test",
+          "at": "2026-05-17T16:53:12.212Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "ec0f43b2",
+          "authorId": "reviewer-1779036792203-78456",
+          "note": "Investigating",
+          "createdAt": "2026-05-17T16:53:12.209Z"
+        }
+      ]
+    }
+  },
+  "guild-1779037585028-2756": {
+    "857c7024": {
+      "id": "857c7024",
+      "userId": "user-1779037585028-70115",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-17T17:06:25.031Z",
+      "reviewedAt": "2026-05-17T17:06:25.036Z",
+      "reviewedBy": "reviewer-1779037585028-5354",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "fece0db7",
+          "type": "submitted",
+          "actorId": "user-1779037585028-70115",
+          "note": "Appeal submitted",
+          "at": "2026-05-17T17:06:25.031Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "9668b4bf",
+          "type": "note",
+          "actorId": "reviewer-1779037585028-5354",
+          "note": "Investigating",
+          "at": "2026-05-17T17:06:25.034Z",
+          "meta": {}
+        },
+        {
+          "id": "66402cff",
+          "type": "approved",
+          "actorId": "reviewer-1779037585028-5354",
+          "note": "Approved for test",
+          "at": "2026-05-17T17:06:25.037Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "5c11c76d",
+          "authorId": "reviewer-1779037585028-5354",
+          "note": "Investigating",
+          "createdAt": "2026-05-17T17:06:25.034Z"
+        }
+      ]
+    }
+  },
+  "guild-1779037912087-5902": {
+    "13f989f4": {
+      "id": "13f989f4",
+      "userId": "user-1779037912087-86339",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-17T17:11:52.096Z",
+      "reviewedAt": "2026-05-17T17:11:52.102Z",
+      "reviewedBy": "reviewer-1779037912087-70504",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "daffb9e9",
+          "type": "submitted",
+          "actorId": "user-1779037912087-86339",
+          "note": "Appeal submitted",
+          "at": "2026-05-17T17:11:52.096Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "8c9a90f2",
+          "type": "note",
+          "actorId": "reviewer-1779037912087-70504",
+          "note": "Investigating",
+          "at": "2026-05-17T17:11:52.099Z",
+          "meta": {}
+        },
+        {
+          "id": "ebf00e63",
+          "type": "approved",
+          "actorId": "reviewer-1779037912087-70504",
+          "note": "Approved for test",
+          "at": "2026-05-17T17:11:52.103Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "4baaed06",
+          "authorId": "reviewer-1779037912087-70504",
+          "note": "Investigating",
+          "createdAt": "2026-05-17T17:11:52.099Z"
+        }
+      ]
+    }
+  },
+  "guild-1779040308205-15606": {
+    "4daf714e": {
+      "id": "4daf714e",
+      "userId": "user-1779040308205-29561",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-17T17:51:48.208Z",
+      "reviewedAt": "2026-05-17T17:51:48.215Z",
+      "reviewedBy": "reviewer-1779040308205-26047",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "de3ada33",
+          "type": "submitted",
+          "actorId": "user-1779040308205-29561",
+          "note": "Appeal submitted",
+          "at": "2026-05-17T17:51:48.208Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "4c9334b1",
+          "type": "note",
+          "actorId": "reviewer-1779040308205-26047",
+          "note": "Investigating",
+          "at": "2026-05-17T17:51:48.213Z",
+          "meta": {}
+        },
+        {
+          "id": "bc73db16",
+          "type": "approved",
+          "actorId": "reviewer-1779040308205-26047",
+          "note": "Approved for test",
+          "at": "2026-05-17T17:51:48.216Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "c3e88bc8",
+          "authorId": "reviewer-1779040308205-26047",
+          "note": "Investigating",
+          "createdAt": "2026-05-17T17:51:48.212Z"
+        }
+      ]
+    }
+  },
+  "guild-1780024261749-45830": {
+    "18ff8534": {
+      "id": "18ff8534",
+      "userId": "user-1780024261749-98464",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-29T03:11:01.751Z",
+      "reviewedAt": "2026-05-29T03:11:01.756Z",
+      "reviewedBy": "reviewer-1780024261749-97684",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "b11c1934",
+          "type": "submitted",
+          "actorId": "user-1780024261749-98464",
+          "note": "Appeal submitted",
+          "at": "2026-05-29T03:11:01.751Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "cf35f11e",
+          "type": "note",
+          "actorId": "reviewer-1780024261749-97684",
+          "note": "Investigating",
+          "at": "2026-05-29T03:11:01.754Z",
+          "meta": {}
+        },
+        {
+          "id": "bf0c247d",
+          "type": "approved",
+          "actorId": "reviewer-1780024261749-97684",
+          "note": "Approved for test",
+          "at": "2026-05-29T03:11:01.757Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "cc7a4481",
+          "authorId": "reviewer-1780024261749-97684",
+          "note": "Investigating",
+          "createdAt": "2026-05-29T03:11:01.754Z"
+        }
+      ]
+    }
+  },
+  "guild-1780024659828-42747": {
+    "1d4c713f": {
+      "id": "1d4c713f",
+      "userId": "user-1780024659828-5285",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-29T03:17:39.830Z",
+      "reviewedAt": "2026-05-29T03:17:39.835Z",
+      "reviewedBy": "reviewer-1780024659828-10261",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "2e230d72",
+          "type": "submitted",
+          "actorId": "user-1780024659828-5285",
+          "note": "Appeal submitted",
+          "at": "2026-05-29T03:17:39.830Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "df72e4e6",
+          "type": "note",
+          "actorId": "reviewer-1780024659828-10261",
+          "note": "Investigating",
+          "at": "2026-05-29T03:17:39.834Z",
+          "meta": {}
+        },
+        {
+          "id": "18954633",
+          "type": "approved",
+          "actorId": "reviewer-1780024659828-10261",
+          "note": "Approved for test",
+          "at": "2026-05-29T03:17:39.836Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "b95d4653",
+          "authorId": "reviewer-1780024659828-10261",
+          "note": "Investigating",
+          "createdAt": "2026-05-29T03:17:39.834Z"
+        }
+      ]
+    }
+  },
+  "guild-1780024825085-96698": {
+    "04b8a9ae": {
+      "id": "04b8a9ae",
+      "userId": "user-1780024825085-44768",
+      "reason": "Test reason",
+      "moderatorsNote": "Test note",
+      "targetGuildId": null,
+      "source": "test",
+      "status": "approved",
+      "submittedAt": "2026-05-29T03:20:25.089Z",
+      "reviewedAt": "2026-05-29T03:20:25.097Z",
+      "reviewedBy": "reviewer-1780024825085-12641",
+      "decision": "approved",
+      "response": "Approved for test",
+      "history": [
+        {
+          "id": "dca57806",
+          "type": "submitted",
+          "actorId": "user-1780024825085-44768",
+          "note": "Appeal submitted",
+          "at": "2026-05-29T03:20:25.089Z",
+          "meta": {
+            "source": "test",
+            "targetGuildId": null
+          }
+        },
+        {
+          "id": "0bc43213",
+          "type": "note",
+          "actorId": "reviewer-1780024825085-12641",
+          "note": "Investigating",
+          "at": "2026-05-29T03:20:25.094Z",
+          "meta": {}
+        },
+        {
+          "id": "20b3cc0c",
+          "type": "approved",
+          "actorId": "reviewer-1780024825085-12641",
+          "note": "Approved for test",
+          "at": "2026-05-29T03:20:25.098Z",
+          "meta": {}
+        }
+      ],
+      "notes": [
+        {
+          "id": "dee9cce9",
+          "authorId": "reviewer-1780024825085-12641",
+          "note": "Investigating",
+          "createdAt": "2026-05-29T03:20:25.094Z"
+        }
+      ]
+    }
+  }
+}

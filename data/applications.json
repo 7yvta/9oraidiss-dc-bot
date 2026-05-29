@@ -1,0 +1,84 @@
+{
+  "1479255758561480906": {
+    "be15b4ec": {
+      "id": "be15b4ec",
+      "userId": "1474509136606789715",
+      "applicationType": "middleman",
+      "answers": {
+        "name": "ss",
+        "age": "13",
+        "experience": "11",
+        "reason": "3"
+      },
+      "status": "rejected",
+      "submittedAt": "2026-05-01T22:47:13.877Z",
+      "reviewedBy": "1474509136606789715",
+      "reviewedAt": "2026-05-01T22:47:20.531Z",
+      "reviewMessage": "Reviewed by 9oraidiisss"
+    },
+    "7aa96cfe": {
+      "id": "7aa96cfe",
+      "userId": "1474509136606789715",
+      "applicationType": "content_creator",
+      "answers": {
+        "name": "ss",
+        "age": "31",
+        "experience": "13",
+        "reason": "23"
+      },
+      "status": "rejected",
+      "submittedAt": "2026-05-01T22:54:45.207Z",
+      "reviewedBy": "1474509136606789715",
+      "reviewedAt": "2026-05-01T22:54:50.555Z",
+      "reviewMessage": "Reviewed by 9oraidiisss"
+    },
+    "95ee14d2": {
+      "id": "95ee14d2",
+      "userId": "1474509136606789715",
+      "applicationType": "middleman",
+      "answers": {
+        "name": "w",
+        "age": "12",
+        "experience": "3",
+        "reason": "s"
+      },
+      "status": "rejected",
+      "submittedAt": "2026-05-01T23:01:32.757Z",
+      "reviewedBy": "1474509136606789715",
+      "reviewedAt": "2026-05-01T23:01:38.650Z",
+      "reviewMessage": "Reviewed by 9oraidiisss"
+    },
+    "4e18a7cf": {
+      "id": "4e18a7cf",
+      "userId": "1474509136606789715",
+      "applicationType": "middleman",
+      "answers": {
+        "why": "c",
+        "experience": "yes",
+        "vouches": "yes",
+        "collet": "yes"
+      },
+      "status": "rejected",
+      "submittedAt": "2026-05-02T11:59:50.143Z",
+      "reviewedBy": "1474509136606789715",
+      "reviewedAt": "2026-05-02T11:59:57.606Z",
+      "reviewMessage": "Reviewed by 9oraidiisss"
+    },
+    "a17ecca1": {
+      "id": "a17ecca1",
+      "userId": "1474509136606789715",
+      "applicationType": "middleman",
+      "answers": {
+        "why": "w",
+        "experience": "no",
+        "vouches": "yes",
+        "collet": "yes"
+      },
+      "status": "approved",
+      "submittedAt": "2026-05-02T12:59:28.244Z",
+      "reviewedBy": "1474509136606789715",
+      "reviewedAt": "2026-05-02T13:09:49.754Z",
+      "reviewMessage": "Reviewed by 9oraidiisss"
+    }
+  }
+}

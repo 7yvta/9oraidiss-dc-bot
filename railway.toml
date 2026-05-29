@@ -1,0 +1,21 @@
+[build]
+builder = "NIXPACKS"
+
+[deploy]
+healthcheckPath = "/health"
+healthcheckTimeout = 100
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 10
+
+[env]
+NODE_ENV = "production"
+PORT = "3000"
+
+[[services]]
+name = "bot-dashboard"
+
+[services.variables]
+DASHBOARD_ENABLED = "true"
+DASHBOARD_BIND = "0.0.0.0"
+DASHBOARD_PORT = "3000"
+PUBLIC_BASE_URL = "https://dc-ticket-bot-production.up.railway.app"

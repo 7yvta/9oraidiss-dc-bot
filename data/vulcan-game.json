@@ -1,0 +1,554 @@
+{
+  "guilds": {
+    "test-guild": {
+      "users": {
+        "test-user": {
+          "balance": 10000,
+          "boosterLevel": 1,
+          "rolls": 3,
+          "wins": 0,
+          "losses": 0,
+          "sold": 0,
+          "inventory": {
+            "rocket": {
+              "qty": 1,
+              "locked": false
+            },
+            "chop": {
+              "qty": 1,
+              "locked": false
+            },
+            "spike": {
+              "qty": 1,
+              "locked": false
+            }
+          },
+          "lastRollAt": 1777853872626,
+          "lastSeenStockAt": 1777853872625
+        }
+      },
+      "stock": {
+        "windowId": 123462,
+        "updatedAt": 1777853872624,
+        "updatedBy": "test-user",
+        "items": [
+          {
+            "key": "spike",
+            "name": "Spike",
+            "rarity": "Uncommon",
+            "value": 20000
+          },
+          {
+            "key": "dragon",
+            "name": "Dragon",
+            "rarity": "Mythical",
+            "value": 4500000
+          },
+          {
+            "key": "barrier",
+            "name": "Barrier",
+            "rarity": "Epic",
+            "value": 820000
+          },
+          {
+            "key": "spring",
+            "name": "Spring",
+            "rarity": "Common",
+            "value": 5500
+          },
+          {
+            "key": "smoke",
+            "name": "Smoke",
+            "rarity": "Uncommon",
+            "value": 15000
+          }
+        ]
+      },
+      "stockHistory": [
+        {
+          "windowId": 123462,
+          "updatedAt": 1777853872624,
+          "items": [
+            {
+              "key": "spike",
+              "name": "Spike",
+              "rarity": "Uncommon",
+              "value": 20000
+            },
+            {
+              "key": "dragon",
+              "name": "Dragon",
+              "rarity": "Mythical",
+              "value": 4500000
+            },
+            {
+              "key": "barrier",
+              "name": "Barrier",
+              "rarity": "Epic",
+              "value": 820000
+            },
+            {
+              "key": "spring",
+              "name": "Spring",
+              "rarity": "Common",
+              "value": 5500
+            },
+            {
+              "key": "smoke",
+              "name": "Smoke",
+              "rarity": "Uncommon",
+              "value": 15000
+            }
+          ]
+        }
+      ],
+      "stockAlert": {
+        "channelId": null,
+        "roleIds": []
+      },
+      "autoWinOrLose": {
+        "channelId": null
+      },
+      "greetChannels": [],
+      "autoRoles": []
+    },
+    "1500641550152237066": {
+      "users": {},
+      "stock": {
+        "source": "live_fruityblox",
+        "signature": "{\"normal\":[\"rocket\",\"spin\",\"blade\",\"flame\",\"dark\",\"ghost\",\"spider\"],\"mirage\":[\"rocket\",\"spin\",\"blade\",\"bomb\",\"flame\",\"dark\",\"love\",\"creation\"]}",
+        "updatedAt": 1777854533434,
+        "fetchedAt": 1777854533434,
+        "updatedBy": "test",
+        "normalItems": [
+          {
+            "key": "rocket",
+            "name": "Rocket",
+            "rarity": "Common",
+            "value": 3000,
+            "type": "Natural",
+            "beli": 5000,
+            "robux": 50
+          },
+          {
+            "key": "spin",
+            "name": "Spin",
+            "rarity": "Common",
+            "value": 3500,
+            "type": "Natural",
+            "beli": 7500,
+            "robux": 75
+          },
+          {
+            "key": "blade",
+            "name": "Blade",
+            "rarity": "Natural",
+            "value": 30000,
+            "type": "Natural",
+            "beli": 30000,
+            "robux": 100
+          },
+          {
+            "key": "flame",
+            "name": "Flame",
+            "rarity": "Rare",
+            "value": 250000,
+            "type": "Elemental",
+            "beli": 250000,
+            "robux": 550
+          },
+          {
+            "key": "dark",
+            "name": "Dark",
+            "rarity": "Rare",
+            "value": 420000,
+            "type": "Elemental",
+            "beli": 500000,
+            "robux": 950
+          },
+          {
+            "key": "ghost",
+            "name": "Ghost",
+            "rarity": "Epic",
+            "value": 900000,
+            "type": "Natural",
+            "beli": 940000,
+            "robux": 1275
+          },
+          {
+            "key": "spider",
+            "name": "Spider",
+            "rarity": "Natural",
+            "value": 1500000,
+            "type": "Natural",
+            "beli": 1500000,
+            "robux": 1800
+          }
+        ],
+        "mirageItems": [
+          {
+            "key": "rocket",
+            "name": "Rocket",
+            "rarity": "Common",
+            "value": 3000,
+            "type": "Natural",
+            "beli": 5000,
+            "robux": 50
+          },
+          {
+            "key": "spin",
+            "name": "Spin",
+            "rarity": "Common",
+            "value": 3500,
+            "type": "Natural",
+            "beli": 7500,
+            "robux": 75
+          },
+          {
+            "key": "blade",
+            "name": "Blade",
+            "rarity": "Natural",
+            "value": 30000,
+            "type": "Natural",
+            "beli": 30000,
+            "robux": 100
+          },
+          {
+            "key": "bomb",
+            "name": "Bomb",
+            "rarity": "Uncommon",
+            "value": 12000,
+            "type": "Natural",
+            "beli": 80000,
+            "robux": 220
+          },
+          {
+            "key": "flame",
+            "name": "Flame",
+            "rarity": "Rare",
+            "value": 250000,
+            "type": "Elemental",
+            "beli": 250000,
+            "robux": 550
+          },
+          {
+            "key": "dark",
+            "name": "Dark",
+            "rarity": "Rare",
+            "value": 420000,
+            "type": "Elemental",
+            "beli": 500000,
+            "robux": 950
+          },
+          {
+            "key": "love",
+            "name": "Love",
+            "rarity": "Natural",
+            "value": 1300000,
+            "type": "Natural",
+            "beli": 1300000,
+            "robux": 1700
+          },
+          {
+            "key": "creation",
+            "name": "Creation",
+            "rarity": "Natural",
+            "value": 1400000,
+            "type": "Natural",
+            "beli": 1400000,
+            "robux": 1750
+          }
+        ],
+        "items": [
+          {
+            "key": "rocket",
+            "name": "Rocket",
+            "rarity": "Common",
+            "value": 3000,
+            "type": "Natural",
+            "beli": 5000,
+            "robux": 50
+          },
+          {
+            "key": "spin",
+            "name": "Spin",
+            "rarity": "Common",
+            "value": 3500,
+            "type": "Natural",
+            "beli": 7500,
+            "robux": 75
+          },
+          {
+            "key": "blade",
+            "name": "Blade",
+            "rarity": "Natural",
+            "value": 30000,
+            "type": "Natural",
+            "beli": 30000,
+            "robux": 100
+          },
+          {
+            "key": "flame",
+            "name": "Flame",
+            "rarity": "Rare",
+            "value": 250000,
+            "type": "Elemental",
+            "beli": 250000,
+            "robux": 550
+          },
+          {
+            "key": "dark",
+            "name": "Dark",
+            "rarity": "Rare",
+            "value": 420000,
+            "type": "Elemental",
+            "beli": 500000,
+            "robux": 950
+          },
+          {
+            "key": "ghost",
+            "name": "Ghost",
+            "rarity": "Epic",
+            "value": 900000,
+            "type": "Natural",
+            "beli": 940000,
+            "robux": 1275
+          },
+          {
+            "key": "spider",
+            "name": "Spider",
+            "rarity": "Natural",
+            "value": 1500000,
+            "type": "Natural",
+            "beli": 1500000,
+            "robux": 1800
+          }
+        ],
+        "normalResetRaw": "03:35:04",
+        "mirageResetRaw": "01:35:04",
+        "nextNormalResetAt": 1777867437434,
+        "nextMirageResetAt": 1777860237434
+      },
+      "stockHistory": [
+        {
+          "mode": "live",
+          "signature": "{\"normal\":[\"rocket\",\"spin\",\"blade\",\"flame\",\"dark\",\"ghost\",\"spider\"],\"mirage\":[\"rocket\",\"spin\",\"blade\",\"bomb\",\"flame\",\"dark\",\"love\",\"creation\"]}",
+          "updatedAt": 1777854533434,
+          "items": [
+            {
+              "key": "rocket",
+              "name": "Rocket",
+              "rarity": "Common",
+              "value": 3000,
+              "type": "Natural",
+              "beli": 5000,
+              "robux": 50
+            },
+            {
+              "key": "spin",
+              "name": "Spin",
+              "rarity": "Common",
+              "value": 3500,
+              "type": "Natural",
+              "beli": 7500,
+              "robux": 75
+            },
+            {
+              "key": "blade",
+              "name": "Blade",
+              "rarity": "Natural",
+              "value": 30000,
+              "type": "Natural",
+              "beli": 30000,
+              "robux": 100
+            },
+            {
+              "key": "flame",
+              "name": "Flame",
+              "rarity": "Rare",
+              "value": 250000,
+              "type": "Elemental",
+              "beli": 250000,
+              "robux": 550
+            },
+            {
+              "key": "dark",
+              "name": "Dark",
+              "rarity": "Rare",
+              "value": 420000,
+              "type": "Elemental",
+              "beli": 500000,
+              "robux": 950
+            },
+            {
+              "key": "ghost",
+              "name": "Ghost",
+              "rarity": "Epic",
+              "value": 900000,
+              "type": "Natural",
+              "beli": 940000,
+              "robux": 1275
+            },
+            {
+              "key": "spider",
+              "name": "Spider",
+              "rarity": "Natural",
+              "value": 1500000,
+              "type": "Natural",
+              "beli": 1500000,
+              "robux": 1800
+            }
+          ],
+          "normalItems": [
+            {
+              "key": "rocket",
+              "name": "Rocket",
+              "rarity": "Common",
+              "value": 3000,
+              "type": "Natural",
+              "beli": 5000,
+              "robux": 50
+            },
+            {
+              "key": "spin",
+              "name": "Spin",
+              "rarity": "Common",
+              "value": 3500,
+              "type": "Natural",
+              "beli": 7500,
+              "robux": 75
+            },
+            {
+              "key": "blade",
+              "name": "Blade",
+              "rarity": "Natural",
+              "value": 30000,
+              "type": "Natural",
+              "beli": 30000,
+              "robux": 100
+            },
+            {
+              "key": "flame",
+              "name": "Flame",
+              "rarity": "Rare",
+              "value": 250000,
+              "type": "Elemental",
+              "beli": 250000,
+              "robux": 550
+            },
+            {
+              "key": "dark",
+              "name": "Dark",
+              "rarity": "Rare",
+              "value": 420000,
+              "type": "Elemental",
+              "beli": 500000,
+              "robux": 950
+            },
+            {
+              "key": "ghost",
+              "name": "Ghost",
+              "rarity": "Epic",
+              "value": 900000,
+              "type": "Natural",
+              "beli": 940000,
+              "robux": 1275
+            },
+            {
+              "key": "spider",
+              "name": "Spider",
+              "rarity": "Natural",
+              "value": 1500000,
+              "type": "Natural",
+              "beli": 1500000,
+              "robux": 1800
+            }
+          ],
+          "mirageItems": [
+            {
+              "key": "rocket",
+              "name": "Rocket",
+              "rarity": "Common",
+              "value": 3000,
+              "type": "Natural",
+              "beli": 5000,
+              "robux": 50
+            },
+            {
+              "key": "spin",
+              "name": "Spin",
+              "rarity": "Common",
+              "value": 3500,
+              "type": "Natural",
+              "beli": 7500,
+              "robux": 75
+            },
+            {
+              "key": "blade",
+              "name": "Blade",
+              "rarity": "Natural",
+              "value": 30000,
+              "type": "Natural",
+              "beli": 30000,
+              "robux": 100
+            },
+            {
+              "key": "bomb",
+              "name": "Bomb",
+              "rarity": "Uncommon",
+              "value": 12000,
+              "type": "Natural",
+              "beli": 80000,
+              "robux": 220
+            },
+            {
+              "key": "flame",
+              "name": "Flame",
+              "rarity": "Rare",
+              "value": 250000,
+              "type": "Elemental",
+              "beli": 250000,
+              "robux": 550
+            },
+            {
+              "key": "dark",
+              "name": "Dark",
+              "rarity": "Rare",
+              "value": 420000,
+              "type": "Elemental",
+              "beli": 500000,
+              "robux": 950
+            },
+            {
+              "key": "love",
+              "name": "Love",
+              "rarity": "Natural",
+              "value": 1300000,
+              "type": "Natural",
+              "beli": 1300000,
+              "robux": 1700
+            },
+            {
+              "key": "creation",
+              "name": "Creation",
+              "rarity": "Natural",
+              "value": 1400000,
+              "type": "Natural",
+              "beli": 1400000,
+              "robux": 1750
+            }
+          ]
+        }
+      ],
+      "stockAlert": {
+        "channelId": null,
+        "roleIds": []
+      },
+      "autoWinOrLose": {
+        "channelId": null
+      },
+      "greetChannels": [],
+      "autoRoles": []
+    }
+  }
+}

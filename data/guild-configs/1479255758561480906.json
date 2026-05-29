@@ -1,0 +1,609 @@
+{
+  "disabledCommands": [],
+  "commandPermissions": {
+    "ping": {
+      "allowedRoleIds": [
+        "1479263062065152111",
+        "1496926360487330015",
+        "1479263536797454489",
+        "1483555926492451118"
+      ],
+      "deniedRoleIds": [
+        "1480358424909975592",
+        "1479887231991939203",
+        "1492925801891627018",
+        "1487601467400392918",
+        "1492922914650193981",
+        "1483496972261265669",
+        "1483496866279591977",
+        "1479264717972308111",
+        "1483496727284678717",
+        "1481850141534322852",
+        "1483496153260625982",
+        "1483495496130629672",
+        "1483546231841095731",
+        "1481850905921065183",
+        "1482862172366311444",
+        "1482862407138279447",
+        "1482862462155096166",
+        "1480011765151699054"
+      ],
+      "adminBypass": true
+    },
+    "clearwarnings": {
+      "allowedRoleIds": [
+        "1479263062065152111",
+        "1496926360487330015",
+        "1479263536797454489",
+        "1483555926492451118",
+        "1479263836778532934"
+      ],
+      "deniedRoleIds": [
+        "1479887231991939203",
+        "1492925801891627018",
+        "1487601467400392918",
+        "1492922914650193981",
+        "1483496972261265669",
+        "1483496866279591977",
+        "1479264717972308111",
+        "1483496727284678717",
+        "1481850141534322852",
+        "1483496153260625982",
+        "1483495496130629672",
+        "1483546231841095731",
+        "1481850905921065183",
+        "1482862172366311444",
+        "1482862407138279447",
+        "1482862462155096166",
+        "1480011765151699054"
+      ],
+      "adminBypass": true
+    },
+    "kick": {
+      "allowedRoleIds": [
+        "1479263062065152111",
+        "1496926360487330015",
+        "1479263536797454489",
+        "1483555926492451118",
+        "1479263836778532934",
+        "1493298416363765941",
+        "1479264180866388089"
+      ],
+      "deniedRoleIds": [],
+      "adminBypass": true
+    },
+    "manageban": {
+      "allowedRoleIds": [
+        "1479263062065152111",
+        "1496926360487330015",
+        "1479263536797454489",
+        "1483555926492451118",
+        "1479263836778532934",
+        "1479264180866388089"
+      ],
+      "deniedRoleIds": [],
+      "adminBypass": true
+    },
+    "managerole": {
+      "allowedRoleIds": [
+        "1479263062065152111",
+        "1496926360487330015",
+        "1479263536797454489",
+        "1493298416363765941"
+      ],
+      "deniedRoleIds": [],
+      "adminBypass": true
+    },
+    "purge": {
+      "allowedRoleIds": [
+        "1479263062065152111",
+        "1496926360487330015",
+        "1479263536797454489",
+        "1483555926492451118"
+      ],
+      "deniedRoleIds": [],
+      "adminBypass": true
+    },
+    "timeout": {
+      "allowedRoleIds": [
+        "1479263062065152111",
+        "1496926360487330015",
+        "1479263536797454489",
+        "1483555926492451118",
+        "1479263836778532934",
+        "1493298416363765941",
+        "1479264180866388089",
+        "1480358424909975592",
+        "1483497619090178098",
+        "1479264429383225520"
+      ],
+      "deniedRoleIds": [],
+      "adminBypass": true
+    },
+    "unban": {
+      "allowedRoleIds": [
+        "1479263062065152111",
+        "1496926360487330015",
+        "1479263536797454489",
+        "1483555926492451118",
+        "1479263836778532934"
+      ],
+      "deniedRoleIds": [],
+      "adminBypass": true
+    },
+    "unmute": {
+      "allowedRoleIds": [
+        "1479263062065152111",
+        "1479263536797454489",
+        "1483555926492451118",
+        "1479263836778532934",
+        "1493298416363765941",
+        "1479264180866388089"
+      ],
+      "deniedRoleIds": [],
+      "adminBypass": true
+    },
+    "warn": {
+      "allowedRoleIds": [
+        "1479263062065152111",
+        "1496926360487330015",
+        "1479263536797454489",
+        "1483555926492451118",
+        "1479263836778532934",
+        "1493298416363765941",
+        "1479264180866388089"
+      ],
+      "deniedRoleIds": [],
+      "adminBypass": true
+    },
+    "warnings": {
+      "allowedRoleIds": [
+        "1479263062065152111",
+        "1496926360487330015",
+        "1479263536797454489",
+        "1483555926492451118",
+        "1479263836778532934",
+        "1493298416363765941",
+        "1479264180866388089"
+      ],
+      "deniedRoleIds": [],
+      "adminBypass": true
+    },
+    "add": {
+      "allowedRoleIds": [
+        "1479263062065152111",
+        "1496926360487330015",
+        "1479263536797454489",
+        "1493298416363765941",
+        "1479264429383225520",
+        "1483634346333311160",
+        "1483496972261265669",
+        "1483496866279591977",
+        "1479264717972308111",
+        "1483496727284678717",
+        "1481850141534322852"
+      ],
+      "deniedRoleIds": [],
+      "adminBypass": true
+    },
+    "forceclaim": {
+      "allowedRoleIds": [
+        "1479263062065152111",
+        "1496926360487330015"
+      ],
+      "deniedRoleIds": [],
+      "adminBypass": true
+    },
+    "panel1": {
+      "allowedRoleIds": [
+        "1479263062065152111"
+      ],
+      "deniedRoleIds": [],
+      "adminBypass": true
+    },
+    "remove": {
+      "allowedRoleIds": [
+        "1479263062065152111",
+        "1493298416363765941",
+        "1483497619090178098",
+        "1479264429383225520",
+        "1483634346333311160",
+        "1483496972261265669",
+        "1483496866279591977",
+        "1479264717972308111",
+        "1483496727284678717"
+      ],
+      "deniedRoleIds": [],
+      "adminBypass": true
+    },
+    "unclaim": {
+      "allowedRoleIds": [
+        "1493298416363765941",
+        "1479264429383225520",
+        "1483634346333311160",
+        "1483496972261265669",
+        "1483496866279591977",
+        "1479264717972308111"
+      ],
+      "deniedRoleIds": [],
+      "adminBypass": true
+    },
+    "confirmation": {
+      "allowedRoleIds": [
+        "1479263062065152111",
+        "1479263536797454489",
+        "1483555926492451118",
+        "1479263836778532934",
+        "1483634346333311160",
+        "1483496972261265669",
+        "1483496866279591977",
+        "1479264717972308111",
+        "1483496727284678717"
+      ],
+      "deniedRoleIds": [],
+      "adminBypass": true
+    },
+    "giveaway": {
+      "allowedRoleIds": [
+        "1479263062065152111",
+        "1479263536797454489",
+        "1481709821844520970"
+      ],
+      "deniedRoleIds": [],
+      "adminBypass": true
+    },
+    "help": {
+      "allowedRoleIds": [
+        "1479263062065152111",
+        "1479263536797454489",
+        "1483555926492451118",
+        "1479263836778532934",
+        "1493298416363765941",
+        "1479264180866388089",
+        "1483497619090178098",
+        "1479264429383225520",
+        "1483634346333311160"
+      ],
+      "deniedRoleIds": [],
+      "adminBypass": true
+    },
+    "middleman": {
+      "allowedRoleIds": [
+        "1479263062065152111",
+        "1479263536797454489",
+        "1483496972261265669",
+        "1483496866279591977",
+        "1479264717972308111",
+        "1483496727284678717"
+      ],
+      "deniedRoleIds": [],
+      "adminBypass": true
+    },
+    "rank": {
+      "allowedRoleIds": [
+        "1480011765151699054"
+      ],
+      "deniedRoleIds": [],
+      "adminBypass": true
+    },
+    "rules": {
+      "allowedRoleIds": [
+        "1479263062065152111"
+      ],
+      "deniedRoleIds": [],
+      "adminBypass": true
+    },
+    "ticketruls": {
+      "allowedRoleIds": [
+        "1479263062065152111"
+      ],
+      "deniedRoleIds": [],
+      "adminBypass": true
+    }
+  },
+  "ownerOnlyMode": false,
+  "botOwnerId": "1474509136606789715",
+  "strictGuildLock": false,
+  "allowedGuildIds": [
+    "1479255758561480906"
+  ],
+  "ticketPanelChannelId": "1480002919737589861",
+  "supportTicketCategoryId": "1489735635253071872",
+  "middlemanTicketCategoryId": "1489735694283833455",
+  "indexTicketCategoryId": "1489735769340903524",
+  "roleRequestTicketCategoryId": "1499146688072519780",
+  "modLogChannelId": "1479261743502070022",
+  "reportChannelId": "1479261743502070022",
+  "levelLogChannelId": "1482863406351515709",
+  "giveawayLogChannelId": "1492248806803374322",
+  "welcomeChannelId": "1493004946981916816",
+  "levelUpChannelId": "1482863406351515709",
+  "memberRoleId": "1480011765151699054",
+  "giveawayHostRoleId": "1481709821844520970",
+  "prefix": "+",
+  "automodEnabled": true,
+  "blockInvites": true,
+  "blockLinks": true,
+  "blockedWords": [
+    "[",
+    "\"fuck\"",
+    "\"fucking\"",
+    "\"fucked\"",
+    "\"fucker\"",
+    "\"motherfucker\"",
+    "\"mf\"",
+    "\"fck\"",
+    "\"fk\"",
+    "\"fuk\"",
+    "\"shit\"",
+    "\"shitty\"",
+    "\"bullshit\"",
+    "\"bitch\"",
+    "\"bitches\"",
+    "\"son of a bitch\"",
+    "\"sob\"",
+    "\"ass\"",
+    "\"asshole\"",
+    "\"dumbass\"",
+    "\"jackass\"",
+    "\"badass\"",
+    "\"bastard\"",
+    "\"cunt\"",
+    "\"dick\"",
+    "\"dickhead\"",
+    "\"pussy\"",
+    "\"slut\"",
+    "\"whore\"",
+    "\"hoe\"",
+    "\"retard\"",
+    "\"retarded\"",
+    "\"idiot\"",
+    "\"moron\"",
+    "\"stupid\"",
+    "\"dumb\"",
+    "\"loser\"",
+    "\"clown\"",
+    "\"trash\"",
+    "\"kys\"",
+    "\"kill yourself\"",
+    "\"stfu\"",
+    "\"shut the fuck up\"",
+    "\"gtfo\"",
+    "\"get the fuck out\"",
+    "\"wtf\"",
+    "\"tf\"",
+    "\"af\"",
+    "\"lmfao\"",
+    "\"lmao\"",
+    "\"porn\"",
+    "\"porno\"",
+    "\"pornhub\"",
+    "\"nsfw\"",
+    "\"nude\"",
+    "\"nudes\"",
+    "\"boobs\"",
+    "\"tits\"",
+    "\"milf\"",
+    "\"dildo\"",
+    "\"cum\"",
+    "\"cumming\"",
+    "\"jizz\"",
+    "\"blowjob\"",
+    "\"handjob\"",
+    "\"anal\"",
+    "\"rape\"",
+    "\"rapist\"",
+    "\"pedo\"",
+    "\"pedophile\"",
+    "\"incest\"",
+    "\"naz i\"",
+    "\"hitler\"",
+    "\"terrorist\"",
+    "\"terrorism\"",
+    "\"racist\"",
+    "\"homophobic\"",
+    "\"isis\"",
+    "\"kkk\"",
+    "\"niga\"",
+    "\"nigga\"",
+    "\"nigger\"",
+    "]"
+  ],
+  "messageXpMin": 15,
+  "messageXpMax": 35,
+  "messageXpCooldownSeconds": 60,
+  "levelCurve": "linear",
+  "levelCurveMultiplier": 1,
+  "levelRewards": [
+    {
+      "level": 5,
+      "roleId": "1482862462155096166"
+    },
+    {
+      "level": 15,
+      "roleId": "1482862407138279447"
+    },
+    {
+      "level": 25,
+      "roleId": "1482862172366311444"
+    },
+    {
+      "level": 40,
+      "roleId": "1481850905921065183"
+    },
+    {
+      "level": 65,
+      "roleId": "1483546231841095731"
+    },
+    {
+      "level": 100,
+      "roleId": "1483495496130629672"
+    }
+  ],
+  "ticketForceClaimRoleIds": [
+    "1479263062065152111",
+    "1479263536797454489"
+  ],
+  "supportTeamRoleIds": [
+    "1479264429383225520"
+  ],
+  "middlemanTeamRoleIds": [
+    "1499837044237537460"
+  ],
+  "indexTeamRoleIds": [
+    "1483634346333311160"
+  ],
+  "roleRequestTeamRoleIds": [
+    "1493298416363765941"
+  ],
+  "fullCommandRoleIds": [
+    "1479263062065152111",
+    "1483555926492451118",
+    "1479263836778532934",
+    "1493298416363765941",
+    "1479264429383225520",
+    "1499837044237537460",
+    "1481709821844520970",
+    "1483634346333311160",
+    "1483497619090178098",
+    "1479264180866388089",
+    "1479263536797454489",
+    "1499460686181437450"
+  ],
+  "timeoutOnlyRoleIds": [
+    "1483497619090178098",
+    "1479264429383225520"
+  ],
+  "confirmationRoleIds": [
+    "1479263062065152111",
+    "1479263536797454489",
+    "1483496972261265669",
+    "1483496866279591977",
+    "1479264717972308111",
+    "1483496727284678717"
+  ],
+  "welcomeEnabled": true,
+  "rulesChannelId": "1493004946981916816",
+  "welcomeMessageTemplate": "{userMention} welcome to **{guildName}**. Please read the rules in {rulesChannelMention}. Invited by: {inviterMention}.",
+  "warnConsequence": {
+    "enabled": true,
+    "threshold": 3,
+    "action": "timeout",
+    "timeoutMinutes": 60,
+    "clearWarningsOnAction": true,
+    "reason": "Automatic moderation consequence after warning threshold"
+  },
+  "warnConsequences": [
+    {
+      "enabled": true,
+      "threshold": 3,
+      "action": "timeout",
+      "timeoutMinutes": 60,
+      "clearWarningsOnAction": true,
+      "reason": "Automatic moderation consequence after warning threshold"
+    },
+    {
+      "enabled": true,
+      "threshold": 4,
+      "action": "kick",
+      "timeoutMinutes": 60,
+      "clearWarningsOnAction": true,
+      "reason": "Automatic moderation consequence after warning threshold"
+    },
+    {
+      "enabled": true,
+      "threshold": 5,
+      "action": "ban",
+      "timeoutMinutes": 60,
+      "clearWarningsOnAction": true,
+      "reason": "Automatic moderation consequence after warning threshold"
+    }
+  ],
+  "giveawayExtraEntriesRoleIds": [
+    "1479263062065152111",
+    "1479263536797454489"
+  ],
+  "autoresponderEnabled": true,
+  "autoMessageEnabled": false,
+  "autoMessageChannelId": null,
+  "autoMessageIntervalMinutes": 60,
+  "autoMessageContent": "Remember to read the rules and stay respectful.",
+  "autoresponderRules": [],
+  "ticketPanel": {
+    "color": "#2ecc71",
+    "title": "Welcome to the Ticket System!",
+    "description": "Please choose the type of ticket you want by clicking one of the buttons below:\r\n\r\nÃ°Å¸â€™Â¬ **Support Ticket**\r\nUse this ticket if you need help with the server or questions.\r\n\r\nÃ°Å¸Â¤Â **Trade / Middleman Ticket**\r\nUse this ticket for secure trades. Both parties must confirm first.\r\n\r\nÃ°Å¸â€œÅ  **Index Ticket**\r\nUse this ticket to request your base to be reviewed and indexed.",
+    "footer": "One open ticket per type per user"
+  },
+  "roleRequestPanel": {
+    "color": "#5865f2",
+    "title": "Role Request Panel",
+    "descriptionTemplate": "Click the button below to open a role request ticket.\r\n\r\nHandled by authorized role(s):\r\n{{roles}}"
+  },
+  "ticketTypes": {
+    "support": {
+      "enabled": true,
+      "buttonLabel": "Request Support Team",
+      "introMessage": "Support Ticket\r\n\r\nPlease describe your issue clearly.\r\n\r\nInclude:\r\n- What problem you have\r\n- Screenshots (if needed)\r\n- Extra details\r\n\r\nStaff will respond soon.\r\nBe patient and respectful."
+    },
+    "middleman": {
+      "enabled": true,
+      "buttonLabel": "Request MM Team",
+      "introMessage": "Middleman Ticket\n\n{user}, Thank you for using our middleman services.\n\nPlease wait for a middleman to assist you.\n\nIf you have any questions, please let a staff member know."
+    },
+    "index": {
+      "enabled": true,
+      "buttonLabel": "Index Request",
+      "introMessage": "Base Index System\r\n\r\nWant your base to be colored ? Open a ticket below.\r\n\r\nWe will review and list your base.\r\nGet more visibility and customers.\r\nTrusted indexing system.\r\n\r\nRequirements:\r\n- Legit base only\r\n- No scams\r\n- Must follow server rules\r\n\r\nClick below to request an index."
+    },
+    "role": {
+      "enabled": true,
+      "buttonLabel": "Role Request",
+      "introMessage": "Role Request Ticket\r\n\r\nPlease send your role request clearly.\r\n\r\nInclude:\r\n- The role you want\r\n- Why you need it\r\n- Any proof/screenshots if needed\r\n\r\nStaff will review and respond soon."
+    },
+    "report": {
+      "enabled": true,
+      "buttonLabel": "Open Report Ticket"
+    },
+    "host": {
+      "enabled": true,
+      "buttonLabel": "Open Host Giveaway Ticket"
+    },
+    "service": {
+      "enabled": true,
+      "buttonLabel": "Request Service Team",
+      "introMessage": "Service Ticket\n\n{user}, Thank you for using our service team.\n\nPlease wait for a service staff member to assist you.\n\nIf you have any questions, please let a staff member know."
+    }
+  },
+  "reportHandlerRoleIds": [
+    "1479264180866388089",
+    "1479263836778532934",
+    "1483555926492451118"
+  ],
+  "hostGiveawayRoleIds": [
+    "1481709821844520970"
+  ],
+  "reportTeamRoleIds": [
+    "1479264180866388089",
+    "1479263836778532934",
+    "1483555926492451118"
+  ],
+  "hostGiveawayTeamRoleIds": [
+    "1481709821844520970"
+  ],
+  "reportTicketPanelChannelId": "1505604766468804814",
+  "hostGiveawayTicketPanelChannelId": "1505604770805579957",
+  "reportTicketCategoryId": "1505582476544704693",
+  "hostGiveawayTicketCategoryId": "1505582187112697898",
+  "supportTicketPanelChannelId": "1480002919737589861",
+  "middlemanTicketPanelChannelId": "1506055902048944360",
+  "serviceTicketPanelChannelId": "1505526246623150180",
+  "indexTicketPanelChannelId": "1505526250763190486",
+  "roleRequestTicketPanelChannelId": "1505526254458372226",
+  "serviceTicketCategoryId": "1506034008222339242",
+  "serviceTeamRoleIds": [
+    "1505637024588234993"
+  ],
+  "middlemanTicketRoleId": "1499837044237537460",
+  "serviceTicketRoleId": "1505637024588234993"
+}

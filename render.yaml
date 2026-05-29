@@ -1,0 +1,49 @@
+services:
+  - type: web
+    name: dc-ticket-bot
+    runtime: node
+    rootDir: .
+    plan: free
+    buildCommand: npm ci --omit=dev
+    startCommand: npm start
+    healthCheckPath: /health
+    autoDeployTrigger: commit
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: TOKEN
+        sync: false
+      - key: CLIENT_ID
+        sync: false
+      - key: BOT_OWNER_ID
+        sync: false
+      - key: GUILD_ID
+        sync: false
+      - key: DATABASE_URL
+        sync: false
+      - key: DASHBOARD_ENABLED
+        value: "true"
+      - key: DASHBOARD_PORT
+        value: "3000"
+      - key: DASHBOARD_BIND
+        value: "0.0.0.0"
+      - key: DASHBOARD_USERNAME
+        sync: false
+      - key: DASHBOARD_PASSWORD
+        sync: false
+      - key: DASHBOARD_SESSION_SECRET
+        sync: false
+      - key: DASHBOARD_PUBLIC_URL
+        sync: false
+      - key: PUBLIC_BASE_URL
+        sync: false
+      - key: AUTO_SYNC_COMMANDS_ON_READY
+        value: "false"
+      - key: CLEAR_GLOBAL_COMMANDS
+        value: "false"
+      - key: COMMAND_DEPLOY_SCOPE
+        value: global
+      - key: ALLOW_MULTI_INSTANCE
+        value: "false"
+      - key: STRICT_GUILD_LOCK
+        value: "false"

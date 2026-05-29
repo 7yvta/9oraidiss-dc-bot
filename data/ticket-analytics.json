@@ -1,0 +1,1060 @@
+{
+  "guilds": {
+    "guild-1778019225358-6272": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1778019225358-83963": 1
+        },
+        "byClaimer": {
+          "claimer-1778019225358-48522": 1
+        }
+      }
+    },
+    "guild-1778024702860-57484": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1778024702860-18699": 1
+        },
+        "byClaimer": {
+          "claimer-1778024702860-93511": 1
+        }
+      }
+    },
+    "guild-1778026671786-52188": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1778026671786-78703": 1
+        },
+        "byClaimer": {
+          "claimer-1778026671786-52195": 1
+        }
+      }
+    },
+    "guild-1778027113426-89090": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1778027113426-54871": 1
+        },
+        "byClaimer": {
+          "claimer-1778027113426-33375": 1
+        }
+      }
+    },
+    "guild-1778027144143-94595": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1778027144143-9040": 1
+        },
+        "byClaimer": {
+          "claimer-1778027144143-262": 1
+        }
+      }
+    },
+    "guild-1778027373929-65838": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1778027373929-43956": 1
+        },
+        "byClaimer": {
+          "claimer-1778027373929-73181": 1
+        }
+      }
+    },
+    "guild-1778027404804-45191": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1778027404804-13269": 1
+        },
+        "byClaimer": {
+          "claimer-1778027404804-75235": 1
+        }
+      }
+    },
+    "guild-1778028874775-38491": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1778028874775-61778": 1
+        },
+        "byClaimer": {
+          "claimer-1778028874775-34014": 1
+        }
+      }
+    },
+    "guild-1778029070259-62102": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1778029070259-84443": 1
+        },
+        "byClaimer": {
+          "claimer-1778029070259-45704": 1
+        }
+      }
+    },
+    "guild-1778030369431-45749": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1778030369431-31938": 1
+        },
+        "byClaimer": {
+          "claimer-1778030369431-30165": 1
+        }
+      }
+    },
+    "guild-1778032857339-14443": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1778032857339-7842": 1
+        },
+        "byClaimer": {
+          "claimer-1778032857339-10390": 1
+        }
+      }
+    },
+    "guild-1778034782565-70078": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1778034782565-33283": 1
+        },
+        "byClaimer": {
+          "claimer-1778034782565-39227": 1
+        }
+      }
+    },
+    "guild-1778035861551-64135": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1778035861551-83717": 1
+        },
+        "byClaimer": {
+          "claimer-1778035861551-23462": 1
+        }
+      }
+    },
+    "guild-1778036190397-22774": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1778036190397-46152": 1
+        },
+        "byClaimer": {
+          "claimer-1778036190397-33751": 1
+        }
+      }
+    },
+    "guild-1778036555924-10300": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1778036555924-14066": 1
+        },
+        "byClaimer": {
+          "claimer-1778036555924-25157": 1
+        }
+      }
+    },
+    "guild-1778036756832-68339": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1778036756832-46946": 1
+        },
+        "byClaimer": {
+          "claimer-1778036756832-55027": 1
+        }
+      }
+    },
+    "guild-1778095903376-78151": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1778095903376-19575": 1
+        },
+        "byClaimer": {
+          "claimer-1778095903376-57835": 1
+        }
+      }
+    },
+    "guild-1778095968520-72565": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1778095968520-18487": 1
+        },
+        "byClaimer": {
+          "claimer-1778095968520-33492": 1
+        }
+      }
+    },
+    "guild-1778096876523-73599": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1778096876523-7648": 1
+        },
+        "byClaimer": {
+          "claimer-1778096876523-70700": 1
+        }
+      }
+    },
+    "guild-1778098348996-83994": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1778098348996-64635": 1
+        },
+        "byClaimer": {
+          "claimer-1778098348996-60860": 1
+        }
+      }
+    },
+    "guild-1778098643285-52943": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1778098643285-6796": 1
+        },
+        "byClaimer": {
+          "claimer-1778098643285-38733": 1
+        }
+      }
+    },
+    "guild-1778100366503-51521": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1778100366503-83540": 1
+        },
+        "byClaimer": {
+          "claimer-1778100366503-22618": 1
+        }
+      }
+    },
+    "guild-1778100863408-4217": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1778100863408-97199": 1
+        },
+        "byClaimer": {
+          "claimer-1778100863408-83800": 1
+        }
+      }
+    },
+    "guild-1778101146705-52053": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1778101146705-80202": 1
+        },
+        "byClaimer": {
+          "claimer-1778101146705-4922": 1
+        }
+      }
+    },
+    "guild-1778101750355-52576": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1778101750355-55757": 1
+        },
+        "byClaimer": {
+          "claimer-1778101750355-72466": 1
+        }
+      }
+    },
+    "guild-1778102673279-33070": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1778102673279-35981": 1
+        },
+        "byClaimer": {
+          "claimer-1778102673279-30509": 1
+        }
+      }
+    },
+    "guild-1778102826797-79898": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1778102826797-58154": 1
+        },
+        "byClaimer": {
+          "claimer-1778102826797-78510": 1
+        }
+      }
+    },
+    "guild-1778105418864-94869": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1778105418864-72223": 1
+        },
+        "byClaimer": {
+          "claimer-1778105418864-48216": 1
+        }
+      }
+    },
+    "guild-1778105910629-4895": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1778105910629-97405": 1
+        },
+        "byClaimer": {
+          "claimer-1778105910629-76213": 1
+        }
+      }
+    },
+    "guild-1778106379564-16775": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1778106379564-39304": 1
+        },
+        "byClaimer": {
+          "claimer-1778106379564-39682": 1
+        }
+      }
+    },
+    "guild-1778154165479-44519": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1778154165479-3167": 1
+        },
+        "byClaimer": {
+          "claimer-1778154165479-43223": 1
+        }
+      }
+    },
+    "guild-1778157226646-74165": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1778157226646-65293": 1
+        },
+        "byClaimer": {
+          "claimer-1778157226646-291": 1
+        }
+      }
+    },
+    "guild-1778158393333-14554": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1778158393333-40671": 1
+        },
+        "byClaimer": {
+          "claimer-1778158393333-32424": 1
+        }
+      }
+    },
+    "guild-1778161576837-95460": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1778161576837-27573": 1
+        },
+        "byClaimer": {
+          "claimer-1778161576837-79369": 1
+        }
+      }
+    },
+    "guild-1778162285231-75268": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1778162285231-73383": 1
+        },
+        "byClaimer": {
+          "claimer-1778162285231-28560": 1
+        }
+      }
+    },
+    "guild-1778163391146-41578": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1778163391146-26895": 1
+        },
+        "byClaimer": {
+          "claimer-1778163391146-4569": 1
+        }
+      }
+    },
+    "guild-1778166233615-41522": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1778166233615-55123": 1
+        },
+        "byClaimer": {
+          "claimer-1778166233615-62501": 1
+        }
+      }
+    },
+    "guild-1778166429089-11479": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1778166429089-72320": 1
+        },
+        "byClaimer": {
+          "claimer-1778166429089-27940": 1
+        }
+      }
+    },
+    "guild-1778175862770-35441": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1778175862770-83807": 1
+        },
+        "byClaimer": {
+          "claimer-1778175862770-32834": 1
+        }
+      }
+    },
+    "guild-1778177957377-62709": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1778177957377-72238": 1
+        },
+        "byClaimer": {
+          "claimer-1778177957377-69539": 1
+        }
+      }
+    },
+    "guild-1778180680498-92635": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1778180680498-31786": 1
+        },
+        "byClaimer": {
+          "claimer-1778180680498-95542": 1
+        }
+      }
+    },
+    "guild-1778218556842-63174": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1778218556842-5438": 1
+        },
+        "byClaimer": {
+          "claimer-1778218556842-38227": 1
+        }
+      }
+    },
+    "guild-1778341889308-83376": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1778341889308-78137": 1
+        },
+        "byClaimer": {
+          "claimer-1778341889308-305": 1
+        }
+      }
+    },
+    "guild-1778444363698-8462": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1778444363698-73154": 1
+        },
+        "byClaimer": {
+          "claimer-1778444363698-311": 1
+        }
+      }
+    },
+    "guild-1778516831149-47161": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1778516831149-65093": 1
+        },
+        "byClaimer": {
+          "claimer-1778516831149-20961": 1
+        }
+      }
+    },
+    "guild-1778610911228-58118": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1778610911228-10027": 1
+        },
+        "byClaimer": {
+          "claimer-1778610911228-85401": 1
+        }
+      }
+    },
+    "guild-1778956382628-23882": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1778956382629-97629": 1
+        },
+        "byClaimer": {
+          "claimer-1778956382629-34007": 1
+        }
+      }
+    },
+    "guild-1778957644549-92921": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1778957644549-4487": 1
+        },
+        "byClaimer": {
+          "claimer-1778957644549-551": 1
+        }
+      }
+    },
+    "guild-1778964712064-22975": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1778964712064-77609": 1
+        },
+        "byClaimer": {
+          "claimer-1778964712064-69438": 1
+        }
+      }
+    },
+    "guild-1778964863008-74923": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1778964863008-51999": 1
+        },
+        "byClaimer": {
+          "claimer-1778964863008-25315": 1
+        }
+      }
+    },
+    "guild-1778965565035-85708": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1778965565035-51542": 1
+        },
+        "byClaimer": {
+          "claimer-1778965565035-65386": 1
+        }
+      }
+    },
+    "guild-1778969928939-32961": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1778969928939-61393": 1
+        },
+        "byClaimer": {
+          "claimer-1778969928939-7297": 1
+        }
+      }
+    },
+    "guild-1778970172029-29938": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1778970172029-84296": 1
+        },
+        "byClaimer": {
+          "claimer-1778970172029-19173": 1
+        }
+      }
+    },
+    "guild-1778974346259-66040": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1778974346259-30832": 1
+        },
+        "byClaimer": {
+          "claimer-1778974346259-54629": 1
+        }
+      }
+    },
+    "guild-1778976112204-35374": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1778976112204-88260": 1
+        },
+        "byClaimer": {
+          "claimer-1778976112204-82779": 1
+        }
+      }
+    },
+    "guild-1778981899101-52004": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1778981899101-31773": 1
+        },
+        "byClaimer": {
+          "claimer-1778981899101-39022": 1
+        }
+      }
+    },
+    "guild-1779014516161-88151": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1779014516161-53763": 1
+        },
+        "byClaimer": {
+          "claimer-1779014516161-4066": 1
+        }
+      }
+    },
+    "guild-1779015685819-46458": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1779015685819-45734": 1
+        },
+        "byClaimer": {
+          "claimer-1779015685819-51299": 1
+        }
+      }
+    },
+    "guild-1779017667818-97082": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1779017667818-34249": 1
+        },
+        "byClaimer": {
+          "claimer-1779017667818-76503": 1
+        }
+      }
+    },
+    "guild-1779018432304-79651": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1779018432304-75613": 1
+        },
+        "byClaimer": {
+          "claimer-1779018432304-91139": 1
+        }
+      }
+    },
+    "guild-1779036200351-44751": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1779036200351-71951": 1
+        },
+        "byClaimer": {
+          "claimer-1779036200351-95610": 1
+        }
+      }
+    },
+    "guild-1779036500940-29222": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1779036500940-96619": 1
+        },
+        "byClaimer": {
+          "claimer-1779036500940-64486": 1
+        }
+      }
+    },
+    "guild-1779036792188-4912": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1779036792188-96225": 1
+        },
+        "byClaimer": {
+          "claimer-1779036792188-17768": 1
+        }
+      }
+    },
+    "guild-1779037585005-30095": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1779037585005-7151": 1
+        },
+        "byClaimer": {
+          "claimer-1779037585005-5108": 1
+        }
+      }
+    },
+    "guild-1779037912062-53094": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1779037912062-68659": 1
+        },
+        "byClaimer": {
+          "claimer-1779037912062-26245": 1
+        }
+      }
+    },
+    "guild-1779040308177-63453": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1779040308177-25893": 1
+        },
+        "byClaimer": {
+          "claimer-1779040308177-48947": 1
+        }
+      }
+    },
+    "1479255758561480906": {
+      "tickets": {
+        "1507551093046116593": {
+          "ownerId": "1474509136606789715",
+          "ticketType": "service",
+          "openedAt": 1779498601929,
+          "claimedBy": null,
+          "claimedAt": null,
+          "closedBy": null,
+          "closedAt": null
+        }
+      },
+      "metrics": {
+        "totalClosed": 0,
+        "totalOpenToCloseMs": 0,
+        "totalOpenToClaimMs": 0,
+        "claimedCount": 0,
+        "byCloser": {},
+        "byClaimer": {}
+      }
+    },
+    "guild-1780024261732-43861": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1780024261732-55960": 1
+        },
+        "byClaimer": {
+          "claimer-1780024261732-89147": 1
+        }
+      }
+    },
+    "guild-1780024659811-14737": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1780024659811-43050": 1
+        },
+        "byClaimer": {
+          "claimer-1780024659811-41288": 1
+        }
+      }
+    },
+    "guild-1780024825062-38789": {
+      "tickets": {},
+      "metrics": {
+        "totalClosed": 1,
+        "totalOpenToCloseMs": 50000,
+        "totalOpenToClaimMs": 20000,
+        "claimedCount": 1,
+        "byCloser": {
+          "closer-1780024825062-26139": 1
+        },
+        "byClaimer": {
+          "claimer-1780024825062-82057": 1
+        }
+      }
+    }
+  }
+}

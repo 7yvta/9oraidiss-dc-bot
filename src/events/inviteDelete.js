@@ -1,0 +1,12 @@
+const { Events } = require("discord.js");
+const { refreshGuildInviteCache } = require("../utils/inviteTracker");
+
+module.exports = {
+  name: Events.InviteDelete,
+  async execute(invite) {
+    if (!invite.guild) {
+      return;
+    }
+    await refreshGuildInviteCache(invite.guild);
+  }
+};

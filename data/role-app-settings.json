@@ -1,0 +1,58 @@
+{
+  "enabled": true,
+  "logChannelId": null,
+  "applications": [
+    {
+      "id": "moderator",
+      "roleId": null,
+      "roleName": "Moderator",
+      "description": "Apply for moderator role to help manage the server",
+      "questions": [
+        {
+          "id": "experience",
+          "question": "How much moderation experience do you have?",
+          "required": true,
+          "type": "textarea"
+        },
+        {
+          "id": "reason",
+          "question": "Why do you want to be a moderator?",
+          "required": true,
+          "type": "textarea"
+        },
+        {
+          "id": "availability",
+          "question": "How many hours per day can you be active?",
+          "required": true,
+          "type": "text"
+        }
+      ],
+      "enabled": true,
+      "autoApprove": false,
+      "minAge": 16
+    },
+    {
+      "id": "staff",
+      "roleId": null,
+      "roleName": "Staff",
+      "description": "Apply for staff role to help with server management",
+      "questions": [
+        {
+          "id": "skills",
+          "question": "What skills do you have that would help as staff?",
+          "required": true,
+          "type": "textarea"
+        },
+        {
+          "id": "motivation",
+          "question": "What motivates you to help in this server?",
+          "required": true,
+          "type": "textarea"
+        }
+      ],
+      "enabled": true,
+      "autoApprove": false,
+      "minAge": 14
+    }
+  ]
+}

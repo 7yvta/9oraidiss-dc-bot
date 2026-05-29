@@ -1,0 +1,10 @@
+{
+  "enabled": true,
+  "channelId": null,
+  "logChannelId": null,
+  "questions": [],
+  "autoRoles": [],
+  "pendingRole": null,
+  "approvedRole": null,
+  "rejectedRole": null
+}

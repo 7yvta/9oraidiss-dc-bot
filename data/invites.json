@@ -1,0 +1,25 @@
+{
+  "1479255758561480906": {
+    "invitedBy": {
+      "1408476307720769569": {
+        "inviterId": "1474509136606789715",
+        "inviteCode": "fyFk6JBQD",
+        "joinedAt": 1777563762433,
+        "left": true,
+        "leftAt": 1777592987100
+      },
+      "1494439161950638272": {
+        "inviterId": "1474509136606789715",
+        "inviteCode": "27JuBrnWrN",
+        "joinedAt": 1777938545706,
+        "left": false
+      }
+    },
+    "inviterStats": {
+      "1474509136606789715": {
+        "joins": 2,
+        "left": 1
+      }
+    }
+  }
+}

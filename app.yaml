@@ -1,0 +1,40 @@
+runtime: nodejs20
+
+# Instance configuration
+instance_class: F2
+
+# Automatic scaling
+automatic_scaling:
+  min_instances: 1
+  max_instances: 3
+  cpu_utilization:
+    target_utilization: 0.75
+
+# Environment variables
+env_variables:
+  NODE_ENV: production
+  PORT: 8080
+
+# Health check
+health_check:
+  enable_health_check: True
+  check_interval_sec: 30
+  timeout_sec: 4
+  unhealthy_threshold: 2
+  healthy_threshold: 2
+
+# Resources
+resources:
+  cpu: 1
+  memory_gb: 1
+  disk_size_gb: 10
+
+# Network
+network:
+  session_affinity: true
+
+# Handlers
+handlers:
+  - url: /.*
+    script: auto
+    secure: always
