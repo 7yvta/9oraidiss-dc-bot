@@ -8,6 +8,20 @@ const DESIGN_ROLE_IDS = [
   "1499840816322187457"
 ];
 
+function isBotOwnerId(userId) {
+  const normalizedId = String(userId || "").trim();
+  if (!normalizedId) {
+    return false;
+  }
+  const ownerIds = Array.isArray(config.botOwnerIds)
+    ? config.botOwnerIds
+    : [config.botOwnerId];
+  return ownerIds
+    .map((ownerId) => String(ownerId || "").trim())
+    .filter(Boolean)
+    .includes(normalizedId);
+}
+
 function canModerate(invoker, target) {
   if (invoker.id === target.id) {
     return false;
@@ -16,7 +30,7 @@ function canModerate(invoker, target) {
     return false;
   }
   // Bot owner has full access to all commands
-  if (config.botOwnerId && invoker.id === config.botOwnerId) {
+  if (isBotOwnerId(invoker.id)) {
     return true;
   }
   if (invoker.id === invoker.guild.ownerId) {

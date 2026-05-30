@@ -95,6 +95,27 @@ function getMemberId(member) {
   return member?.id || member?.user?.id || null;
 }
 
+function isBotOwnerId(userId) {
+  const normalizedId = String(userId || "").trim();
+  if (!normalizedId) {
+    return false;
+  }
+
+  const ownerIds = Array.isArray(config.botOwnerIds)
+    ? config.botOwnerIds
+    : [config.botOwnerId];
+  return ownerIds
+    .map((ownerId) => String(ownerId || "").trim())
+    .filter(Boolean)
+    .includes(normalizedId);
+}
+
+function isGuildOwner(member) {
+  const memberId = getMemberId(member);
+  const guildOwnerId = String(member?.guild?.ownerId || "").trim();
+  return Boolean(memberId && guildOwnerId && memberId === guildOwnerId);
+}
+
 function hasPermission(member, permission) {
   if (!member) {
     return false;
@@ -178,6 +199,14 @@ function canUseCommand(member, commandName) {
   }
   const settings = getGuildSettingsSync(member.guild?.id);
   const commandOverride = getCommandPermissionOverride(commandName, settings);
+  const memberId = getMemberId(member);
+
+  // The configured bot creator and the Discord server owner can manage commands
+  // before per-guild role gates, disabled lists, or deny roles are checked.
+  if (isBotOwnerId(memberId) || isGuildOwner(member)) {
+    return true;
+  }
+
   if (!commandOverride.enabled) {
     return false;
   }
@@ -217,5 +246,7 @@ module.exports = {
   hasRole,
   hasAnyRole,
   hasPermission,
-  isAdmin
+  isAdmin,
+  isBotOwnerId,
+  isGuildOwner
 };

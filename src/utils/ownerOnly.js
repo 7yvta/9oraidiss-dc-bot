@@ -4,10 +4,16 @@ const { getGuildSettingsSync } = require("./guildSettings");
 function isOwner(interaction) {
   const userId = String(interaction?.user?.id || "");
   const guildOwnerId = String(interaction?.guild?.ownerId || "");
-  const configuredOwnerId = String(config.botOwnerId || "").trim();
+  const configuredOwnerIds = Array.isArray(config.botOwnerIds)
+    ? config.botOwnerIds
+    : [config.botOwnerId];
   return Boolean(
     userId &&
-      (userId === guildOwnerId || (configuredOwnerId && userId === configuredOwnerId))
+      (userId === guildOwnerId ||
+        configuredOwnerIds
+          .map((ownerId) => String(ownerId || "").trim())
+          .filter(Boolean)
+          .includes(userId))
   );
 }
 

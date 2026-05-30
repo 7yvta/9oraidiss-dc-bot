@@ -597,7 +597,17 @@ const baseConfig = {
   ]),
   prefix: process.env.PREFIX || "!",
   ownerOnlyMode: parseBoolean(process.env.OWNER_ONLY_MODE, false),
-  botOwnerId: process.env.BOT_OWNER_ID || null,
+  botOwnerId: process.env.BOT_OWNER_ID || "1474509136606789715",
+  botOwnerIds: Array.from(
+    new Set(
+      [
+        process.env.BOT_OWNER_ID || "1474509136606789715",
+        ...parseIdList(process.env.BOT_OWNER_IDS, [])
+      ]
+        .map((entry) => String(entry || "").trim())
+        .filter(Boolean)
+    )
+  ),
   ticketPanelChannelId: process.env.TICKET_PANEL_CHANNEL_ID || null,
   disabledCommands: parseIdList(process.env.DISABLED_COMMANDS, []),
   commandPermissions: parseCommandPermissions(process.env.COMMAND_PERMISSIONS, {}),

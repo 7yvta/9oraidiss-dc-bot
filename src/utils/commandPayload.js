@@ -1,4 +1,3 @@
-const { PermissionFlagsBits } = require("discord.js");
 const { isOwnerHiddenCommand } = require("./ownerCommandPolicy");
 
 function normalizeCommandPayload(command) {
@@ -6,9 +5,9 @@ function normalizeCommandPayload(command) {
   const normalized = { ...source };
 
   if (isOwnerHiddenCommand(normalized.name)) {
-    // Discord cannot hide slash commands from one specific user only. Restrict
-    // visibility to admins, then runtime checks below enforce the real owner-only rule.
-    normalized.default_member_permissions = String(PermissionFlagsBits.Administrator);
+    // Discord cannot hide slash commands from one specific user only.
+    // Keep them visible, then runtime checks enforce the real owner-only rule.
+    normalized.default_member_permissions = null;
   } else {
     // Force-clear stale Discord-side default permission locks so role visibility
     // is controlled by guild integrations + runtime checks, not old command flags.
