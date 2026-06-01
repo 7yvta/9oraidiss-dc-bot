@@ -49,6 +49,8 @@ const PREFIX_RESPONSE_SETTLE_MS = 220;
 const PREFIX_RESPONSE_SECOND_PASS_MS = 2200;
 const LEVEL_ANNOUNCE_LOOKBACK_LIMIT = 60;
 const SERVER_BOOST_XP_MULTIPLIER = 2;
+const AFK_NICK_PREFIX = "[AFK]";
+const AFK_CONFIRM_DELETE_MS = 20 * 1000;
 const PREFIX_ANYWHERE_COMMANDS = new Set([
   "w",
   "whois",
@@ -107,6 +109,115 @@ function formatAfkDuration(ms) {
     return `${hours}h`;
   }
   return `${hours}h ${minutes}m`;
+}
+
+function stripAfkPrefix(name) {
+  return String(name || "")
+    .replace(/^\s*\[AFK\]\s*/i, "")
+    .trim();
+}
+
+function buildAfkNickname(baseName) {
+  const cleaned = stripAfkPrefix(baseName) || "AFK";
+  return `${AFK_NICK_PREFIX} ${cleaned}`.slice(0, 32);
+}
+
+async function setAfkNickname(member, originalNickname) {
+  if (!member?.manageable) {
+    return false;
+  }
+
+  const baseName =
+    stripAfkPrefix(originalNickname) ||
+    stripAfkPrefix(member.displayName) ||
+    member.user?.username ||
+    "AFK";
+  const nextNickname = buildAfkNickname(baseName);
+  if (member.nickname === nextNickname) {
+    return true;
+  }
+
+  await member.setNickname(nextNickname, "AFK status enabled").catch(() => null);
+  return true;
+}
+
+async function restoreAfkNickname(member, originalNickname) {
+  if (!member?.manageable) {
+    return false;
+  }
+
+  const currentName = String(member.nickname || member.displayName || "");
+  if (!/^\s*\[AFK\]/i.test(currentName)) {
+    return true;
+  }
+
+  const nextNickname =
+    originalNickname === undefined || originalNickname === null
+      ? null
+      : String(originalNickname).slice(0, 32);
+  await member.setNickname(nextNickname, "AFK status cleared").catch(() => null);
+  return true;
+}
+
+async function handlePrefixAfk(message, args) {
+  const reason = String(Array.isArray(args) ? args.join(" ") : "")
+    .trim()
+    .slice(0, 160);
+  const previousAccount = await getAccount(message.guild.id, message.author.id).catch(
+    () => null
+  );
+  const member =
+    message.member ||
+    (await message.guild.members.fetch(message.author.id).catch(() => null));
+  const originalNickname =
+    previousAccount?.afk && Object.prototype.hasOwnProperty.call(previousAccount, "afkOriginalNickname")
+      ? previousAccount.afkOriginalNickname
+      : member?.nickname ?? null;
+
+  await updateAccount(message.guild.id, message.author.id, async (acc) => {
+    acc.afk = true;
+    acc.afkSince = Date.now();
+    acc.afkReason = reason || null;
+    acc.afkOriginalNickname = originalNickname;
+  }).catch(() => null);
+
+  await setAfkNickname(member, originalNickname);
+
+  const sent = await message.channel
+    .send({
+      content: reason
+        ? `${message.author} i set ur afk : ${reason}`
+        : `${message.author} i set ur afk`,
+      allowedMentions: { users: [message.author.id], roles: [] }
+    })
+    .catch(() => null);
+
+  if (sent?.deletable) {
+    setTimeout(() => sent.delete().catch(() => null), AFK_CONFIRM_DELETE_MS);
+  }
+
+  return true;
+}
+
+async function clearAuthorAfk(message, account) {
+  const originalNickname = Object.prototype.hasOwnProperty.call(
+    account || {},
+    "afkOriginalNickname"
+  )
+    ? account.afkOriginalNickname
+    : null;
+  const member =
+    message.member ||
+    (await message.guild.members.fetch(message.author.id).catch(() => null));
+
+  await updateAccount(message.guild.id, message.author.id, async (acc) => {
+    acc.afk = false;
+    acc.afkSince = null;
+    acc.afkReason = null;
+    acc.afkOriginalNickname = null;
+  }).catch(() => null);
+
+  await restoreAfkNickname(member, originalNickname);
 }
 
 async function buildAfkMentionLines(message) {
@@ -1562,29 +1673,20 @@ module.exports = {
     const rawContent = String(message.content || "");
     const content = rawContent.toLowerCase();
     const trimmedContent = rawContent.trim();
+    const acceptedPrefixes = getAcceptedPrefixes(settings);
+    const matchedPrefix = acceptedPrefixes.find((prefix) =>
+      trimmedContent.startsWith(prefix)
+    );
+    const pendingPrefixBody = matchedPrefix
+      ? trimmedContent.slice(matchedPrefix.length).trim()
+      : "";
+    const pendingPrefixCommand = pendingPrefixBody
+      ? String(pendingPrefixBody.split(/\s+/)[0] || "").toLowerCase()
+      : "";
 
     const authorAccount = await getAccount(message.guild.id, message.author.id).catch(() => null);
-    if (authorAccount?.afk) {
-      await updateAccount(message.guild.id, message.author.id, async (acc) => {
-        acc.afk = false;
-        acc.afkSince = null;
-        acc.afkReason = null;
-      }).catch(() => null);
-      await sendDedupedPrefixReply(message, {
-        embeds: [
-          buildResultEmbed({
-            title: "AFK Removed",
-            color: 0x57f287,
-            fields: [
-              {
-                name: "Status",
-                value: "Welcome back, your AFK status is now off."
-              }
-            ]
-          })
-        ],
-        allowedMentions: { parse: [] }
-      });
+    if (authorAccount?.afk && pendingPrefixCommand !== "afk") {
+      await clearAuthorAfk(message, authorAccount);
     }
 
     const afkMentionLines = await buildAfkMentionLines(message);
@@ -1744,10 +1846,6 @@ module.exports = {
       return;
     }
 
-    const acceptedPrefixes = getAcceptedPrefixes(settings);
-    const matchedPrefix = acceptedPrefixes.find((prefix) =>
-      trimmedContent.startsWith(prefix)
-    );
     if (matchedPrefix) {
       const commandBody = trimmedContent.slice(matchedPrefix.length).trim();
       if (commandBody) {
@@ -1803,6 +1901,11 @@ module.exports = {
               (PREFIX_RESPONSE_JITTER_MAX_MS - PREFIX_RESPONSE_JITTER_MIN_MS + 1)
           );
         await sleep(jitter);
+
+        if (command === "afk") {
+          await handlePrefixAfk(message, args);
+          return;
+        }
 
         if (command === "w" || command === "whois" || command === "userinfo") {
           await handlePrefixWhois(message, args, matchedPrefix);
