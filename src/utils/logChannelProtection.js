@@ -28,6 +28,14 @@ const DEFAULT_LOG_PROTECTION_BYPASS_ROLE_IDS = [
   "1479263536797454489"
 ];
 
+function isLogChannelAutoRestoreEnabled() {
+  return (
+    String(process.env.LOG_CHANNEL_AUTO_RESTORE_ENABLED || "false")
+      .trim()
+      .toLowerCase() === "true"
+  );
+}
+
 function parseIdList(rawValue, fallback = []) {
   const text = String(rawValue || "").trim();
   if (!text) {
@@ -249,6 +257,14 @@ async function enforceProtectedLogChannelsForGuild(guild) {
       guild.channels.cache.get(entry.channelId) ||
       (await guild.channels.fetch(entry.channelId).catch(() => null));
     if (!channel) {
+      if (!isLogChannelAutoRestoreEnabled()) {
+        failed.push({
+          channelId: entry.channelId,
+          keys: entry.keys,
+          reason: "channel_not_found_auto_restore_disabled"
+        });
+        continue;
+      }
       const restored = await autoCreateMissingProtectedChannel(guild, entry).catch(
         () => null
       );
@@ -285,6 +301,10 @@ async function enforceProtectedLogChannelsForGuild(guild) {
 }
 
 async function autoCreateMissingProtectedChannel(guild, entry) {
+  if (!isLogChannelAutoRestoreEnabled()) {
+    return null;
+  }
+
   const key = Array.isArray(entry?.keys) && entry.keys.length > 0 ? entry.keys[0] : null;
   const fallbackName = key ? DEFAULT_PROTECTED_LOG_CHANNEL_NAMES[key] : null;
   const channelName = fallbackName || "protected-logs";
@@ -360,6 +380,10 @@ async function notifyProtectedLogRestore(guild, restoredChannelId, restoredKeys,
 async function autoRestoreDeletedLogChannel(channel) {
   if (!channel?.guild?.id) {
     return { restored: false, reason: "missing_guild" };
+  }
+
+  if (!isLogChannelAutoRestoreEnabled()) {
+    return { restored: false, reason: "auto_restore_disabled" };
   }
 
   const protectedEntries = getProtectedLogChannelsForGuild(channel.guild);

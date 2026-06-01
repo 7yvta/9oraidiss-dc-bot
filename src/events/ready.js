@@ -31,6 +31,14 @@ function resolveActivityType(rawType) {
   return ActivityType.Watching;
 }
 
+function envFlag(name, fallback = false) {
+  const raw = process.env[name];
+  if (raw == null || raw === "") {
+    return Boolean(fallback);
+  }
+  return String(raw).trim().toLowerCase() === "true";
+}
+
 function syncBotPresence(clientReady) {
   const activityText = String(process.env.BOT_ACTIVITY_TEXT || "Tickets + Services").trim();
   if (!activityText) {
@@ -275,7 +283,7 @@ async function enforceProtectedLogChannelsForAllGuilds(client) {
 module.exports = {
   name: Events.ClientReady,
   once: true,
-  async execute(clientReady) {
+async execute(clientReady) {
     console.log(`Logged in as ${clientReady.user.tag}`);
     syncBotPresence(clientReady);
 
@@ -310,76 +318,123 @@ module.exports = {
       console.error("Invite cache initialization failed:", error);
     });
 
-    syncLevelRolePermissionsForAllGuilds(clientReady).catch((error) => {
-      console.error("Level role permission sync failed:", error);
-    });
+    const startupServerMutationsEnabled = envFlag(
+      "STARTUP_SERVER_MUTATIONS_ENABLED",
+      false
+    );
 
-    syncBotNicknamesForAllGuilds(clientReady).catch((error) => {
-      console.error("Bot nickname sync failed:", error);
-    });
-
-    enforceProtectedLogChannelsForAllGuilds(clientReady).catch((error) => {
-      console.error("Protected log channel lock sync failed:", error);
-    });
-
-    syncRoleThemeForConfiguredGuilds(clientReady)
-      .then((outcome) => {
-        if (outcome?.skipped) {
-          console.log(`[RoleTheme] Skipped: ${outcome.reason}`);
-          return;
-        }
-        for (const item of outcome.results || []) {
-          console.log(
-            `[RoleTheme] Guild ${item.guildId}: changed=${item.changed} failed=${item.failed} skipped=${item.skipped}`
-          );
-          if (Array.isArray(item.details) && item.details.length > 0) {
-            console.log(`[RoleTheme] ${item.details.slice(0, 20).join(" | ")}`);
-          }
-        }
-      })
-      .catch((error) => {
-        console.error("Role theme sync failed:", error);
+    if (
+      startupServerMutationsEnabled ||
+      envFlag("SYNC_LEVEL_ROLE_PERMS_ON_READY", false)
+    ) {
+      syncLevelRolePermissionsForAllGuilds(clientReady).catch((error) => {
+        console.error("Level role permission sync failed:", error);
       });
+    } else {
+      console.log("[StartupMutations] Level role permission sync skipped.");
+    }
 
-    syncChannelThemeForConfiguredGuilds(clientReady)
-      .then((outcome) => {
-        if (outcome?.skipped) {
-          console.log(`[ChannelTheme] Skipped: ${outcome.reason}`);
-          return;
-        }
-        for (const item of outcome.results || []) {
-          console.log(
-            `[ChannelTheme] Guild ${item.guildId}: changed=${item.changed} failed=${item.failed} skipped=${item.skipped}`
-          );
-          if (Array.isArray(item.details) && item.details.length > 0) {
-            console.log(`[ChannelTheme] ${item.details.slice(0, 20).join(" | ")}`);
-          }
-        }
-      })
-      .catch((error) => {
-        console.error("Channel theme sync failed:", error);
+    if (
+      startupServerMutationsEnabled ||
+      envFlag("SYNC_BOT_NICKNAME_ON_READY", false)
+    ) {
+      syncBotNicknamesForAllGuilds(clientReady).catch((error) => {
+        console.error("Bot nickname sync failed:", error);
       });
+    } else {
+      console.log("[StartupMutations] Bot nickname sync skipped.");
+    }
 
-    syncTicketPanelPlacementForConfiguredGuilds(clientReady)
-      .then((outcome) => {
-        if (outcome?.skipped) {
-          console.log(`[TicketPanelSync] Skipped: ${outcome.reason}`);
-          return;
-        }
-        for (const item of outcome.results || []) {
-          console.log(
-            `[TicketPanelSync] Guild ${item.guildId}: changed=${item.changed} failed=${item.failed} skipped=${item.skipped}`
-          );
-          if (Array.isArray(item.details) && item.details.length > 0) {
+    if (
+      startupServerMutationsEnabled ||
+      envFlag("LOG_CHANNEL_PROTECTION_ON_READY", false)
+    ) {
+      enforceProtectedLogChannelsForAllGuilds(clientReady).catch((error) => {
+        console.error("Protected log channel lock sync failed:", error);
+      });
+    } else {
+      console.log("[StartupMutations] Protected log channel sync skipped.");
+    }
+
+    if (
+      startupServerMutationsEnabled ||
+      envFlag("AUTO_ROLE_THEME_ENABLED", false)
+    ) {
+      syncRoleThemeForConfiguredGuilds(clientReady)
+        .then((outcome) => {
+          if (outcome?.skipped) {
+            console.log(`[RoleTheme] Skipped: ${outcome.reason}`);
+            return;
+          }
+          for (const item of outcome.results || []) {
             console.log(
-              `[TicketPanelSync] ${item.details.slice(0, 20).join(" | ")}`
+              `[RoleTheme] Guild ${item.guildId}: changed=${item.changed} failed=${item.failed} skipped=${item.skipped}`
             );
+            if (Array.isArray(item.details) && item.details.length > 0) {
+              console.log(`[RoleTheme] ${item.details.slice(0, 20).join(" | ")}`);
+            }
           }
-        }
-      })
-      .catch((error) => {
-        console.error("Ticket panel placement sync failed:", error);
-      });
+        })
+        .catch((error) => {
+          console.error("Role theme sync failed:", error);
+        });
+    } else {
+      console.log("[StartupMutations] Role theme sync skipped.");
+    }
+
+    if (
+      startupServerMutationsEnabled ||
+      envFlag("AUTO_CHANNEL_THEME_ENABLED", false)
+    ) {
+      syncChannelThemeForConfiguredGuilds(clientReady)
+        .then((outcome) => {
+          if (outcome?.skipped) {
+            console.log(`[ChannelTheme] Skipped: ${outcome.reason}`);
+            return;
+          }
+          for (const item of outcome.results || []) {
+            console.log(
+              `[ChannelTheme] Guild ${item.guildId}: changed=${item.changed} failed=${item.failed} skipped=${item.skipped}`
+            );
+            if (Array.isArray(item.details) && item.details.length > 0) {
+              console.log(`[ChannelTheme] ${item.details.slice(0, 20).join(" | ")}`);
+            }
+          }
+        })
+        .catch((error) => {
+          console.error("Channel theme sync failed:", error);
+        });
+    } else {
+      console.log("[StartupMutations] Channel theme sync skipped.");
+    }
+
+    if (
+      startupServerMutationsEnabled ||
+      envFlag("AUTO_TICKET_PANEL_PLACEMENT_ENABLED", false)
+    ) {
+      syncTicketPanelPlacementForConfiguredGuilds(clientReady)
+        .then((outcome) => {
+          if (outcome?.skipped) {
+            console.log(`[TicketPanelSync] Skipped: ${outcome.reason}`);
+            return;
+          }
+          for (const item of outcome.results || []) {
+            console.log(
+              `[TicketPanelSync] Guild ${item.guildId}: changed=${item.changed} failed=${item.failed} skipped=${item.skipped}`
+            );
+            if (Array.isArray(item.details) && item.details.length > 0) {
+              console.log(
+                `[TicketPanelSync] ${item.details.slice(0, 20).join(" | ")}`
+              );
+            }
+          }
+        })
+        .catch((error) => {
+          console.error("Ticket panel placement sync failed:", error);
+        });
+    } else {
+      console.log("[StartupMutations] Ticket panel placement sync skipped.");
+    }
 
     const shouldAutoSync =
       String(process.env.DISABLE_GUILD_COMMAND_SYNC || "false").toLowerCase() !==
@@ -404,8 +459,13 @@ module.exports = {
       console.log("Scheduled guild command resync is disabled.");
     }
 
-    const lockRecheckMinutes = Number(process.env.LOG_CHANNEL_LOCK_RECHECK_MINUTES || 5);
-    if (lockRecheckMinutes > 0 && Number.isFinite(lockRecheckMinutes)) {
+    const lockRecheckMinutes = Number(process.env.LOG_CHANNEL_LOCK_RECHECK_MINUTES || 0);
+    if (
+      (startupServerMutationsEnabled ||
+        envFlag("LOG_CHANNEL_PROTECTION_ON_READY", false)) &&
+      lockRecheckMinutes > 0 &&
+      Number.isFinite(lockRecheckMinutes)
+    ) {
       setInterval(() => {
         enforceProtectedLogChannelsForAllGuilds(clientReady).catch((error) => {
           console.error("Protected log channel recheck failed:", error);

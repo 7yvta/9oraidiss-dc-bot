@@ -649,7 +649,7 @@ const baseConfig = {
   messageXpMax: parseNumber(process.env.MESSAGE_XP_MAX, 40),
   messageXpCooldownSeconds: parseNumber(process.env.MESSAGE_XP_COOLDOWN_SECONDS, 60),
   levelUpChannelId: process.env.LEVEL_UP_CHANNEL_ID || null,
-  autoRoleThemeEnabled: parseBoolean(process.env.AUTO_ROLE_THEME_ENABLED, true),
+  autoRoleThemeEnabled: parseBoolean(process.env.AUTO_ROLE_THEME_ENABLED, false),
   autoRoleThemeGuildIds: parseIdList(
     process.env.AUTO_ROLE_THEME_GUILD_IDS,
     process.env.GUILD_ID ? [process.env.GUILD_ID] : []
