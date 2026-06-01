@@ -76,7 +76,7 @@ async function resolveCommandSyncGuildIds(client) {
 
 async function syncGuildCommands(client) {
   const shouldSync =
-    String(process.env.AUTO_SYNC_COMMANDS_ON_READY || "true").toLowerCase() ===
+    String(process.env.DISABLE_GUILD_COMMAND_SYNC || "false").toLowerCase() !==
     "true";
   if (!shouldSync) {
     return { skipped: true, reason: "disabled" };
@@ -179,19 +179,20 @@ async function clearGlobalCommandsIfRequested(client) {
     String(process.env.CLEAR_GLOBAL_COMMANDS || "false").toLowerCase() === "true";
   const autoClearWithGuildSync =
     String(process.env.AUTO_CLEAR_GLOBAL_ON_GUILD_SYNC || "true").toLowerCase() === "true" &&
-    String(process.env.AUTO_SYNC_COMMANDS_ON_READY || "true").toLowerCase() === "true";
+    String(process.env.DISABLE_GUILD_COMMAND_SYNC || "false").toLowerCase() !== "true";
   const shouldClear = explicitClear || autoClearWithGuildSync;
   if (!shouldClear) {
     return;
   }
 
-  if (!config.token || !config.clientId) {
+  const applicationId = client.application?.id || config.clientId;
+  if (!config.token || !applicationId) {
     return;
   }
 
   try {
     const rest = new REST({ version: "10" }).setToken(config.token);
-    await rest.put(Routes.applicationCommands(config.clientId), { body: [] });
+    await rest.put(Routes.applicationCommands(applicationId), { body: [] });
     console.log("Cleared global slash commands (CLEAR_GLOBAL_COMMANDS=true).");
   } catch (error) {
     console.error("Failed to clear global slash commands:", error);
@@ -381,7 +382,7 @@ module.exports = {
       });
 
     const shouldAutoSync =
-      String(process.env.AUTO_SYNC_COMMANDS_ON_READY || "false").toLowerCase() ===
+      String(process.env.DISABLE_GUILD_COMMAND_SYNC || "false").toLowerCase() !==
       "true";
     const resyncMinutes = Number(process.env.GUILD_COMMAND_RESYNC_MINUTES || 15);
     if (shouldAutoSync && resyncMinutes > 0 && Number.isFinite(resyncMinutes)) {
@@ -400,7 +401,7 @@ module.exports = {
       }, Math.floor(resyncMinutes * 60 * 1000));
       console.log(`Scheduled guild command resync every ${resyncMinutes} minute(s).`);
     } else {
-      console.log("Guild command auto-sync is disabled.");
+      console.log("Scheduled guild command resync is disabled.");
     }
 
     const lockRecheckMinutes = Number(process.env.LOG_CHANNEL_LOCK_RECHECK_MINUTES || 5);

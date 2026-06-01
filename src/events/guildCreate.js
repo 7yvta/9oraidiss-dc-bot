@@ -5,6 +5,7 @@ const {
   getCommandPublishPolicy,
   shouldIncludeCommandForGuild
 } = require("../utils/commandPublishPolicy");
+const { normalizeCommandPayloads } = require("../utils/commandPayload");
 const config = require("../config");
 
 
@@ -29,7 +30,8 @@ function readCommandFiles(dirPath) {
 module.exports = {
   name: Events.GuildCreate,
   async execute(guild) {
-    if (!config.clientId) {
+    const applicationId = guild.client.application?.id || config.clientId;
+    if (!applicationId) {
       return;
     }
 
@@ -58,8 +60,8 @@ module.exports = {
       }
 
       const rest = new REST({ version: "10" }).setToken(config.token);
-      await rest.put(Routes.applicationGuildCommands(config.clientId, guild.id), {
-        body: commands
+      await rest.put(Routes.applicationGuildCommands(applicationId, guild.id), {
+        body: normalizeCommandPayloads(commands)
       });
 
       console.log(`Successfully deployed ${commands.length} commands to ${guild.name} (${guild.id})`);
