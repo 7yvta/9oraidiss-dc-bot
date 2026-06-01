@@ -18,6 +18,7 @@ const {
 const { setTimeout: delay } = require("node:timers/promises");
 const config = require("../config");
 const { canUseCommand, canHandleTicket } = require("../utils/accessControl");
+const { isBotOwnerId } = require("../utils/permissionEngine");
 const { hasRecentAction, markRecentAction, clearRecentAction } = require("../utils/actionDeduper");
 const {
   getTrade,
@@ -1104,7 +1105,8 @@ module.exports = {
         return;
       }
 
-      if (!canUseCommand(interaction.member, interaction.commandName)) {
+      const isConfiguredBotOwner = isBotOwnerId(interaction.user?.id);
+      if (!isConfiguredBotOwner && !canUseCommand(interaction.member, interaction.commandName)) {
         const payload = {
           embeds: [
             buildResultEmbed({

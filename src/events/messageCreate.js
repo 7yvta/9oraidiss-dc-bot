@@ -23,7 +23,7 @@ const { shouldAnnounceLevelUp } = require("../utils/levelAnnouncementStore");
 const { getAutoWinOrLoseChannel, recordWinOrLose } = require("../utils/vulcanGame");
 const { getAccount, updateAccount } = require("../utils/economyStore");
 const { runOnce } = require("../utils/idempotency");
-const { canUseCommand } = require("../utils/permissionEngine");
+const { canUseCommand, isBotOwnerId } = require("../utils/permissionEngine");
 const { canModerate } = require("../utils/moderation");
 const { checkCooldown, formatRetryAfter, parseCooldownMs } = require("../utils/cooldowns");
 
@@ -1770,7 +1770,12 @@ module.exports = {
           return null;
         };
         const prefixCommandName = resolvePrefixCommandName(command);
-        if (prefixCommandName && message.member && !canUseCommand(message.member, prefixCommandName)) {
+        if (
+          prefixCommandName &&
+          message.member &&
+          !isBotOwnerId(message.author.id) &&
+          !canUseCommand(message.member, prefixCommandName)
+        ) {
           // Silent ignore to avoid chat spam.
           return;
         }
