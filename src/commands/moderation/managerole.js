@@ -16,6 +16,7 @@ const {
 const { sendRoleUpdateDM } = require("../../utils/dmHelper");
 const { syncTriggeredRolesForMember } = require("../../utils/roleTriggerSync");
 const { clearRecentAction, markRecentAction } = require("../../utils/actionDeduper");
+const { isBotOwnerId } = require("../../utils/permissionEngine");
 
 function buildSingleRoleChangeFingerprint(memberId, action, roleId) {
   const added = action === "add" ? String(roleId) : "";
@@ -179,7 +180,12 @@ module.exports = {
     const isAdmin =
       interaction.memberPermissions?.has(PermissionFlagsBits.Administrator) ||
       interaction.member?.permissions?.has?.(PermissionFlagsBits.Administrator);
-    if (!isAdmin && role.position >= interaction.member.roles.highest.position) {
+    const isBotOwner = isBotOwnerId(interaction.user.id);
+    if (
+      !isBotOwner &&
+      !isAdmin &&
+      role.position >= interaction.member.roles.highest.position
+    ) {
       await interaction.reply({
         embeds: [
           buildResultEmbed({
@@ -242,7 +248,7 @@ module.exports = {
         return;
       }
 
-      if (!interaction.member.roles.cache.has(role.id)) {
+      if (!isBotOwner && !interaction.member.roles.cache.has(role.id)) {
         await interaction.reply({
           embeds: [
             buildResultEmbed({
