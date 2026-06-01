@@ -59,31 +59,6 @@ function readCommandFiles(dirPath) {
   return files;
 }
 
-function isCommandEnabledForGuildSettings(commandName, settings) {
-  const normalized = String(commandName || "").trim();
-  if (!normalized) {
-    return false;
-  }
-
-  const disabledSet = new Set(
-    Array.isArray(settings?.disabledCommands) ? settings.disabledCommands.map(String) : []
-  );
-  if (disabledSet.has(normalized)) {
-    return false;
-  }
-
-  const permissions =
-    settings?.commandPermissions && typeof settings.commandPermissions === "object"
-      ? settings.commandPermissions
-      : {};
-  const override = permissions[normalized];
-  if (override && typeof override === "object" && override.enabled === false) {
-    return false;
-  }
-
-  return true;
-}
-
 async function resolveCommandSyncGuildIds(client) {
   const guildIds = new Set(Array.from(client.guilds.cache.keys()));
   if (guildIds.size > 0 || typeof client.guilds.fetch !== "function") {
@@ -101,7 +76,7 @@ async function resolveCommandSyncGuildIds(client) {
 
 async function syncGuildCommands(client) {
   const shouldSync =
-    String(process.env.AUTO_SYNC_COMMANDS_ON_READY || "false").toLowerCase() ===
+    String(process.env.AUTO_SYNC_COMMANDS_ON_READY || "true").toLowerCase() ===
     "true";
   if (!shouldSync) {
     return { skipped: true, reason: "disabled" };
@@ -132,10 +107,8 @@ async function syncGuildCommands(client) {
   const results = [];
 
   for (const targetGuildId of guildIds) {
-    const settings = getGuildSettingsSync(targetGuildId);
     const commands = normalizeCommandPayloads(
       filterCommandsForGuild(allCommands, targetGuildId, commandPolicy)
-        .filter((record) => isCommandEnabledForGuildSettings(record.name, settings))
         .map((record) => record.payload)
     );
 
@@ -206,7 +179,7 @@ async function clearGlobalCommandsIfRequested(client) {
     String(process.env.CLEAR_GLOBAL_COMMANDS || "false").toLowerCase() === "true";
   const autoClearWithGuildSync =
     String(process.env.AUTO_CLEAR_GLOBAL_ON_GUILD_SYNC || "true").toLowerCase() === "true" &&
-    String(process.env.AUTO_SYNC_COMMANDS_ON_READY || "false").toLowerCase() === "true";
+    String(process.env.AUTO_SYNC_COMMANDS_ON_READY || "true").toLowerCase() === "true";
   const shouldClear = explicitClear || autoClearWithGuildSync;
   if (!shouldClear) {
     return;
