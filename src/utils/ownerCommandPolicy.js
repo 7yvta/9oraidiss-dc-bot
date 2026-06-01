@@ -1,4 +1,5 @@
 const ownerHiddenCommandNames = new Set([
+  "creat",
   "fixinvites",
   "roleall",
   "rolefilter"
