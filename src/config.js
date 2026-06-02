@@ -57,7 +57,7 @@ function isRailwayPublicUrl(url) {
 
 function resolvePublicBaseUrl() {
   const fallbackPublicUrl = normalizePublicBaseUrl(
-    process.env.DEFAULT_PUBLIC_BASE_URL || "https://shadow.up.railway.app"
+    process.env.DEFAULT_PUBLIC_BASE_URL || "https://shadow-production-be95.up.railway.app"
   );
   const explicit =
     process.env.PUBLIC_BASE_URL ||
