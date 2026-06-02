@@ -1,5 +1,11 @@
 const express = require('express');
 const config = require('./config');
+const {
+  getGuildOverridesSync,
+  getGuildSettingsSync,
+  patchGuildOverrides
+} = require('./utils/guildSettings');
+const { getTicketTypeConfig } = require('./utils/tickets');
 
 const BOT_NAME = process.env.PUBLIC_BOT_NAME || 'Vault';
 const SERVICE_NAME = process.env.PUBLIC_SERVICE_NAME || 'Vault Marketplace';
@@ -519,8 +525,281 @@ function buildAppealPage() {
   });
 }
 
+function getDashboardLinks(req) {
+  const baseUrl = trimUrl(
+    config.publicBaseUrl ||
+      process.env.PUBLIC_BASE_URL ||
+      `${req.protocol}://${req.get('host')}`
+  );
+  return {
+    botName: BOT_NAME,
+    serviceName: SERVICE_NAME,
+    baseUrl,
+    termsUrl: `${baseUrl}/terms`,
+    privacyUrl: `${baseUrl}/privacy`,
+    appealUrl: `${baseUrl}/appeal`,
+    serverUrl: resolveServerUrl(),
+    contactProfileUrl: resolveContactProfileUrl()
+  };
+}
+
+function getDashboardApiToken() {
+  return String(
+    process.env.DASHBOARD_API_TOKEN ||
+      process.env.DASHBOARD_TOKEN ||
+      process.env.ADMIN_DASHBOARD_TOKEN ||
+      ''
+  ).trim();
+}
+
+function readDashboardToken(req) {
+  const auth = String(req.get('authorization') || '').trim();
+  if (/^bearer\s+/i.test(auth)) {
+    return auth.replace(/^bearer\s+/i, '').trim();
+  }
+  return String(req.get('x-dashboard-token') || '').trim();
+}
+
+function requireDashboardAuth(req, res, next) {
+  const expected = getDashboardApiToken();
+  if (!expected) {
+    res.status(503).json({
+      ok: false,
+      reason: 'dashboard_api_token_missing',
+      message: 'Set DASHBOARD_API_TOKEN on the bot host before saving dashboard changes.'
+    });
+    return;
+  }
+
+  const provided = readDashboardToken(req);
+  if (!provided || provided !== expected) {
+    res.status(401).json({ ok: false, reason: 'invalid_dashboard_token' });
+    return;
+  }
+
+  next();
+}
+
+function configureDashboardCors(app) {
+  app.use('/api/dashboard', (req, res, next) => {
+    const origin = req.get('origin');
+    const configured = String(process.env.DASHBOARD_ALLOWED_ORIGINS || '*')
+      .split(',')
+      .map((entry) => entry.trim())
+      .filter(Boolean);
+    const allowAll = configured.includes('*');
+    const allowedOrigin = allowAll ? '*' : configured.includes(origin) ? origin : '';
+
+    if (allowedOrigin) {
+      res.setHeader('Access-Control-Allow-Origin', allowedOrigin);
+      res.setHeader('Vary', 'Origin');
+    }
+    res.setHeader('Access-Control-Allow-Methods', 'GET,PATCH,OPTIONS');
+    res.setHeader(
+      'Access-Control-Allow-Headers',
+      'Authorization,Content-Type,X-Dashboard-Token'
+    );
+
+    if (req.method === 'OPTIONS') {
+      res.status(204).end();
+      return;
+    }
+
+    next();
+  });
+}
+
+const simpleSettingKeys = new Set([
+  'modLogChannelId',
+  'reportChannelId',
+  'serverUpdateChannelId',
+  'ticketTranscriptLogId',
+  'welcomeChannelId',
+  'levelUpChannelId',
+  'rulesChannelId',
+  'memberRoleId',
+  'welcomeEnabled',
+  'autoMemberRoleEnabled',
+  'stickyMemberRoleEnabled',
+  'automodEnabled',
+  'blockInvites',
+  'blockLinks'
+]);
+
+const roleListSettingKeys = new Set([
+  'botAdminRoleIds',
+  'fullCommandRoleIds',
+  'timeoutOnlyRoleIds',
+  'prefixAnywhereRoleIds',
+  'confirmationRoleIds'
+]);
+
+const ticketFieldMap = {
+  support: {
+    panel: 'supportTicketPanelChannelId',
+    category: 'supportTicketCategoryId',
+    roles: 'supportTeamRoleIds'
+  },
+  middleman: {
+    panel: 'middlemanTicketPanelChannelId',
+    category: 'middlemanTicketCategoryId',
+    roles: 'middlemanTeamRoleIds'
+  },
+  index: {
+    panel: 'indexTicketPanelChannelId',
+    category: 'indexTicketCategoryId',
+    roles: 'indexTeamRoleIds'
+  },
+  role: {
+    panel: 'roleRequestTicketPanelChannelId',
+    category: 'roleRequestTicketCategoryId',
+    roles: 'roleRequestTeamRoleIds'
+  },
+  report: {
+    panel: 'reportTicketPanelChannelId',
+    category: 'reportTicketCategoryId',
+    roles: 'reportTeamRoleIds'
+  },
+  host: {
+    panel: 'hostGiveawayTicketPanelChannelId',
+    category: 'hostGiveawayTicketCategoryId',
+    roles: 'hostGiveawayTeamRoleIds'
+  }
+};
+
+function normalizeId(value) {
+  return String(value || '').replace(/[^\d]/g, '').trim();
+}
+
+function normalizeRoleIds(value) {
+  const source = Array.isArray(value)
+    ? value
+    : String(value || '')
+        .split(/[,\s]+/)
+        .filter(Boolean);
+  return [...new Set(source.map(normalizeId).filter(Boolean))];
+}
+
+function normalizeBool(value) {
+  if (typeof value === 'boolean') {
+    return value;
+  }
+  if (typeof value === 'string') {
+    return ['true', '1', 'yes', 'on', 'enabled'].includes(value.toLowerCase());
+  }
+  return Boolean(value);
+}
+
+function pickDashboardSettings(settings) {
+  const result = {};
+  for (const key of simpleSettingKeys) {
+    if (settings[key] !== undefined) {
+      result[key] = settings[key];
+    }
+  }
+  for (const key of roleListSettingKeys) {
+    result[key] = Array.isArray(settings[key]) ? settings[key] : [];
+  }
+  result.roleTriggerRules = Array.isArray(settings.roleTriggerRules)
+    ? settings.roleTriggerRules
+    : [];
+  return result;
+}
+
+function buildDashboardConfig(guildId, req) {
+  const settings = getGuildSettingsSync(guildId);
+  return {
+    ok: true,
+    guildId,
+    links: getDashboardLinks(req),
+    settings: pickDashboardSettings(settings),
+    tickets: getTicketTypeConfig(guildId),
+    overrides: getGuildOverridesSync(guildId)
+  };
+}
+
+function buildDashboardPatch(body) {
+  const patch = {};
+
+  if (body.settings && typeof body.settings === 'object') {
+    for (const key of simpleSettingKeys) {
+      if (body.settings[key] === undefined) {
+        continue;
+      }
+      if (key.endsWith('Enabled') || key === 'automodEnabled' || key === 'blockInvites' || key === 'blockLinks') {
+        patch[key] = normalizeBool(body.settings[key]);
+        continue;
+      }
+      patch[key] = normalizeId(body.settings[key]);
+    }
+
+    for (const key of roleListSettingKeys) {
+      if (body.settings[key] !== undefined) {
+        patch[key] = normalizeRoleIds(body.settings[key]);
+      }
+    }
+
+    if (Array.isArray(body.settings.roleTriggerRules)) {
+      patch.roleTriggerRules = body.settings.roleTriggerRules
+        .map((rule) => {
+          if (!rule || typeof rule !== 'object') {
+            return null;
+          }
+          return {
+            triggerRoleIds: normalizeRoleIds(rule.triggerRoleIds),
+            assignRoleIds: normalizeRoleIds(rule.assignRoleIds),
+            removeWhenMissing: rule.removeWhenMissing !== false
+          };
+        })
+        .filter((rule) => rule && rule.triggerRoleIds.length > 0 && rule.assignRoleIds.length > 0);
+    }
+  }
+
+  if (body.tickets && typeof body.tickets === 'object') {
+    const ticketTypes = {};
+    for (const [type, fields] of Object.entries(ticketFieldMap)) {
+      const incoming = body.tickets[type];
+      if (!incoming || typeof incoming !== 'object') {
+        continue;
+      }
+
+      if (incoming.panelChannelId !== undefined) {
+        patch[fields.panel] = normalizeId(incoming.panelChannelId);
+      }
+      if (incoming.categoryId !== undefined) {
+        patch[fields.category] = normalizeId(incoming.categoryId);
+      }
+      if (incoming.teamRoleIds !== undefined) {
+        patch[fields.roles] = normalizeRoleIds(incoming.teamRoleIds);
+      }
+
+      const typePatch = {};
+      if (incoming.enabled !== undefined) {
+        typePatch.enabled = normalizeBool(incoming.enabled);
+      }
+      if (incoming.buttonLabel !== undefined) {
+        typePatch.buttonLabel = String(incoming.buttonLabel || '').slice(0, 80).trim();
+      }
+      if (incoming.introMessage !== undefined) {
+        typePatch.introMessage = String(incoming.introMessage || '').slice(0, 900).trim();
+      }
+      if (Object.keys(typePatch).length > 0) {
+        ticketTypes[type] = typePatch;
+      }
+    }
+
+    if (Object.keys(ticketTypes).length > 0) {
+      patch.ticketTypes = ticketTypes;
+    }
+  }
+
+  return patch;
+}
+
 function createHealthCheck() {
   const app = express();
+  app.use(express.json({ limit: '256kb' }));
+  configureDashboardCors(app);
 
   app.get('/', (req, res) => {
     const baseUrl = config.publicBaseUrl || process.env.PUBLIC_BASE_URL || `${req.protocol}://${req.get('host')}`;
@@ -605,6 +884,41 @@ function createHealthCheck() {
       return;
     }
     res.redirect(302, contactProfileUrl);
+  });
+
+  app.get('/api/dashboard/links', (req, res) => {
+    res.json({ ok: true, links: getDashboardLinks(req) });
+  });
+
+  app.get('/api/dashboard/config', requireDashboardAuth, (req, res) => {
+    const guildId = normalizeId(req.query.guildId);
+    if (!guildId) {
+      res.status(400).json({ ok: false, reason: 'missing_guild_id' });
+      return;
+    }
+    res.json(buildDashboardConfig(guildId, req));
+  });
+
+  app.patch('/api/dashboard/config', requireDashboardAuth, async (req, res) => {
+    const guildId = normalizeId(req.body?.guildId);
+    if (!guildId) {
+      res.status(400).json({ ok: false, reason: 'missing_guild_id' });
+      return;
+    }
+
+    const patch = buildDashboardPatch(req.body || {});
+    if (Object.keys(patch).length === 0) {
+      res.status(400).json({ ok: false, reason: 'empty_patch' });
+      return;
+    }
+
+    const result = await patchGuildOverrides(guildId, patch);
+    if (!result.ok) {
+      res.status(400).json(result);
+      return;
+    }
+
+    res.json(buildDashboardConfig(guildId, req));
   });
   
   // Health check endpoint

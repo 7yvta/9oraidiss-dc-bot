@@ -1,0 +1,98 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vault Dashboard</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main class="shell">
+    <section class="hero card">
+      <div>
+        <p class="eyebrow">Vault Control</p>
+        <h1>Small Bot Dashboard</h1>
+        <p class="muted">Update live bot settings from Netlify. Saves go directly to the bot API and apply without editing raw JSON.</p>
+      </div>
+      <div class="links" id="quickLinks"></div>
+    </section>
+
+    <section class="card grid two">
+      <label>
+        <span>Bot API URL</span>
+        <input id="apiBase" placeholder="https://shadow-production-be95.up.railway.app" />
+      </label>
+      <label>
+        <span>Dashboard Token</span>
+        <input id="apiToken" type="password" placeholder="DASHBOARD_API_TOKEN" />
+      </label>
+      <label>
+        <span>Guild ID</span>
+        <input id="guildId" placeholder="1479255758561480906" />
+      </label>
+      <div class="actions">
+        <button id="saveLocal" type="button">Save Login</button>
+        <button id="loadConfig" type="button" class="primary">Load Config</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Logs</p>
+          <h2>Channel Settings</h2>
+        </div>
+      </div>
+      <div class="grid three">
+        <label><span>Mod Logs</span><input data-setting="modLogChannelId" placeholder="channel id" /></label>
+        <label><span>Server Logs</span><input data-setting="serverUpdateChannelId" placeholder="channel id" /></label>
+        <label><span>Ticket Transcripts</span><input data-setting="ticketTranscriptLogId" placeholder="channel id" /></label>
+        <label><span>Appeals / Reports</span><input data-setting="reportChannelId" placeholder="channel id" /></label>
+        <label><span>Welcome Channel</span><input data-setting="welcomeChannelId" placeholder="channel id" /></label>
+        <label><span>Level Channel</span><input data-setting="levelUpChannelId" placeholder="channel id" /></label>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Access</p>
+          <h2>Admin Roles</h2>
+        </div>
+      </div>
+      <div class="grid two">
+        <label><span>Bot Admin Roles</span><textarea data-setting-list="botAdminRoleIds" placeholder="role ids separated by comma or space"></textarea></label>
+        <label><span>Prefix Anywhere Roles</span><textarea data-setting-list="prefixAnywhereRoleIds" placeholder="role ids separated by comma or space"></textarea></label>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Tickets</p>
+          <h2>Ticket Routing</h2>
+        </div>
+      </div>
+      <div id="tickets" class="tickets"></div>
+    </section>
+
+    <section class="card">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Triggers</p>
+          <h2>Auto Role Triggers</h2>
+        </div>
+      </div>
+      <p class="muted small">One rule per line: trigger role IDs, then =>, then assigned role IDs.</p>
+      <textarea id="triggers" class="wide" placeholder="1505612011579506711 1505612010690314340 => 1505632362417885194 1505637024588234993"></textarea>
+    </section>
+
+    <section class="card footer-actions">
+      <button id="saveConfig" type="button" class="primary big">Save To Bot</button>
+      <button id="reloadConfig" type="button">Reload</button>
+      <pre id="status" aria-live="polite"></pre>
+    </section>
+  </main>
+  <script src="./app.js"></script>
+</body>
+</html>
