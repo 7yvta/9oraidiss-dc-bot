@@ -10,7 +10,7 @@ const config = require("../config");
 const { getGuildSettingsSync } = require("./guildSettings");
 const { getTicketTypeConfig } = require("./tickets");
 
-const PANEL_CATEGORY_NAME = "❖› TICKETS";
+const PANEL_CATEGORY_NAME = "��� TICKETS";
 const PANEL_LAYOUT = Object.freeze([
   {
     type: "support",
@@ -24,13 +24,6 @@ const PANEL_LAYOUT = Object.freeze([
     channelName: "open-middleman-ticket",
     aliases: ["middleman-ticket", "ticket-middleman", "open-mm-ticket", "open-middleman-ticket"],
     color: 0x3b82f6,
-    style: ButtonStyle.Secondary
-  },
-  {
-    type: "service",
-    channelName: "open-service-ticket",
-    aliases: ["service-ticket", "ticket-service", "open-service-ticket"],
-    color: 0x5865f2,
     style: ButtonStyle.Secondary
   },
   {
@@ -67,18 +60,16 @@ const ENFORCED_PANEL_CHANNEL_IDS_BY_GUILD = Object.freeze({
   "1479255758561480906": {
     support: "1480002919737589861",
     middleman: "1506055902048944360",
-    service: "1505526246623150180",
     index: "1505526250763190486",
     role: "1505526254458372226",
     report: "1505604766468804814",
     host: "1505604770805579957"
   }
 });
-const NEVER_AUTO_CREATE_PANEL_TYPES = new Set(["support", "middleman", "service", "index", "role", "report", "host"]);
+const NEVER_AUTO_CREATE_PANEL_TYPES = new Set(["support", "middleman", "index", "role", "report", "host"]);
 const PANEL_FALLBACK_ALIASES_BY_TYPE = Object.freeze({
   support: ["open support ticket", "open-support-ticket"],
   middleman: ["middleman", "open middleman ticket", "open-middleman-ticket"],
-  service: ["service", "open service ticket", "open-service-ticket"],
   index: ["open index ticket", "open-index-ticket"],
   role: ["open role request", "open-role-request"],
   report: ["reports", "report", "open report ticket", "open-report-ticket"],
@@ -159,8 +150,6 @@ function getPanelChannelSettingKey(ticketType) {
       return "supportTicketPanelChannelId";
     case "middleman":
       return "middlemanTicketPanelChannelId";
-    case "service":
-      return "serviceTicketPanelChannelId";
     case "index":
       return "indexTicketPanelChannelId";
     case "role":
@@ -185,10 +174,9 @@ function buildPanelEmbed(ticketType, buttonLabel, color) {
   const titleMap = {
     support: "🎫 Support Ticket",
     middleman: "💱 Middleman Ticket",
-    service: "🤝 Service Ticket",
     index: "📊 Index Ticket",
-    role: "🏷 Role Request Ticket",
-    report: "📝 Report Ticket",
+    role: "�� Role Request Ticket",
+    report: "� Report Ticket",
     host: "👥 Host Giveaway Ticket"
   };
   const textMap = {
@@ -196,8 +184,6 @@ function buildPanelEmbed(ticketType, buttonLabel, color) {
       "Need staff help? Open a support ticket and explain your issue clearly so the team can assist fast.",
     middleman:
       "Need secure trading help? Open a middleman ticket and wait for MM staff.",
-    service:
-      "Need Blox Fruits services? Open a service ticket and wait for service staff.",
     index:
       "Need indexing help? Open an index ticket and share what you need reviewed.",
     role:
@@ -228,7 +214,6 @@ function collectTicketStaffRoleIds(settings) {
   const sets = [
     settings.supportTeamRoleIds,
     settings.middlemanTeamRoleIds,
-    settings.serviceTeamRoleIds,
     settings.indexTeamRoleIds,
     settings.roleRequestTeamRoleIds,
     settings.reportTeamRoleIds,
@@ -526,3 +511,4 @@ module.exports = {
   PANEL_LAYOUT,
   syncTicketPanelPlacementForConfiguredGuilds
 };
+

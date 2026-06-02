@@ -16,23 +16,19 @@ const allowedOverrideKeys = new Set([
   "roleTriggerRules",
   "supportTeamRoleIds",
   "middlemanTeamRoleIds",
-  "serviceTeamRoleIds",
   "indexTeamRoleIds",
   "roleRequestTeamRoleIds",
   "reportTeamRoleIds",
   "hostGiveawayTeamRoleIds",
   "middlemanTicketRoleId",
-  "serviceTicketRoleId",
   "supportTicketCategoryId",
   "middlemanTicketCategoryId",
-  "serviceTicketCategoryId",
   "indexTicketCategoryId",
   "roleRequestTicketCategoryId",
   "reportTicketCategoryId",
   "hostGiveawayTicketCategoryId",
   "supportTicketPanelChannelId",
   "middlemanTicketPanelChannelId",
-  "serviceTicketPanelChannelId",
   "indexTicketPanelChannelId",
   "roleRequestTicketPanelChannelId",
   "reportTicketPanelChannelId",
@@ -74,7 +70,6 @@ const allowedOverrideKeys = new Set([
   "autoVouchPerCycle",
   "autoVouchMemberIds",
   "autoVouchMmReasons",
-  "autoVouchIndexReasons",
   "levelCurve",
   "levelCurveMultiplier",
   "levelMax",
@@ -229,19 +224,6 @@ function getGuildSettingsSync(guildId) {
       ? configuredMiddlemanRoleIds
       : fallbackMiddlemanRoleId
         ? [fallbackMiddlemanRoleId]
-        : [];
-
-  const configuredServiceRoleIds = Array.isArray(merged.serviceTeamRoleIds)
-    ? merged.serviceTeamRoleIds.map((roleId) => String(roleId || "").trim()).filter(Boolean)
-    : [];
-  const fallbackServiceRoleId = String(
-    merged.serviceTicketRoleId || "1505637024588234993"
-  ).trim();
-  merged.serviceTeamRoleIds =
-    configuredServiceRoleIds.length > 0
-      ? configuredServiceRoleIds
-      : fallbackServiceRoleId
-        ? [fallbackServiceRoleId]
         : [];
 
   return merged;

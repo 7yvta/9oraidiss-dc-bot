@@ -9,7 +9,7 @@ module.exports = {
   async execute(interaction) {
     const embed1 = new EmbedBuilder()
       .setColor(0xed4245)
-      .setTitle("⚔️ Server Rules & Guidelines")
+      .setTitle("?? Server Rules & Guidelines")
       .setDescription("Follow these rules to keep the server safe and fair.")
       .addFields(
         {
@@ -28,9 +28,9 @@ module.exports = {
             "No flood messages, mass emojis, repeated pings, or copy-paste spam."
         },
         {
-          name: "4) Trading & Service Team",
+          name: "4) Trading & Middleman Team",
           value:
-            "All trades/services must use verified service staff. Never send items/Robux/accounts before staff confirms."
+            "All trades must use verified middleman staff. Never send items, Robux, or accounts before staff confirms."
         },
         {
           name: "5) Self-Promotion",
@@ -74,4 +74,5 @@ module.exports = {
     });
   }
 };
+
 

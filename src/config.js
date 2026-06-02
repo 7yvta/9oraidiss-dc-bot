@@ -1,4 +1,4 @@
-﻿const fs = require("node:fs");
+const fs = require("node:fs");
 const fsp = require("node:fs/promises");
 const path = require("node:path");
 
@@ -418,13 +418,13 @@ const defaultTicketPanel = {
   description: [
     "Please choose the type of ticket you want by clicking one of the buttons below:",
     "",
-    "ðŸ’¬ **Support Ticket**",
+    "💬 **Support Ticket**",
     "Use this ticket if you need help with the server or questions.",
     "",
-    "ðŸ¤ **Trade / Service Ticket**",
+    "� **Trade / Middleman Ticket**",
     "Use this ticket for secure trades. Both parties must confirm first.",
     "",
-    "ðŸ“Š **Index Ticket**",
+    "📊 **Index Ticket**",
     "Use this ticket to request your base to be reviewed and indexed."
   ].join("\n"),
   footer: "One open ticket per type per user"
@@ -471,19 +471,6 @@ Do not trade without a middleman.
 Stay in the ticket during the trade.
 
 Click below to start.`
-  },
-  service: {
-    enabled: true,
-    buttonLabel: "Request Service Team",
-    introMessage: `Service System
-
-Need help with Blox Fruits services? Open a ticket below.
-
-A service staff member will assist you.
-Fast and trusted support for service requests.
-
-Please explain clearly what service you need.
-Stay in the ticket until service is done.`
   },
   index: {
     enabled: true,
@@ -637,10 +624,6 @@ const baseConfig = {
     "1479920539815510056"
   ]),
   autoVouchMmReasons: parseStringList(process.env.AUTO_VOUCH_MM_REASONS, []),
-  autoVouchIndexReasons: parseStringList(
-    process.env.AUTO_VOUCH_INDEX_REASONS,
-    []
-  ),
 
   levelCurve: (process.env.LEVEL_CURVE || "linear").toLowerCase(),
   levelCurveMultiplier: parseNumber(process.env.LEVEL_CURVE_MULTIPLIER, 1),
@@ -692,8 +675,6 @@ const baseConfig = {
     process.env.SUPPORT_TICKET_CATEGORY_ID || "1489735635253071872",
   middlemanTicketCategoryId:
     process.env.MIDDLEMAN_TICKET_CATEGORY_ID || "1489735694283833455",
-  serviceTicketCategoryId:
-    process.env.SERVICE_TICKET_CATEGORY_ID || "1506034008222339242",
   indexTicketCategoryId:
     process.env.INDEX_TICKET_CATEGORY_ID || "1489735769340903524",
   roleRequestTicketCategoryId:
@@ -711,9 +692,6 @@ const baseConfig = {
 
   middlemanTeamRoleIds,
   middlemanTicketRoleId,
-  serviceTeamRoleIds: parseIdList(process.env.SERVICE_TEAM_ROLE_IDS, [
-    "1505637024588234993"
-  ]),
   supportTeamRoleIds: parseIdList(process.env.SUPPORT_TEAM_ROLE_IDS, [
     "1479264429383225520"
   ]),

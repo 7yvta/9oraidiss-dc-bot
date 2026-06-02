@@ -17,10 +17,10 @@ module.exports = {
   async execute(interaction) {
     const embed = new EmbedBuilder()
       .setColor(0x5865f2)
-      .setTitle("📋 Bot Commands")
+      .setTitle("?? Bot Commands")
       .addFields(
         {
-          name: "🔧 Utility",
+          name: "?? Utility",
           value: line([
             "ping",
             "help",
@@ -45,7 +45,7 @@ module.exports = {
           ])
         },
         {
-          name: "🛠 Moderation",
+          name: "?? Moderation",
           value: line([
             "warn",
             "warnings",
@@ -63,7 +63,7 @@ module.exports = {
           ])
         },
         {
-          name: "🎫 Tickets",
+          name: "?? Tickets",
           value: line([
             "add",
             "remove",
@@ -74,11 +74,11 @@ module.exports = {
           ])
         },
         {
-          name: "📝 Applications",
+          name: "?? Applications",
           value: line(["apply", "applypanel", "roleapply", "reviewapps"])
         },
         {
-          name: "💰 Economy",
+          name: "?? Economy",
           value: line([
             "balance",
             "daily",
@@ -95,11 +95,11 @@ module.exports = {
           ])
         },
         {
-          name: "🪙 Crypto Prices",
+          name: "?? Crypto Prices",
           value: line(["btcprice", "ethprice", "solprice", "xmrprice", "crypto"])
         },
         {
-          name: "⭐ Vouches",
+          name: "? Vouches",
           value: line([
             "vouchpanel",
             "autovouchnow",
@@ -110,15 +110,15 @@ module.exports = {
           ])
         },
         {
-          name: "🎲 Fun / Misc",
+          name: "?? Fun / Misc",
           value: line(["8ball"])
         },
         {
-          name: "🧰 Owner / Setup",
+          name: "?? Owner / Setup",
           value: line(["backup create", "teamroles", "ticketconfig", "ticketpanel", "panel1"])
         }
       )
-      .setFooter({ text: "Powered by 9oraidiss Ticket Service" })
+      .setFooter({ text: "Powered by 9oraidiss Ticket System" })
       .setTimestamp();
 
     await interaction.reply({
@@ -127,3 +127,4 @@ module.exports = {
     });
   }
 };
+

@@ -1,4 +1,4 @@
-const { getGuildSettingsSync } = require("./guildSettings");
+﻿const { getGuildSettingsSync } = require("./guildSettings");
 
 const MAIN_GUILD_ID = "1479255758561480906";
 const DEFAULT_TRANSCRIPT_LOG_CHANNEL_ID = "1499962658051326022";
@@ -17,13 +17,6 @@ const DEFAULT_TICKET_REGISTRY = Object.freeze({
     panelChannelId: "1506055902048944360",
     categoryId: "1489735694283833455",
     teamRoleIds: ["1499837044237537460"]
-  },
-  service: {
-    label: "Service Ticket",
-    buttonLabel: "Request Service Team",
-    panelChannelId: "1505526246623150180",
-    categoryId: "1506034008222339242",
-    teamRoleIds: ["1505637024588234993"]
   },
   index: {
     label: "Index Ticket",
@@ -59,7 +52,6 @@ const ENFORCED_TICKET_CATEGORIES_BY_GUILD = Object.freeze({
   "1479255758561480906": {
     support: "1489735635253071872",
     middleman: "1489735694283833455",
-    service: "1506034008222339242",
     index: "1489735769340903524",
     role: "1499146688072519780",
     report: "1505582476544704693",
@@ -121,7 +113,6 @@ function resolveTicketTeamRoleIds(typeKey, settings) {
   const map = {
     support: settings.supportTeamRoleIds,
     middleman: settings.middlemanTeamRoleIds,
-    service: settings.serviceTeamRoleIds,
     index: settings.indexTeamRoleIds,
     role: settings.roleRequestTeamRoleIds,
     report:
@@ -170,12 +161,6 @@ function getStyledDefaultIntroMessage(typeKey) {
 Please wait for a middleman to assist you.
 
 If you have any questions, please let a staff member know.`;
-    case "service":
-      return `{user}, Thank you for using our service team.
-
-Please wait for a service staff member to assist you.
-
-If you have any questions, please let a staff member know.`;
     case "support":
       return `{user}, Thank you for contacting support.
 
@@ -183,7 +168,7 @@ Please wait for a support member to assist you.
 
 If you have any questions, please let a staff member know.`;
     case "index":
-      return `{user}, Thank you for using our index service.
+      return `{user}, Thank you for using our index team.
 
 One of our team members will help you soon.
 
@@ -227,14 +212,6 @@ function isLegacyDefaultIntro(typeKey, introMessage) {
       normalized.includes("middleman system") ||
       normalized.includes("need a safe trade? open a ticket below.") ||
       normalized.includes("a trusted middleman will assist you.")
-    );
-  }
-
-  if (key === "service") {
-    return (
-      normalized.includes("service system") ||
-      normalized.includes("a trusted service staff member will assist you.") ||
-      normalized.includes("need help with blox fruits services?")
     );
   }
 
@@ -302,7 +279,6 @@ function getTicketTypeConfig(guildId) {
 
   const supportResolved = resolveType("support");
   const middlemanResolved = resolveType("middleman");
-  const serviceResolved = resolveType("service");
   const indexResolved = resolveType("index");
   const roleResolved = resolveType("role");
   const reportResolved = resolveType("report");
@@ -335,22 +311,6 @@ function getTicketTypeConfig(guildId) {
       teamRoleIds: resolveTicketTeamRoleIds("middleman", settings),
       transcriptLogChannelId: settings.ticketTranscriptLogId || DEFAULT_TRANSCRIPT_LOG_CHANNEL_ID,
       introMessage: middlemanResolved.introMessage
-    },
-    service: {
-      key: "service",
-      label: DEFAULT_TICKET_REGISTRY.service.label,
-      enabled: serviceResolved.enabled,
-      buttonLabel: serviceResolved.buttonLabel,
-      panelChannelId: resolveTicketPanelChannelId(guildId, "service", settings.serviceTicketPanelChannelId),
-      categoryId: resolveTicketCategoryId(
-        guildId,
-        "service",
-        settings.serviceTicketCategoryId,
-        settings.supportTicketCategoryId
-      ),
-      teamRoleIds: resolveTicketTeamRoleIds("service", settings),
-      transcriptLogChannelId: settings.ticketTranscriptLogId || DEFAULT_TRANSCRIPT_LOG_CHANNEL_ID,
-      introMessage: serviceResolved.introMessage
     },
     index: {
       key: "index",
@@ -447,3 +407,4 @@ module.exports = {
   getTicketTypeConfig,
   getTicketTypeFromCustomId
 };
+

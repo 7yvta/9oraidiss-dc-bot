@@ -9,7 +9,7 @@ module.exports = {
   async execute(interaction) {
     const embed = new EmbedBuilder()
       .setColor(0x5865f2)
-      .setTitle("🎟 Ticket Rules")
+      .setTitle("?? Ticket Rules")
       .setDescription(
         "Welcome to our ticket system. Follow these rules so staff can help you faster."
       )
@@ -40,9 +40,9 @@ module.exports = {
             "Staff may ask for verification or additional details. Please cooperate."
         },
         {
-          name: "Service/Trade Tickets",
+          name: "Middleman/Trade Tickets",
           value:
-            "Both parties must confirm before completion. Service staff will not complete trades without agreement."
+            "Both parties must confirm before completion. Middleman staff will not complete trades without agreement."
         },
         {
           name: "Role Requests",
@@ -66,4 +66,5 @@ module.exports = {
     });
   }
 };
+
 

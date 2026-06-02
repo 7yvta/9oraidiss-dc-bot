@@ -1,4 +1,4 @@
-const { Events, ActivityType, REST, Routes } = require("discord.js");
+﻿const { Events, ActivityType, REST, Routes } = require("discord.js");
 const fs = require("node:fs");
 const path = require("node:path");
 const { initializeInviteCache } = require("../utils/inviteTracker");
@@ -40,7 +40,7 @@ function envFlag(name, fallback = false) {
 }
 
 function syncBotPresence(clientReady) {
-  const activityText = String(process.env.BOT_ACTIVITY_TEXT || "Tickets + Services").trim();
+  const activityText = String(process.env.BOT_ACTIVITY_TEXT || "Tickets + Marketplace").trim();
   if (!activityText) {
     return;
   }
@@ -481,3 +481,4 @@ async execute(clientReady) {
     startAutoVouchScheduler(clientReady);
   }
 };
+

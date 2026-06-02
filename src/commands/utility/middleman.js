@@ -5,7 +5,7 @@ const { SlashCommandBuilder, AttachmentBuilder, EmbedBuilder } = require("discor
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("middleman")
-    .setDescription("Post service information with rich style")
+    .setDescription("Post middleman information with rich style")
     .setDMPermission(false),
 
   async execute(interaction) {
@@ -20,34 +20,34 @@ module.exports = {
 
     const embed = new EmbedBuilder()
       .setColor(0x5865f2)
-      .setTitle("ðŸ›¡ï¸ Service Team System (Hold Both Method)")
-      .setDescription("Our service staff secures **BOTH** sides before completing the trade.")
+      .setTitle("Middleman System (Hold Both Method)")
+      .setDescription("Our middleman staff secures both sides before completing the trade.")
       .addFields(
         {
-          name: "ðŸ“Œ How it works",
+          name: "How it works",
           value: [
-            "1. Open a **Service ticket** ðŸŽŸï¸",
+            "1. Open a Middleman ticket",
             "2. Both users join and confirm the deal",
-            "3. Service staff verifies everything"
+            "3. Middleman staff verifies everything"
           ].join("\n")
         },
         {
-          name: "ðŸ”’ Secure Process",
+          name: "Secure Process",
           value: [
-            "4. BOTH users send items/payment to the Service staff",
-            "5. Service staff confirms receiving EVERYTHING",
-            "6. Service staff delivers each side to the correct user",
-            "âœ… Trade completed safely with no risk"
+            "4. Both users send items/payment to the middleman",
+            "5. The middleman confirms receiving everything",
+            "6. The middleman delivers each side to the correct user",
+            "Trade completed safely with no risk"
           ].join("\n")
         },
         {
-          name: "âš ï¸ Important Rules",
+          name: "Important Rules",
           value: [
-            "â€¢ Do NOT send anything before the MM says",
-            "â€¢ Only send to the official service staff",
-            "â€¢ Stay inside the ticket",
-            "â€¢ No DMs allowed",
-            "ðŸ” This method prevents scams from BOTH sides"
+            "Do not send anything before the middleman says so",
+            "Only send to official middleman staff",
+            "Stay inside the ticket",
+            "No DMs for trade handling",
+            "This method protects both sides from scams"
           ].join("\n")
         }
       )
@@ -62,10 +62,6 @@ module.exports = {
       return;
     }
 
-    await interaction.reply({
-      embeds: [embed]
-    });
+    await interaction.reply({ embeds: [embed] });
   }
 };
-
-

@@ -7,17 +7,14 @@ const { readJsonDocument, writeJsonDocument } = require("./persistentStore");
 const STATE_FILE = path.join(__dirname, "..", "..", "data", "auto-vouch-state.json");
 const STATE_NAMESPACE = "auto_vouch_store";
 const STATE_DOC_KEY = "state";
-const DEFAULT_MM_VOUCH_ROLE_ID = "1505637024588234993";
-const DEFAULT_INDEXER_ROLE_ID = "1483634346333311160";
+const DEFAULT_MM_VOUCH_ROLE_ID = "1499837044237537460";
 const MANUAL_VOUCH_REASON_MAX = 400;
 const MIN_AUTO_VOUCH_DAYS = 7;
 const DEFAULT_AUTO_VOUCH_PER_CYCLE = 3;
 const MAX_AUTO_VOUCH_PER_CYCLE = 10;
 const MAX_REASON_TEXT_LENGTH = 220;
 const MAX_REASON_POOL_SIZE = 320;
-const DEFAULT_REASON_FALLBACK = "trusted roblox middleman service";
-const DEFAULT_INDEX_REASON_FALLBACK =
-  "blox fruits service handled smoothly and trusted";
+const DEFAULT_REASON_FALLBACK = "trusted roblox middleman";
 const SCAM_VOUCH_KEYWORDS = [
   "scam",
   "scammed",
@@ -95,7 +92,7 @@ const MM_REASONS = [
   "very smooth middleman session",
   "mm was patient and transparent",
   "safe close with screenshots",
-  "10/10 mm service",
+  "10/10 mm",
   "trusted mm for all roblox games",
   "deal finished fast and clean",
   "mm handled a big trade with no issues",
@@ -108,49 +105,6 @@ const MM_REASONS = [
   "great mm for blox fruits + robux",
   "clean close, no confusion",
   "safe trade from start to end"
-];
-
-const INDEX_REASONS = [
-  "aquatic index done smooth and quick",
-  "aquatic index service was clean fr",
-  "sea events run done with no issues",
-  "raids service was fast and legit",
-  "prehistoric island service done clean",
-  "dungeon carry done safe and fast",
-  "race callout service was accurate",
-  "levi hunt service went perfect",
-  "sea beast event service done smooth",
-  "kitsune shrine help was clean",
-  "mirage hunt service done right",
-  "fragment grind service completed",
-  "mastery grind service done fast",
-  "v4 trial support done safely",
-  "aquatic index update finished quick",
-  "service team stayed active whole run",
-  "blox fruits service handled very well",
-  "trusted for sea events and raids",
-  "clean carry for hard blox fruits content",
-  "great service communication and pace",
-  "service done exactly as requested",
-  "fast service no wasted time",
-  "service was organized and legit",
-  "good service with clear updates",
-  "aquatic index workflow was top",
-  "service made the grind easy",
-  "service for raid chain done perfect",
-  "service for event spawn was fast",
-  "blox fruits service quality was solid",
-  "trusted service for long sessions",
-  "service close was clean and safe",
-  "great support for island objectives",
-  "great support for sea danger runs",
-  "service for levi heart objective done",
-  "service for race gears objective done",
-  "service for anchor objective done",
-  "service for chalice objective done",
-  "service for full moon objective done",
-  "aquatic index + service was smooth",
-  "super clean service from start to end"
 ];
 
 const MM_REASON_PREFIXES = [
@@ -195,56 +149,6 @@ const MM_REASON_SUFFIXES = [
   "fair and safe",
   "exactly as agreed",
   "fr"
-];
-
-const INDEX_REASON_PREFIXES = [
-  "fast",
-  "clean",
-  "trusted",
-  "smooth",
-  "accurate",
-  "quick",
-  "solid",
-  "safe",
-  "top",
-  "legit"
-];
-
-const INDEX_REASON_ACTIONS = [
-  "aquatic index",
-  "aquatic index service",
-  "blox fruits service",
-  "sea events service",
-  "raids service",
-  "prehistoric island service",
-  "dungeons service",
-  "race callouts service",
-  "levi hunt service",
-  "mirage hunt service"
-];
-
-const INDEX_REASON_SUFFIXES = [
-  "was clean",
-  "was smooth",
-  "with no issues",
-  "and trusted",
-  "with clear updates",
-  "and quick replies",
-  "from start to end",
-  "no delay",
-  "fr"
-];
-
-const SERVICE_ROLE_NAME_KEYWORDS = [
-  "index",
-  "service",
-  "sea",
-  "raid",
-  "prehistoric",
-  "dungeon",
-  "race",
-  "event",
-  "host"
 ];
 
 function appendUniqueReason(pool, text) {
@@ -304,23 +208,10 @@ const DEFAULT_MM_REASON_POOL = (() => {
   return pool.slice(0, MAX_REASON_POOL_SIZE);
 })();
 
-const DEFAULT_INDEX_REASON_POOL = (() => {
-  const pool = [];
-  INDEX_REASONS.forEach((reason) => appendUniqueReason(pool, reason));
-  buildCrossReasons(
-    INDEX_REASON_PREFIXES,
-    INDEX_REASON_ACTIONS,
-    INDEX_REASON_SUFFIXES
-  ).forEach((reason) => appendUniqueReason(pool, reason));
-  return pool.slice(0, MAX_REASON_POOL_SIZE);
-})();
-
 function getReasonPoolsFromSettings(settings) {
   const customMm = normalizeReasonList(settings?.autoVouchMmReasons);
-  const customIndex = normalizeReasonList(settings?.autoVouchIndexReasons);
   return {
-    mm: customMm.length > 0 ? customMm : DEFAULT_MM_REASON_POOL,
-    index: customIndex.length > 0 ? customIndex : DEFAULT_INDEX_REASON_POOL
+    mm: customMm.length > 0 ? customMm : DEFAULT_MM_REASON_POOL
   };
 }
 
@@ -361,81 +252,13 @@ function getRoleIdFromSettings(settings) {
   return DEFAULT_MM_VOUCH_ROLE_ID;
 }
 
-function getIndexerRoleIdFromSettings(settings) {
-  const ids = Array.isArray(settings?.indexTeamRoleIds)
-    ? settings.indexTeamRoleIds.map((entry) => String(entry || "").trim()).filter(Boolean)
-    : [];
-  if (ids.length > 0) {
-    return ids[0];
-  }
-  return DEFAULT_INDEXER_ROLE_ID;
-}
 
-function getServiceRoleIdsFromSettings(settings, indexerRoleId) {
-  const roleIds = new Set();
-  const explicitIndexer = String(indexerRoleId || "").trim();
-  if (explicitIndexer) {
-    roleIds.add(explicitIndexer);
-  }
-
-  const roleLists = [
-    settings?.indexTeamRoleIds,
-    settings?.supportTeamRoleIds,
-    settings?.hostGiveawayTeamRoleIds
-  ];
-
-  for (const roleList of roleLists) {
-    if (!Array.isArray(roleList)) {
-      continue;
-    }
-    for (const roleId of roleList) {
-      const id = String(roleId || "").trim();
-      if (id) {
-        roleIds.add(id);
-      }
-    }
-  }
-
-  return [...roleIds];
-}
-
-function roleNameLooksLikeService(roleName) {
-  const name = String(roleName || "").toLowerCase().trim();
-  if (!name) {
-    return false;
-  }
-  return SERVICE_ROLE_NAME_KEYWORDS.some((keyword) => name.includes(keyword));
-}
 
 function memberHasRole(member, roleId) {
   if (!member?.roles?.cache || !roleId) {
     return false;
   }
   return member.roles.cache.has(roleId);
-}
-
-function isServiceTargetMember(member, indexerRoleId, serviceRoleIds = []) {
-  if (!member?.roles?.cache) {
-    return false;
-  }
-
-  if (memberHasRole(member, String(indexerRoleId || "").trim())) {
-    return true;
-  }
-
-  for (const roleId of serviceRoleIds) {
-    if (memberHasRole(member, roleId)) {
-      return true;
-    }
-  }
-
-  for (const role of member.roles.cache.values()) {
-    if (roleNameLooksLikeService(role?.name)) {
-      return true;
-    }
-  }
-
-  return false;
 }
 
 async function ensureGuildMemberCache(guild) {
@@ -527,41 +350,18 @@ async function markAutoVouchSentAt(guildId, timestamp = Date.now()) {
 
 async function resolveEligibleVouchTargets(guild, settings) {
   const vouchTargetRoleId = getRoleIdFromSettings(settings);
-  const indexerRoleId = getIndexerRoleIdFromSettings(settings);
-  const serviceRoleIds = getServiceRoleIdsFromSettings(settings, indexerRoleId);
-  const targetRoleIds = new Set();
-
-  if (vouchTargetRoleId) {
-    targetRoleIds.add(vouchTargetRoleId);
-  }
-  for (const roleId of serviceRoleIds) {
-    const id = String(roleId || "").trim();
-    if (id) {
-      targetRoleIds.add(id);
-    }
-  }
-
-  if (targetRoleIds.size === 0) {
+  if (!vouchTargetRoleId) {
     return [];
   }
 
-  const members = new Map();
-  for (const roleId of targetRoleIds) {
-    const targetRole =
-      guild.roles?.cache?.get(roleId) || (await guild.roles.fetch(roleId).catch(() => null));
-    if (!targetRole) {
-      continue;
-    }
-
-    for (const member of targetRole.members.values()) {
-      if (member?.user?.bot) {
-        continue;
-      }
-      members.set(member.id, member);
-    }
+  const targetRole =
+    guild.roles?.cache?.get(vouchTargetRoleId) ||
+    (await guild.roles.fetch(vouchTargetRoleId).catch(() => null));
+  if (!targetRole) {
+    return [];
   }
 
-  return [...members.values()];
+  return [...targetRole.members.values()].filter((member) => !member?.user?.bot);
 }
 
 async function resolveVouchedByMember(guild, targetMember, fallbackIds) {
@@ -608,8 +408,6 @@ async function trySendAutoVouch(guild) {
   const fallbackMemberIds = Array.isArray(settings.autoVouchMemberIds)
     ? settings.autoVouchMemberIds.map((id) => String(id || "").trim()).filter(Boolean)
     : [];
-  const indexerRoleId = getIndexerRoleIdFromSettings(settings);
-  const serviceRoleIds = getServiceRoleIdsFromSettings(settings, indexerRoleId);
   const perCycle = getAutoVouchPerCycle(settings);
   const configuredDays = Number(settings.autoVouchIntervalDays);
   const intervalDays = Math.max(
@@ -652,8 +450,6 @@ async function trySendAutoVouch(guild) {
           guild,
           channel,
           fallbackMemberIds,
-          indexerRoleId,
-          serviceRoleIds,
           targetMember
         });
         lastResult = result;
@@ -678,8 +474,6 @@ async function sendAutoVouchMessage({
   guild,
   channel,
   fallbackMemberIds,
-  indexerRoleId,
-  serviceRoleIds,
   targetMember: providedTargetMember
 }) {
   await ensureGuildMemberCache(guild);
@@ -697,9 +491,7 @@ async function sendAutoVouchMessage({
     fallbackMemberIds
   );
   const reasonPools = getReasonPoolsFromSettings(settings);
-  const reason = isServiceTargetMember(vouchedForMember, indexerRoleId, serviceRoleIds)
-    ? pickRandom(reasonPools.index) || DEFAULT_INDEX_REASON_FALLBACK
-    : pickRandom(reasonPools.mm) || DEFAULT_REASON_FALLBACK;
+  const reason = pickRandom(reasonPools.mm) || DEFAULT_REASON_FALLBACK;
   const totalVouches = await incrementCount(guild.id, vouchedForMember.id);
 
   const embed = new EmbedBuilder()
@@ -711,7 +503,7 @@ async function sendAutoVouchMessage({
       { name: "💬 Reason", value: reason },
       { name: "🔢 Total Vouches", value: String(totalVouches) }
     )
-    .setFooter({ text: "Powered by NEXUS Ticket Service" })
+    .setFooter({ text: "Powered by 9oraidiss Vouch System" })
     .setTimestamp();
 
   const sentMessage = await channel
@@ -748,8 +540,6 @@ async function triggerAutoVouchNow(guild, { requestedById } = {}) {
   const fallbackMemberIds = Array.isArray(settings.autoVouchMemberIds)
     ? settings.autoVouchMemberIds.map((id) => String(id || "").trim()).filter(Boolean)
     : [];
-  const indexerRoleId = getIndexerRoleIdFromSettings(settings);
-  const serviceRoleIds = getServiceRoleIdsFromSettings(settings, indexerRoleId);
   const channel = await getAutoVouchChannel(guild, settings);
   if (!channel) {
     return { ok: false, reason: "channel_unavailable" };
@@ -766,9 +556,7 @@ async function triggerAutoVouchNow(guild, { requestedById } = {}) {
       sendAutoVouchMessage({
         guild,
         channel,
-        fallbackMemberIds,
-        indexerRoleId,
-        serviceRoleIds
+        fallbackMemberIds
       })
   });
 
@@ -811,9 +599,6 @@ async function triggerSubmittedVouch(
     return { ok: false, reason: "channel_unavailable" };
   }
 
-  const indexerRoleId = getIndexerRoleIdFromSettings(settings);
-  const serviceRoleIds = getServiceRoleIdsFromSettings(settings, indexerRoleId);
-
   const targetId = String(vouchedForId || "").trim();
   const byId = String(vouchedById || "").trim();
   if (!targetId || !byId) {
@@ -839,9 +624,6 @@ async function triggerSubmittedVouch(
     normalizeManualReason(reason) ||
     (() => {
       const reasonPools = getReasonPoolsFromSettings(settings);
-      if (isServiceTargetMember(vouchedForMember, indexerRoleId, serviceRoleIds)) {
-        return pickRandom(reasonPools.index) || DEFAULT_INDEX_REASON_FALLBACK;
-      }
       return pickRandom(reasonPools.mm) || DEFAULT_REASON_FALLBACK;
     })();
   const scamDetected = isScamVouchReason(resolvedReason);
@@ -870,7 +652,7 @@ async function triggerSubmittedVouch(
             ? { name: "🚫 Scam Vouch Counter", value: String(totalScamVouches || 1) }
             : { name: "🔢 Total Vouches", value: String(totalVouches || 1) }
         )
-        .setFooter({ text: "Powered by NEXUS Ticket Service" })
+        .setFooter({ text: "Powered by 9oraidiss Vouch System" })
         .setTimestamp();
 
       const sentMessage = await channel
@@ -927,3 +709,7 @@ module.exports = {
   triggerAutoVouchNow,
   triggerSubmittedVouch
 };
+
+
+
+

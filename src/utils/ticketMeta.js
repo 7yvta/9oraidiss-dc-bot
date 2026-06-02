@@ -1,4 +1,4 @@
-const { getTicketCategoryMap } = require("./tickets")
+﻿const { getTicketCategoryMap } = require("./tickets")
 
 function parseTicketTopic(topic) {
   const text = String(topic || "").trim()
@@ -38,7 +38,7 @@ function inferTicketTypeFromName(channelName) {
     return "middleman"
   }
   if (name.startsWith("service-") || name.startsWith("srv-")) {
-    return "service"
+    return "middleman"
   }
   if (name.startsWith("index-") || name.startsWith("idx-")) {
     return "index"
@@ -140,4 +140,5 @@ module.exports = {
   getTicketMetaFromChannel,
   buildTicketTopic
 }
+
 

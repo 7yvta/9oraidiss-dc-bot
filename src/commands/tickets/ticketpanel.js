@@ -11,7 +11,7 @@ const { buildResultEmbed } = require("../../utils/logger");
 const { hasRecentAction, markRecentAction } = require("../../utils/actionDeduper");
 const { getGuildSettingsSync } = require("../../utils/guildSettings");
 
-const PANEL_TYPE_ORDER = ["support", "middleman", "service", "index", "role", "report", "host"];
+const PANEL_TYPE_ORDER = ["support", "middleman", "index", "role", "report", "host"];
 const PANEL_TYPE_STYLE = {
   support: {
     emoji: "🎫",
@@ -27,13 +27,6 @@ const PANEL_TYPE_STYLE = {
     description: "Need safe trading? Open a middleman ticket and wait for MM staff.",
     buttonStyle: ButtonStyle.Secondary
   },
-  service: {
-    emoji: "🤝",
-    title: "Service Ticket",
-    color: 0x5865f2,
-    description: "Need a service? Open a service ticket and wait for service staff.",
-    buttonStyle: ButtonStyle.Secondary
-  },
   index: {
     emoji: "📊",
     title: "Index Ticket",
@@ -42,14 +35,14 @@ const PANEL_TYPE_STYLE = {
     buttonStyle: ButtonStyle.Success
   },
   role: {
-    emoji: "🏷",
+    emoji: "��",
     title: "Role Request Ticket",
     color: 0xf1c40f,
     description: "Need to request a role? Open a role request ticket and provide full details.",
     buttonStyle: ButtonStyle.Primary
   },
   report: {
-    emoji: "📝",
+    emoji: "�",
     title: "Report Ticket",
     color: 0xe67e22,
     description: "Need to report a problem/user? Open a report ticket and include full proof.",

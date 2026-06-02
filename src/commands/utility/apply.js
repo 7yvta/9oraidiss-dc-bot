@@ -40,12 +40,6 @@ const APPLICATION_TYPES = [
     approvedRoleId: "1479264717972308111"
   },
   {
-    id: "service_team",
-    label: "Service Team Application",
-    emoji: "🛠",
-    approvedRoleId: "1505632362417885194"
-  },
-  {
     id: "content_creator",
     label: "Content Creator Application",
     emoji: "🎥",
@@ -105,70 +99,6 @@ const QUESTION_SETS = {
       prompt: [
         "### 📋 Middleman Application",
         "5/5. What is your timezone and your daily availability?"
-      ].join("\n")
-    }
-  ],
-  service_team: [
-    {
-      id: "service_type",
-      input: "text",
-      prompt: [
-        "### 🛠 Service Team Application",
-        "1/7. What services can you do? (raids / sea events / dungeons / prehistoric / crews / others)"
-      ].join("\n")
-    },
-    {
-      id: "experience",
-      input: "yes_no_select",
-      prompt: [
-        "### 🛠 Service Team Application",
-        "2/7. Do you have service or trading experience?",
-        "",
-        "-# To answer this question, please select Yes or No from the dropdown below."
-      ].join("\n")
-    },
-    {
-      id: "collateral",
-      input: "yes_no_select",
-      prompt: [
-        "### 🛠 Service Team Application",
-        "3/7. Can you provide collateral when needed?",
-        "",
-        "-# To answer this question, please select Yes or No from the dropdown below."
-      ].join("\n")
-    },
-    {
-      id: "availability",
-      input: "text",
-      prompt: [
-        "### 🛠 Service Team Application",
-        "4/7. What is your timezone and daily availability?"
-      ].join("\n")
-    },
-    {
-      id: "proof",
-      input: "yes_no_select",
-      prompt: [
-        "### 🛠 Service Team Application",
-        "5/7. Do you have proofs or vouches for your services?",
-        "",
-        "-# To answer this question, please select Yes or No from the dropdown below."
-      ].join("\n")
-    },
-    {
-      id: "service_scope",
-      input: "text",
-      prompt: [
-        "### 🛠 Service Team Application",
-        "6/7. Which service type will you focus on first in this server?"
-      ].join("\n")
-    },
-    {
-      id: "why",
-      input: "text",
-      prompt: [
-        "### 🛠 Service Team Application",
-        "7/7. Why should we accept you into the service team?"
       ].join("\n")
     }
   ],
@@ -931,4 +861,5 @@ async function waitForReply(dmChannel, userId) {
     return null;
   }
 }
+
 

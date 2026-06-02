@@ -1,4 +1,4 @@
-const {
+﻿const {
   ActionRowBuilder,
   ButtonBuilder,
   ButtonStyle,
@@ -8,7 +8,6 @@ const {
 const TICKET_COLORS = {
   support: 0x57f287,
   middleman: 0x3b82f6,
-  service: 0x5865f2,
   index: 0x3498db,
   role: 0xf1c40f,
   report: 0xe67e22,
@@ -19,7 +18,6 @@ const TICKET_COLORS = {
 const TICKET_LABELS = {
   support: "Support Ticket",
   middleman: "Middleman Ticket",
-  service: "Service Ticket",
   index: "Index Ticket",
   role: "Role Request Ticket",
   report: "Report Ticket",
@@ -38,8 +36,6 @@ function getTicketOpenTitle(ticketType) {
   switch (String(ticketType || "").toLowerCase()) {
     case "middleman":
       return "\u{1F3AB} Middleman Ticket";
-    case "service":
-      return "\u{1F3AB} Service Ticket";
     case "support":
       return "\u{1F3AB} Support Ticket";
     case "index":
@@ -60,10 +56,7 @@ function getTicketFooterText(ticketType) {
   if (normalizedType === "middleman") {
     return "Powered by 9oraidiss Middleman Service";
   }
-  if (normalizedType === "service") {
-    return "Powered by 9oraidiss Service Team";
-  }
-  return "Powered by 9oraidiss Ticket Service";
+  return "Powered by 9oraidiss Ticket System";
 }
 
 function applyTicketMessageTemplate(rawText, openerId) {
@@ -78,7 +71,7 @@ function applyTicketMessageTemplate(rawText, openerId) {
 function buildTicketControlsRow({ ticketType, claimed = false } = {}) {
   const normalizedType = String(ticketType || "").toLowerCase();
 
-  if (normalizedType === "middleman" || normalizedType === "service") {
+  if (normalizedType === "middleman") {
     return new ActionRowBuilder().addComponents(
       new ButtonBuilder()
         .setCustomId("ticket_claim")
@@ -137,14 +130,6 @@ function buildTicketOpenEmbed({ ticketType, openerId, introMessage }) {
       "",
       "If you have any questions, please let a staff member know."
     ];
-  } else if (normalizedType === "service") {
-    lines = [
-      `<@${openerId}>, thank you for using our service team.`,
-      "",
-      "Please wait for a service staff member to assist you.",
-      "",
-      "If you have any questions, please let a staff member know."
-    ];
   } else if (normalizedType === "support") {
     lines = [
       `<@${openerId}>, thank you for contacting support.`,
@@ -155,7 +140,7 @@ function buildTicketOpenEmbed({ ticketType, openerId, introMessage }) {
     ];
   } else if (normalizedType === "index") {
     lines = [
-      `<@${openerId}>, thank you for using our index service.`,
+      `<@${openerId}>, thank you for using our index team.`,
       "",
       "One of our index team members will help you soon.",
       "",
@@ -216,8 +201,6 @@ async function updateTicketControlMessage(channel, { ticketType, claimed = false
     ticketType ||
     (String(channel?.topic || "").includes("ticket-type:middleman")
       ? "middleman"
-      : String(channel?.topic || "").includes("ticket-type:service")
-        ? "service"
       : undefined);
 
   await targetMessage
@@ -237,4 +220,5 @@ module.exports = {
   buildTicketEventEmbed,
   updateTicketControlMessage
 };
+
 

@@ -16,12 +16,6 @@ const ROLE_GROUPS = [
     singleKey: "middlemanTicketRoleId"
   },
   {
-    option: "service",
-    label: "Service",
-    key: "serviceTeamRoleIds",
-    singleKey: "serviceTicketRoleId"
-  },
-  {
     option: "index",
     label: "Index",
     key: "indexTeamRoleIds"

@@ -138,15 +138,15 @@ module.exports = {
     } else if (topic === "tickets") {
       embed
         .setTitle("Tickets")
-        .setDescription("Support, service, index, and role request ticket flows.")
+        .setDescription("Support, middleman, index, role request, report, and host giveaway ticket flows.")
         .addFields(
           {
             name: "Panels",
             value: "`/ticketpanel` for main panel, `/panel1` for role request panel."
           },
           {
-            name: "Service Team",
-            value: "Uses your configured Service ticket team role for claim/transfer/unclaim."
+            name: "Middleman Team",
+            value: "Uses your configured middleman team role for claim/transfer/unclaim."
           }
         );
     } else if (topic === "dm") {
@@ -218,4 +218,5 @@ module.exports = {
     await interaction.reply({ embeds: [embed] });
   }
 };
+
 

@@ -4,100 +4,100 @@ const { getGuildSettingsSync } = require("./guildSettings");
 
 const CHANNEL_THEME_LAYOUT = Object.freeze([
   {
-    name: "ðŸ“Šãƒ»server-stats",
+    name: "📊・server-stats",
     channels: [
       {
-        name: "ðŸ‘¥ãƒ»all-members",
+        name: "👥・all-members",
         aliases: ["all-members", "all members"],
         permissionProfile: "stats_readonly"
       },
       {
-        name: "ðŸ‘¤ãƒ»members",
+        name: "👤・members",
         aliases: ["members"],
         permissionProfile: "stats_readonly"
       },
       {
-        name: "ðŸ¤–ãƒ»bots",
+        name: "🤖・bots",
         aliases: ["bots"],
         permissionProfile: "stats_readonly"
       }
     ]
   },
   {
-    name: "â„¹ï¸ãƒ»info",
+    name: "ℹ��・info",
     channels: [
       {
-        name: "ðŸ‘‹ãƒ»welcome",
+        name: "👋・welcome",
         aliases: ["welcome"],
         permissionProfile: "public_readonly"
       },
       {
-        name: "ðŸ“£ãƒ»announcements",
+        name: "📣・announcements",
         aliases: ["announcements"],
         permissionProfile: "public_readonly"
       },
       {
-        name: "ðŸ•µï¸ãƒ»leaks",
+        name: "🕵��・leaks",
         aliases: ["leaks"],
         permissionProfile: "public_readonly"
       },
       {
-        name: "ðŸ“œãƒ»rules",
+        name: "📜・rules",
         aliases: ["rules"],
         permissionProfile: "public_readonly"
       },
       {
-        name: "ðŸŽ­ãƒ»roles",
+        name: "🎭・roles",
         aliases: ["roles"],
         permissionProfile: "public_readonly"
       },
       {
-        name: "ðŸ”—ãƒ»server-link",
+        name: "���・server-link",
         aliases: ["server-link"],
         permissionProfile: "public_readonly"
       },
       {
-        name: "ðŸ¤ãƒ»partner-servers",
+        name: "��・partner-servers",
         aliases: ["partner-server", "partner-servers"],
         permissionProfile: "public_readonly"
       },
       {
-        name: "ðŸ’¼ãƒ»owner-trades",
+        name: "💼・owner-trades",
         aliases: ["owner-trads", "owner-trades"],
         permissionProfile: "public_readonly"
       }
     ]
   },
   {
-    name: "ðŸ’¬ãƒ»main",
+    name: "💬・main",
     channels: [
       {
-        name: "ðŸ’­ãƒ»general",
+        name: "💭・general",
         aliases: ["general", "blox-chat"],
         permissionProfile: "public_chat"
       },
       {
-        name: "â“ãƒ»question-help",
+        name: "���・question-help",
         aliases: ["question-and-help", "question-help", "help"],
         permissionProfile: "public_chat"
       },
       {
-        name: "ðŸ“·ãƒ»media",
+        name: "📷・media",
         aliases: ["media"],
         permissionProfile: "public_media"
       },
       {
-        name: "ðŸ¤–ãƒ»cmds",
+        name: "🤖・cmds",
         aliases: ["cmds", "commands", "bot-commands"],
         permissionProfile: "public_commands"
       }
     ]
   },
   {
-    name: "ðŸ›Ÿãƒ»support",
+    name: "🛟・support",
     channels: [
       {
-        name: "ðŸ“¨ãƒ»reports",
+        name: "📨・reports",
         aliases: ["reports"],
         permissionProfile: "support_reports"
       },
@@ -109,180 +109,180 @@ const CHANNEL_THEME_LAYOUT = Object.freeze([
     ]
   },
   {
-    name: "ðŸ’±ãƒ»trading",
+    name: "💱・trading",
     channels: [
       {
-        name: "ðŸãƒ»fruit-stock",
+        name: "���・fruit-stock",
         aliases: ["fruit-stock", "blox-fruits-stock"],
         permissionProfile: "public_chat"
       },
       {
-        name: "ðŸ‘€ãƒ»last-seen",
+        name: "👀・last-seen",
         aliases: ["last-seen"],
         permissionProfile: "public_chat"
       },
       {
-        name: "ðŸ’Žãƒ»fast-trading",
+        name: "💎・fast-trading",
         aliases: ["fast-trading", "trading-sab"],
         permissionProfile: "public_chat"
       },
       {
-        name: "ðŸ’µãƒ»slow-trading",
+        name: "💵・slow-trading",
         aliases: ["slow-trading", "blox-fruit-trading"],
         permissionProfile: "public_chat"
       },
       {
-        name: "ðŸ’°ãƒ»fruit-values",
+        name: "💰・fruit-values",
         aliases: ["fruit-values", "values"],
         permissionProfile: "public_chat"
       },
       {
-        name: "ðŸŒ€ãƒ»win-or-loss",
+        name: "🌀・win-or-loss",
         aliases: ["win-or-loss", "winorlose", "auto-winorlose"],
         permissionProfile: "public_chat"
       }
     ]
   },
   {
-    name: "âš”ï¸ãƒ»services",
+    name: "gameplay",
     channels: [
       {
-        name: "ðŸ´ãƒ»crews",
+        name: "���・crews",
         aliases: ["crews"],
         permissionProfile: "public_chat"
       },
       {
-        name: "ðŸ’£ãƒ»raids",
+        name: "💣・raids",
         aliases: ["raids"],
         permissionProfile: "public_chat"
       },
       {
-        name: "ðŸ¦´ãƒ»prehistoric-island",
+        name: "🦴・prehistoric-island",
         aliases: ["prehistoric-island"],
         permissionProfile: "public_chat"
       },
       {
-        name: "ðŸŒŠãƒ»sea-events",
+        name: "🌊・sea-events",
         aliases: ["sea-events"],
         permissionProfile: "public_chat"
       },
       {
-        name: "ðŸ¦„ãƒ»race-callouts",
+        name: "🦄・race-callouts",
         aliases: ["race-callouts"],
         permissionProfile: "public_chat"
       },
       {
-        name: "ðŸ°ãƒ»dungeons",
+        name: "���・dungeons",
         aliases: ["dungeons"],
         permissionProfile: "public_chat"
       }
     ]
   },
   {
-    name: "ðŸŒãƒ»community",
+    name: "��・community",
     channels: [
       {
-        name: "ðŸ—£ï¸ãƒ»blox-chat",
+        name: "🗣��・blox-chat",
         aliases: ["blox-chat", "general"],
         permissionProfile: "public_chat"
       },
       {
-        name: "ðŸ“ˆãƒ»leveling",
+        name: "📈・leveling",
         aliases: ["leveling"],
         permissionProfile: "public_chat"
       },
       {
-        name: "ðŸ”¢ãƒ»counting",
+        name: "���・counting",
         aliases: ["counting"],
         permissionProfile: "public_chat"
       }
     ]
   },
   {
-    name: "ðŸŽ«ãƒ»tickets",
+    name: "🎫・tickets",
     channels: [
       {
-        name: "ðŸ“‹ãƒ»ticket-rules",
+        name: "📋・ticket-rules",
         aliases: ["ticket-rules"],
         permissionProfile: "public_readonly"
       },
       {
-        name: "ðŸŽ«ãƒ»open-support-ticket",
+        name: "🎫・open-support-ticket",
         aliases: ["open-support-ticket", "open-a-ticket", "support-ticket"],
         permissionProfile: "public_readonly"
       },
       {
-        name: "ðŸ¤ãƒ»open-service-ticket",
-        aliases: ["open-service-ticket", "open-middleman-ticket", "middleman-ticket"],
+        name: "middleman-ticket",
+        aliases: ["open-middleman-ticket", "middleman-ticket"],
         permissionProfile: "public_readonly"
       },
       {
-        name: "ðŸ“Šãƒ»open-index-ticket",
+        name: "📊・open-index-ticket",
         aliases: ["open-index-ticket", "index-ticket"],
         permissionProfile: "public_readonly"
       },
       {
-        name: "ðŸ§¾ãƒ»open-role-request",
+        name: "🧾・open-role-request",
         aliases: ["open-role-request", "role-request"],
         permissionProfile: "public_readonly"
       },
       {
-        name: "ðŸ“ãƒ»applications",
+        name: "��・applications",
         aliases: ["applications"],
         permissionProfile: "public_readonly"
       }
     ]
   },
   {
-    name: "ðŸ‘ãƒ»vouches",
+    name: "��・vouches",
     channels: [
       {
-        name: "âœï¸ãƒ»vouch-submit",
+        name: "����・vouch-submit",
         aliases: ["vouch-submit"],
         permissionProfile: "public_chat"
       },
       {
-        name: "ðŸ“Œãƒ»vouches",
+        name: "📌・vouches",
         aliases: ["vouches"],
         permissionProfile: "public_chat"
       }
     ]
   },
   {
-    name: "ðŸ›¡ï¸ãƒ»staff",
+    name: "🛡��・staff",
     channels: [
       {
-        name: "ðŸ§ªãƒ»test-lab",
+        name: "🧪・test-lab",
         aliases: ["test-lab"],
         permissionProfile: "staff_private"
       },
       {
-        name: "ðŸ’¬ãƒ»staff-chat",
+        name: "💬・staff-chat",
         aliases: ["staff-chat"],
         permissionProfile: "staff_private"
       },
       {
-        name: "ðŸ“šãƒ»server-logs",
+        name: "📚・server-logs",
         aliases: ["server-logs"],
         permissionProfile: "staff_private"
       },
       {
-        name: "ðŸ”¨ãƒ»mod-logs",
+        name: "���・mod-logs",
         aliases: ["mod-logs"],
         permissionProfile: "staff_private"
       },
       {
-        name: "ðŸ“¨ãƒ»applications-appeals",
+        name: "📨・applications-appeals",
         aliases: ["applications-appeals"],
         permissionProfile: "staff_private"
       },
       {
-        name: "ðŸŽ«ãƒ»tickets-log",
+        name: "🎫・tickets-log",
         aliases: ["tickets", "ticket-logs", "tickets-log"],
         permissionProfile: "staff_private"
       },
       {
-        name: "ðŸš¨ãƒ»security-audit",
+        name: "🚨・security-audit",
         aliases: ["security-audit"],
         permissionProfile: "staff_private"
       }
@@ -769,3 +769,4 @@ module.exports = {
   isThemeManagedChannel,
   syncChannelThemeForConfiguredGuilds
 };
+

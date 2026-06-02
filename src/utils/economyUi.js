@@ -3,7 +3,7 @@ const { EmbedBuilder } = require("discord.js");
 const ECONOMY_COLOR = 0xffd000;
 const SUCCESS_COLOR = 0x22c55e;
 const FAIL_COLOR = 0xed4245;
-const FOOTER = "Powered by 9oraidiss Ticket Service";
+const FOOTER = "Powered by 9oraidiss Ticket System";
 
 function coins(value) {
   return `💰 ${Math.floor(Number(value || 0)).toLocaleString("en-US")}`;
@@ -60,3 +60,4 @@ module.exports = {
   coins,
   economyEmbed
 };
+

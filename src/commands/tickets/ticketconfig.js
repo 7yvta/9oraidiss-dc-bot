@@ -15,7 +15,6 @@ const { isBotAdmin } = require("../../utils/ownerOnly");
 const TICKET_TYPES = [
   ["support", "Support"],
   ["middleman", "Middleman"],
-  ["service", "Service"],
   ["index", "Index"],
   ["role", "Role Request"],
   ["report", "Report"],
@@ -33,12 +32,6 @@ const TYPE_KEYS = {
     category: "middlemanTicketCategoryId",
     roles: "middlemanTeamRoleIds",
     singleRole: "middlemanTicketRoleId"
-  },
-  service: {
-    panel: "serviceTicketPanelChannelId",
-    category: "serviceTicketCategoryId",
-    roles: "serviceTeamRoleIds",
-    singleRole: "serviceTicketRoleId"
   },
   index: {
     panel: "indexTicketPanelChannelId",

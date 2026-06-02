@@ -62,7 +62,6 @@ const { triggerSubmittedVouch } = require("../utils/autoVouchScheduler");
 const { runOnce } = require("../utils/idempotency");
 const { checkCooldown, formatRetryAfter, parseCooldownMs } = require("../utils/cooldowns");
 
-const SERVICE_TICKET_CATEGORY_NAME = "service tickets";
 const VOUCH_SUBMIT_BUTTON_ID = "vouch_submit_open";
 const VOUCH_SUBMIT_MODAL_ID = "vouch_submit_modal";
 const processedInteractionIds = new Map();
@@ -295,9 +294,8 @@ function resolveTicketTypeFromPanelMessage(interaction) {
 
   const typeHints = [
     ["middleman", ["middleman", "mm ticket", "request mm"]],
-    ["service", ["service ticket", "service team", "blox fruit service"]],
     ["support", ["support ticket", "contacting support"]],
-    ["index", ["index ticket", "index service"]],
+    ["index", ["index ticket", "index help"]],
     ["role", ["role request", "role ticket"]],
     ["report", ["report ticket"]],
     ["host", ["host giveaway", "giveaway host"]]
@@ -320,10 +318,7 @@ function getTicketTranscriptFooterText(ticketType) {
   if (normalizedType === "middleman") {
     return "Powered by 9oraidiss Middleman Service";
   }
-  if (normalizedType === "service") {
-    return "Powered by 9oraidiss Service Team";
-  }
-  return "Powered by 9oraidiss Ticket Service";
+  return "Powered by 9oraidiss Ticket System";
 }
 
 async function ensureHiddenTicketCategory(category, guild) {
@@ -353,44 +348,6 @@ async function ensureHiddenTicketCategory(category, guild) {
 
 async function resolveTicketParentCategory(guild, ticketType, configuredCategoryId) {
   const configuredId = String(configuredCategoryId || "").trim();
-  const normalizedType = String(ticketType || "").toLowerCase();
-
-  if (normalizedType === "service") {
-    if (configuredId) {
-      const configuredCategory =
-        guild.channels.cache.get(configuredId) ||
-        (await guild.channels.fetch(configuredId).catch(() => null));
-      if (configuredCategory?.type === ChannelType.GuildCategory) {
-        await ensureHiddenTicketCategory(configuredCategory, guild);
-        return configuredCategory.id;
-      }
-      return configuredId;
-    }
-
-    const normalizedTargetName = SERVICE_TICKET_CATEGORY_NAME.toLowerCase();
-    let serviceCategory =
-      guild.channels.cache.find(
-        (channel) =>
-          channel.type === ChannelType.GuildCategory &&
-          String(channel.name || "").toLowerCase() === normalizedTargetName
-      ) || null;
-
-    if (!serviceCategory && configuredId) {
-      const configuredCategory =
-        guild.channels.cache.get(configuredId) ||
-        (await guild.channels.fetch(configuredId).catch(() => null));
-      if (configuredCategory?.type === ChannelType.GuildCategory) {
-        serviceCategory = configuredCategory;
-      }
-    }
-
-    if (!serviceCategory) {
-      return null;
-    }
-
-    await ensureHiddenTicketCategory(serviceCategory, guild);
-    return serviceCategory.id;
-  }
 
   if (configuredId) {
     const configuredCategory =
@@ -675,16 +632,11 @@ async function handleTicketClaim(interaction) {
     embeds: [
       buildTicketEventEmbed({
         ticketType,
-        color:
-          ticketType === "middleman" || ticketType === "service"
-            ? 0x57f287
-            : undefined,
+        color: ticketType === "middleman" ? 0x57f287 : undefined,
         title: "✅ Ticket Claimed",
         description:
           ticketType === "middleman"
             ? `${interaction.user} will be your middleman for today.`
-            : ticketType === "service"
-              ? `${interaction.user} will be your service staff for today.`
             : `${interaction.user} will handle this ticket now.`
       })
     ]
@@ -1459,7 +1411,8 @@ module.exports = {
         );
       }
       return;
-    }      await handleApplicationButton(interaction);
+    }
+      await handleApplicationButton(interaction);
     } catch (error) {
       if (isInteractionAlreadyAcknowledged(error)) {
         return;
@@ -1844,6 +1797,8 @@ async function handleRoleSelection(interaction) {
 
   await interaction.showModal(modal);
 }
+
+
 
 
 
