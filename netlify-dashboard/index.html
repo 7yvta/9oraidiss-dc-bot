@@ -7,92 +7,265 @@
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <main class="shell">
-    <section class="hero card">
-      <div>
-        <p class="eyebrow">Vault Control</p>
-        <h1>Small Bot Dashboard</h1>
-        <p class="muted">Update live bot settings from Netlify. Saves go directly to the bot API and apply without editing raw JSON.</p>
-      </div>
-      <div class="links" id="quickLinks"></div>
-    </section>
-
-    <section class="card grid two">
-      <label>
-        <span>Bot API URL</span>
-        <input id="apiBase" placeholder="https://shadow-production-be95.up.railway.app" />
-      </label>
-      <label>
-        <span>Dashboard Token</span>
-        <input id="apiToken" type="password" placeholder="DASHBOARD_API_TOKEN" />
-      </label>
-      <label>
-        <span>Guild ID</span>
-        <input id="guildId" placeholder="1479255758561480906" />
-      </label>
-      <div class="actions">
-        <button id="saveLocal" type="button">Save Login</button>
-        <button id="loadConfig" type="button" class="primary">Load Config</button>
-      </div>
-    </section>
-
-    <section class="card">
-      <div class="section-head">
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand-block">
+        <div class="brand-mark">V</div>
         <div>
-          <p class="eyebrow">Logs</p>
-          <h2>Channel Settings</h2>
+          <strong>Vault</strong>
+          <span>Control Panel</span>
         </div>
       </div>
-      <div class="grid three">
-        <label><span>Mod Logs</span><input data-setting="modLogChannelId" placeholder="channel id" /></label>
-        <label><span>Server Logs</span><input data-setting="serverUpdateChannelId" placeholder="channel id" /></label>
-        <label><span>Ticket Transcripts</span><input data-setting="ticketTranscriptLogId" placeholder="channel id" /></label>
-        <label><span>Appeals / Reports</span><input data-setting="reportChannelId" placeholder="channel id" /></label>
-        <label><span>Welcome Channel</span><input data-setting="welcomeChannelId" placeholder="channel id" /></label>
-        <label><span>Level Channel</span><input data-setting="levelUpChannelId" placeholder="channel id" /></label>
-      </div>
-    </section>
 
-    <section class="card">
-      <div class="section-head">
+      <nav class="side-nav" aria-label="Dashboard navigation">
+        <a href="#overview" class="active">Overview</a>
+        <a href="#connect">Connection</a>
+        <a href="#links">Public Links</a>
+        <a href="#logs">Logs</a>
+        <a href="#tickets">Tickets</a>
+        <a href="#roles">Roles & Access</a>
+        <a href="#triggers">Auto Roles</a>
+        <a href="#moderation">Moderation</a>
+        <a href="#welcome">Welcome</a>
+        <a href="#levels">Levels</a>
+        <a href="#vouches">Vouches</a>
+        <a href="#autosend">Auto Send</a>
+        <a href="#commands">Commands</a>
+      </nav>
+
+      <div class="sidebar-foot">
+        <span>API</span>
+        <strong id="apiState">Not loaded</strong>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
         <div>
-          <p class="eyebrow">Access</p>
-          <h2>Admin Roles</h2>
+          <p class="eyebrow">Vault Marketplace</p>
+          <h1>Bot Dashboard</h1>
         </div>
-      </div>
-      <div class="grid two">
-        <label><span>Bot Admin Roles</span><textarea data-setting-list="botAdminRoleIds" placeholder="role ids separated by comma or space"></textarea></label>
-        <label><span>Prefix Anywhere Roles</span><textarea data-setting-list="prefixAnywhereRoleIds" placeholder="role ids separated by comma or space"></textarea></label>
-      </div>
-    </section>
+        <div class="top-actions">
+          <button id="reloadConfig" type="button">Reload</button>
+          <button id="saveConfig" type="button" class="primary">Save Changes</button>
+        </div>
+      </header>
 
-    <section class="card">
-      <div class="section-head">
+      <section id="overview" class="module hero-card">
         <div>
-          <p class="eyebrow">Tickets</p>
-          <h2>Ticket Routing</h2>
+          <p class="eyebrow">Overview</p>
+          <h2>Live server configuration</h2>
+          <p class="muted">Manage the bot from one clean place. All saves go to the live bot API and update guild settings without raw JSON.</p>
         </div>
-      </div>
-      <div id="tickets" class="tickets"></div>
-    </section>
+        <div class="stat-grid">
+          <div class="stat"><span>Bot</span><strong id="statBot">Vault</strong></div>
+          <div class="stat"><span>Guild</span><strong id="statGuild">-</strong></div>
+          <div class="stat"><span>Tickets</span><strong id="statTickets">6 types</strong></div>
+          <div class="stat"><span>Status</span><strong id="statStatus">Idle</strong></div>
+        </div>
+      </section>
 
-    <section class="card">
-      <div class="section-head">
+      <section id="connect" class="module">
+        <div class="module-head">
+          <div>
+            <p class="eyebrow">Connection</p>
+            <h2>Dashboard Login</h2>
+          </div>
+          <span class="pill">Token protected</span>
+        </div>
+        <div class="grid three">
+          <label><span>Bot API URL</span><input id="apiBase" placeholder="https://shadow-production-be95.up.railway.app" /></label>
+          <label><span>Dashboard Token</span><input id="apiToken" type="password" placeholder="DASHBOARD_API_TOKEN" /></label>
+          <label><span>Guild ID</span><input id="guildId" placeholder="1479255758561480906" /></label>
+        </div>
+        <div class="button-row">
+          <button id="saveLocal" type="button">Save Login</button>
+          <button id="loadConfig" type="button" class="primary">Load Config</button>
+        </div>
+      </section>
+
+      <section id="links" class="module">
+        <div class="module-head">
+          <div>
+            <p class="eyebrow">Public Pages</p>
+            <h2>Legal, Appeal, Server Links</h2>
+          </div>
+        </div>
+        <div id="quickLinks" class="link-grid"></div>
+      </section>
+
+      <section id="logs" class="module">
+        <div class="module-head">
+          <div>
+            <p class="eyebrow">Logs</p>
+            <h2>Channel Routing</h2>
+          </div>
+        </div>
+        <div class="grid three">
+          <label><span>Mod Logs</span><input data-setting-id="modLogChannelId" placeholder="channel id" /></label>
+          <label><span>Server Logs</span><input data-setting-id="serverUpdateChannelId" placeholder="channel id" /></label>
+          <label><span>Ticket Transcripts</span><input data-setting-id="ticketTranscriptLogId" placeholder="channel id" /></label>
+          <label><span>Appeals / Reports</span><input data-setting-id="reportChannelId" placeholder="channel id" /></label>
+          <label><span>Welcome Channel</span><input data-setting-id="welcomeChannelId" placeholder="channel id" /></label>
+          <label><span>Level Channel</span><input data-setting-id="levelUpChannelId" placeholder="channel id" /></label>
+        </div>
+      </section>
+
+      <section id="tickets" class="module">
+        <div class="module-head">
+          <div>
+            <p class="eyebrow">Tickets</p>
+            <h2>Panel, Category, Team Roles</h2>
+          </div>
+          <span class="pill">6 ticket types</span>
+        </div>
+        <div id="ticketCards" class="ticket-grid"></div>
+      </section>
+
+      <section id="roles" class="module">
+        <div class="module-head">
+          <div>
+            <p class="eyebrow">Roles & Access</p>
+            <h2>Command Permission Groups</h2>
+          </div>
+        </div>
+        <div class="grid two">
+          <label><span>Bot Admin Roles</span><textarea data-setting-list="botAdminRoleIds" placeholder="role ids separated by comma or space"></textarea></label>
+          <label><span>Prefix Anywhere Roles</span><textarea data-setting-list="prefixAnywhereRoleIds" placeholder="role ids separated by comma or space"></textarea></label>
+          <label><span>Full Command Roles</span><textarea data-setting-list="fullCommandRoleIds" placeholder="role ids"></textarea></label>
+          <label><span>Timeout Only Roles</span><textarea data-setting-list="timeoutOnlyRoleIds" placeholder="role ids"></textarea></label>
+          <label><span>Confirmation Roles</span><textarea data-setting-list="confirmationRoleIds" placeholder="role ids"></textarea></label>
+          <label><span>Ticket Force Claim Roles</span><textarea data-setting-list="ticketForceClaimRoleIds" placeholder="role ids"></textarea></label>
+        </div>
+        <div class="switch-row">
+          <label class="switch"><input type="checkbox" data-setting-bool="ownerOnlyMode"><span></span>Owner-only command mode</label>
+        </div>
+      </section>
+
+      <section id="triggers" class="module">
+        <div class="module-head">
+          <div>
+            <p class="eyebrow">Auto Roles</p>
+            <h2>Role Trigger Rules</h2>
+          </div>
+        </div>
+        <p class="muted small">One rule per line: trigger role IDs, then =>, then assigned role IDs. Example: <code>role1 role2 => addRole1 addRole2</code></p>
+        <textarea id="triggerRules" class="wide" placeholder="1505612011579506711 1505612010690314340 => 1505632362417885194 1505637024588234993"></textarea>
+        <div class="grid three compact-grid">
+          <label><span>Member Role</span><input data-setting-id="memberRoleId" placeholder="role id" /></label>
+          <label class="switch card-switch"><input type="checkbox" data-setting-bool="autoMemberRoleEnabled"><span></span>Auto member role</label>
+          <label class="switch card-switch"><input type="checkbox" data-setting-bool="stickyMemberRoleEnabled"><span></span>Sticky member role</label>
+        </div>
+      </section>
+
+      <section id="moderation" class="module">
+        <div class="module-head">
+          <div>
+            <p class="eyebrow">Moderation</p>
+            <h2>AutoMod & Warnings</h2>
+          </div>
+        </div>
+        <div class="switch-row">
+          <label class="switch"><input type="checkbox" data-setting-bool="automodEnabled"><span></span>Enable AutoMod</label>
+          <label class="switch"><input type="checkbox" data-setting-bool="blockInvites"><span></span>Block invites</label>
+          <label class="switch"><input type="checkbox" data-setting-bool="blockLinks"><span></span>Block links</label>
+          <label class="switch"><input type="checkbox" data-setting-bool="autoresponderEnabled"><span></span>Enable autoresponder</label>
+        </div>
+        <div class="grid two">
+          <label><span>Blocked Words</span><textarea data-setting-text-list="blockedWords" placeholder="one word per line"></textarea></label>
+          <label><span>Warning Consequence</span><textarea data-setting-text="warnConsequence" placeholder="warning action text / notes"></textarea></label>
+        </div>
+      </section>
+
+      <section id="welcome" class="module">
+        <div class="module-head">
+          <div>
+            <p class="eyebrow">Welcome</p>
+            <h2>Join Message</h2>
+          </div>
+        </div>
+        <div class="switch-row"><label class="switch"><input type="checkbox" data-setting-bool="welcomeEnabled"><span></span>Enable welcome message</label></div>
+        <div class="grid two">
+          <label><span>Welcome Channel</span><input data-setting-id="welcomeChannelId" placeholder="channel id" /></label>
+          <label><span>Rules Channel</span><input data-setting-id="rulesChannelId" placeholder="channel id" /></label>
+          <label class="full"><span>Welcome Template</span><textarea data-setting-text="welcomeMessageTemplate" placeholder="{user} welcome to {server}"></textarea></label>
+        </div>
+      </section>
+
+      <section id="levels" class="module">
+        <div class="module-head">
+          <div>
+            <p class="eyebrow">Levels</p>
+            <h2>XP Settings</h2>
+          </div>
+        </div>
+        <div class="grid three">
+          <label><span>XP Min</span><input data-setting-number="messageXpMin" type="number" min="0" /></label>
+          <label><span>XP Max</span><input data-setting-number="messageXpMax" type="number" min="0" /></label>
+          <label><span>XP Cooldown Seconds</span><input data-setting-number="messageXpCooldownSeconds" type="number" min="0" /></label>
+          <label><span>Level Curve</span><input data-setting-number="levelCurve" type="number" min="0" step="0.01" /></label>
+          <label><span>Curve Multiplier</span><input data-setting-number="levelCurveMultiplier" type="number" min="0" step="0.01" /></label>
+          <label><span>Max Level</span><input data-setting-number="levelMax" type="number" min="0" /></label>
+        </div>
+      </section>
+
+      <section id="vouches" class="module">
+        <div class="module-head">
+          <div>
+            <p class="eyebrow">Vouches</p>
+            <h2>Auto Vouch Controls</h2>
+          </div>
+        </div>
+        <div class="switch-row"><label class="switch"><input type="checkbox" data-setting-bool="autoVouchEnabled"><span></span>Enable auto vouches</label></div>
+        <div class="grid three">
+          <label><span>Vouch Channel</span><input data-setting-id="autoVouchChannelId" placeholder="channel id" /></label>
+          <label><span>Interval Days</span><input data-setting-number="autoVouchIntervalDays" type="number" min="1" /></label>
+          <label><span>Per Cycle</span><input data-setting-number="autoVouchPerCycle" type="number" min="1" /></label>
+          <label class="full"><span>Vouch Member IDs</span><textarea data-setting-id-list="autoVouchMemberIds" placeholder="user ids"></textarea></label>
+          <label class="full"><span>Auto Vouch Reasons</span><textarea data-setting-text-list="autoVouchMmReasons" placeholder="one reason per line"></textarea></label>
+        </div>
+      </section>
+
+      <section id="autosend" class="module">
+        <div class="module-head">
+          <div>
+            <p class="eyebrow">Auto Send</p>
+            <h2>Scheduled Message</h2>
+          </div>
+        </div>
+        <div class="switch-row"><label class="switch"><input type="checkbox" data-setting-bool="autoMessageEnabled"><span></span>Enable auto send</label></div>
+        <div class="grid two">
+          <label><span>Channel</span><input data-setting-id="autoMessageChannelId" placeholder="channel id" /></label>
+          <label><span>Interval Minutes</span><input data-setting-number="autoMessageIntervalMinutes" type="number" min="1" /></label>
+          <label class="full"><span>Message</span><textarea data-setting-text="autoMessageContent" placeholder="message content"></textarea></label>
+        </div>
+      </section>
+
+      <section id="commands" class="module">
+        <div class="module-head">
+          <div>
+            <p class="eyebrow">Commands</p>
+            <h2>Visibility & Cleanup</h2>
+          </div>
+        </div>
+        <p class="muted small">Put command names here to hide/disable them in this guild. One command per line.</p>
+        <textarea data-setting-text-list="disabledCommands" class="wide" placeholder="automodall&#10;automode&#10;template"></textarea>
+      </section>
+
+      <section class="save-dock">
         <div>
-          <p class="eyebrow">Triggers</p>
-          <h2>Auto Role Triggers</h2>
+          <strong>Unsaved changes?</strong>
+          <span id="lastLoaded">Load a guild config first.</span>
         </div>
-      </div>
-      <p class="muted small">One rule per line: trigger role IDs, then =>, then assigned role IDs.</p>
-      <textarea id="triggers" class="wide" placeholder="1505612011579506711 1505612010690314340 => 1505632362417885194 1505637024588234993"></textarea>
-    </section>
+        <div class="top-actions">
+          <button id="bottomReload" type="button">Reload</button>
+          <button id="bottomSave" type="button" class="primary">Save Changes</button>
+        </div>
+      </section>
 
-    <section class="card footer-actions">
-      <button id="saveConfig" type="button" class="primary big">Save To Bot</button>
-      <button id="reloadConfig" type="button">Reload</button>
       <pre id="status" aria-live="polite"></pre>
-    </section>
-  </main>
+    </main>
+  </div>
   <script src="./app.js"></script>
 </body>
 </html>

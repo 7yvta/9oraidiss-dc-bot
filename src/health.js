@@ -609,7 +609,7 @@ function configureDashboardCors(app) {
   });
 }
 
-const simpleSettingKeys = new Set([
+const idSettingKeys = new Set([
   'modLogChannelId',
   'reportChannelId',
   'serverUpdateChannelId',
@@ -618,12 +618,39 @@ const simpleSettingKeys = new Set([
   'levelUpChannelId',
   'rulesChannelId',
   'memberRoleId',
+  'autoMessageChannelId',
+  'autoVouchChannelId'
+]);
+
+const boolSettingKeys = new Set([
+  'ownerOnlyMode',
   'welcomeEnabled',
   'autoMemberRoleEnabled',
   'stickyMemberRoleEnabled',
   'automodEnabled',
   'blockInvites',
-  'blockLinks'
+  'blockLinks',
+  'autoresponderEnabled',
+  'autoMessageEnabled',
+  'autoVouchEnabled'
+]);
+
+const textSettingKeys = new Set([
+  'welcomeMessageTemplate',
+  'autoMessageContent',
+  'warnConsequence'
+]);
+
+const numberSettingKeys = new Set([
+  'messageXpMin',
+  'messageXpMax',
+  'messageXpCooldownSeconds',
+  'levelCurve',
+  'levelCurveMultiplier',
+  'levelMax',
+  'autoMessageIntervalMinutes',
+  'autoVouchIntervalDays',
+  'autoVouchPerCycle'
 ]);
 
 const roleListSettingKeys = new Set([
@@ -631,7 +658,20 @@ const roleListSettingKeys = new Set([
   'fullCommandRoleIds',
   'timeoutOnlyRoleIds',
   'prefixAnywhereRoleIds',
-  'confirmationRoleIds'
+  'confirmationRoleIds',
+  'ticketForceClaimRoleIds',
+  'hostGiveawayRoleIds',
+  'reportHandlerRoleIds'
+]);
+
+const idListSettingKeys = new Set([
+  'autoVouchMemberIds'
+]);
+
+const textListSettingKeys = new Set([
+  'blockedWords',
+  'disabledCommands',
+  'autoVouchMmReasons'
 ]);
 
 const ticketFieldMap = {
@@ -690,14 +730,47 @@ function normalizeBool(value) {
   return Boolean(value);
 }
 
+function normalizeNumber(value) {
+  const parsed = Number(value);
+  return Number.isFinite(parsed) ? parsed : 0;
+}
+
+function normalizeTextList(value) {
+  const source = Array.isArray(value)
+    ? value
+    : String(value || '')
+        .split(/[\n,]+/)
+        .filter(Boolean);
+  return [...new Set(source.map((entry) => String(entry || '').trim()).filter(Boolean))];
+}
+
 function pickDashboardSettings(settings) {
   const result = {};
-  for (const key of simpleSettingKeys) {
+  for (const key of idSettingKeys) {
+    if (settings[key] !== undefined) {
+      result[key] = settings[key];
+    }
+  }
+  for (const key of boolSettingKeys) {
+    result[key] = Boolean(settings[key]);
+  }
+  for (const key of textSettingKeys) {
+    if (settings[key] !== undefined) {
+      result[key] = settings[key];
+    }
+  }
+  for (const key of numberSettingKeys) {
     if (settings[key] !== undefined) {
       result[key] = settings[key];
     }
   }
   for (const key of roleListSettingKeys) {
+    result[key] = Array.isArray(settings[key]) ? settings[key] : [];
+  }
+  for (const key of idListSettingKeys) {
+    result[key] = Array.isArray(settings[key]) ? settings[key] : [];
+  }
+  for (const key of textListSettingKeys) {
     result[key] = Array.isArray(settings[key]) ? settings[key] : [];
   }
   result.roleTriggerRules = Array.isArray(settings.roleTriggerRules)
@@ -722,20 +795,46 @@ function buildDashboardPatch(body) {
   const patch = {};
 
   if (body.settings && typeof body.settings === 'object') {
-    for (const key of simpleSettingKeys) {
+    for (const key of idSettingKeys) {
       if (body.settings[key] === undefined) {
-        continue;
-      }
-      if (key.endsWith('Enabled') || key === 'automodEnabled' || key === 'blockInvites' || key === 'blockLinks') {
-        patch[key] = normalizeBool(body.settings[key]);
         continue;
       }
       patch[key] = normalizeId(body.settings[key]);
     }
 
+    for (const key of boolSettingKeys) {
+      if (body.settings[key] !== undefined) {
+        patch[key] = normalizeBool(body.settings[key]);
+      }
+    }
+
+    for (const key of textSettingKeys) {
+      if (body.settings[key] !== undefined) {
+        patch[key] = String(body.settings[key] || '').slice(0, 1200).trim();
+      }
+    }
+
+    for (const key of numberSettingKeys) {
+      if (body.settings[key] !== undefined) {
+        patch[key] = normalizeNumber(body.settings[key]);
+      }
+    }
+
     for (const key of roleListSettingKeys) {
       if (body.settings[key] !== undefined) {
         patch[key] = normalizeRoleIds(body.settings[key]);
+      }
+    }
+
+    for (const key of idListSettingKeys) {
+      if (body.settings[key] !== undefined) {
+        patch[key] = normalizeRoleIds(body.settings[key]);
+      }
+    }
+
+    for (const key of textListSettingKeys) {
+      if (body.settings[key] !== undefined) {
+        patch[key] = normalizeTextList(body.settings[key]);
       }
     }
 
