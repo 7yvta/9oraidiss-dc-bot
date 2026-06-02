@@ -248,27 +248,6 @@ module.exports = {
         return;
       }
 
-      if (!isBotOwner && !interaction.member.roles.cache.has(role.id)) {
-        await interaction.reply({
-          embeds: [
-            buildResultEmbed({
-              title: "Role Manage Failed",
-              color: 0xed4245,
-              fields: [
-                { name: "User", value: `${targetUser.tag} (${targetUser.id})` },
-                { name: "Role", value: `${role}` },
-                {
-                  name: "Reason",
-                  value: "You can only give roles that you already have."
-                }
-              ]
-            })
-          ],
-          flags: MessageFlags.Ephemeral
-        });
-        return;
-      }
-
       if (member.roles.cache.has(role.id)) {
         await interaction.reply({
           embeds: [
