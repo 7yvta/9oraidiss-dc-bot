@@ -895,7 +895,49 @@ function buildDashboardPatch(body) {
   return patch;
 }
 
-function createHealthCheck() {
+function resolveGuildIconUrl(guild) {
+  if (!guild) {
+    return null;
+  }
+
+  if (typeof guild.iconURL === 'function') {
+    return guild.iconURL({ size: 64 }) || null;
+  }
+
+  if (guild.icon && guild.id) {
+    return `https://cdn.discordapp.com/icons/${guild.id}/${guild.icon}.png?size=64`;
+  }
+
+  return null;
+}
+
+async function getDashboardGuilds(client) {
+  if (!client?.guilds) {
+    return [];
+  }
+
+  let guilds = Array.from(client.guilds.cache?.values?.() || []);
+  if (guilds.length === 0 && typeof client.guilds.fetch === 'function') {
+    const fetched = await client.guilds.fetch().catch(() => null);
+    if (fetched?.values) {
+      guilds = Array.from(fetched.values());
+    }
+  }
+
+  return guilds
+    .map((guild) => ({
+      id: guild.id,
+      name: guild.name || 'Unknown Server',
+      iconUrl: resolveGuildIconUrl(guild),
+      memberCount: Number.isFinite(Number(guild.memberCount)) ? Number(guild.memberCount) : null,
+      ownerId: guild.ownerId || null,
+      available: guild.available !== false
+    }))
+    .filter((guild) => guild.id)
+    .sort((a, b) => a.name.localeCompare(b.name));
+}
+
+function createHealthCheck(client = null) {
   const app = express();
   app.use(express.json({ limit: '256kb' }));
   configureDashboardCors(app);
@@ -987,6 +1029,11 @@ function createHealthCheck() {
 
   app.get('/api/dashboard/links', (req, res) => {
     res.json({ ok: true, links: getDashboardLinks(req) });
+  });
+
+  app.get('/api/dashboard/guilds', requireDashboardAuth, async (req, res) => {
+    const guilds = await getDashboardGuilds(client);
+    res.json({ ok: true, count: guilds.length, guilds });
   });
 
   app.get('/api/dashboard/config', requireDashboardAuth, (req, res) => {

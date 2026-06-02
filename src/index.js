@@ -165,8 +165,8 @@ function createBotClient(intents) {
   return client;
 }
 
-function startStandaloneHealthServer() {
-  const healthApp = createHealthCheck();
+function startStandaloneHealthServer(client) {
+  const healthApp = createHealthCheck(client);
   const port = Number(process.env.PORT || 8080);
   healthApp.listen(port, "0.0.0.0", () => {
     console.log(`Health check server listening on port ${port}`);
@@ -180,7 +180,7 @@ async function startHttpServices(client) {
   }
   httpServicesStarted = true;
 
-  startStandaloneHealthServer();
+  startStandaloneHealthServer(client);
 }
 
 async function bootClient(client) {

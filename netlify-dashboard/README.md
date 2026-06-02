@@ -16,3 +16,9 @@ Use the same token inside the dashboard login form.
 
 Default API URL:
 `https://shadow-production-be95.up.railway.app`
+
+Usage:
+- Enter the Bot API URL and dashboard token.
+- Click `Load Servers`.
+- Select the server you want to manage.
+- The dashboard fills `Guild ID` and loads that server config automatically.

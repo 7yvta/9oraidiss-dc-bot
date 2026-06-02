@@ -547,8 +547,12 @@ button:hover { transform: none; filter: brightness(1.08); }
           <label><span>Dashboard Token</span><input id="apiToken" type="password" placeholder="DASHBOARD_API_TOKEN" /></label>
           <label><span>Guild ID</span><input id="guildId" placeholder="1479255758561480906" /></label>
         </div>
+        <div class="grid compact-grid">
+          <label class="full"><span>Manage Server</span><select id="serverSelect"><option value="">Load servers from the bot...</option></select><small id="serverSelectStatus" class="muted small">Enter API + token, then load servers.</small></label>
+        </div>
         <div class="button-row">
           <button id="saveLocal" type="button">Save Login</button>
+          <button id="loadServers" type="button">Load Servers</button>
           <button id="loadConfig" type="button" class="primary">Load Config</button>
         </div>
       </section>
@@ -880,26 +884,26 @@ function parseTriggers() {
 }
 
 function fillSettings(settings = {}) {
-  $('[data-setting-id]').forEach((input) => {
+  $$('[data-setting-id]').forEach((input) => {
     input.value = settings[input.dataset.settingId] || "";
   });
-  $('[data-setting-bool]').forEach((input) => {
+  $$('[data-setting-bool]').forEach((input) => {
     input.checked = Boolean(settings[input.dataset.settingBool]);
   });
-  $('[data-setting-text]').forEach((input) => {
+  $$('[data-setting-text]').forEach((input) => {
     input.value = settings[input.dataset.settingText] || "";
   });
-  $('[data-setting-number]').forEach((input) => {
+  $$('[data-setting-number]').forEach((input) => {
     const value = settings[input.dataset.settingNumber];
     input.value = value === undefined || value === null ? "" : value;
   });
-  $('[data-setting-list]').forEach((input) => {
+  $$('[data-setting-list]').forEach((input) => {
     input.value = idsToText(settings[input.dataset.settingList]);
   });
-  $('[data-setting-id-list]').forEach((input) => {
+  $$('[data-setting-id-list]').forEach((input) => {
     input.value = idsToText(settings[input.dataset.settingIdList]);
   });
-  $('[data-setting-text-list]').forEach((input) => {
+  $$('[data-setting-text-list]').forEach((input) => {
     input.value = textListToText(settings[input.dataset.settingTextList]);
   });
   renderTriggers(settings.roleTriggerRules || []);
@@ -929,12 +933,94 @@ async function loadLinksOnly() {
   }
 }
 
+function escapeHtml(value) {
+  return String(value ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/\"/g, "&quot;");
+}
+
+function renderGuilds(guilds = []) {
+  const select = $("#serverSelect");
+  const status = $("#serverSelectStatus");
+  if (!select) {
+    return;
+  }
+
+  const currentGuildId = $("#guildId").value.trim();
+  if (!guilds.length) {
+    select.innerHTML = '<option value="">No servers returned by the bot</option>';
+    if (status) {
+      status.textContent = "No servers found. Make sure the bot is online and the token is correct.";
+    }
+    return;
+  }
+
+  select.innerHTML = '<option value="">Select a server...</option>' + guilds
+    .map((guild) => {
+      const name = escapeHtml(guild.name || "Unknown Server");
+      const members = Number.isFinite(Number(guild.memberCount)) ? " (" + Number(guild.memberCount).toLocaleString() + " members)" : "";
+      return '<option value="' + escapeHtml(guild.id) + '">' + name + members + '</option>';
+    })
+    .join("");
+
+  if (guilds.some((guild) => String(guild.id) === currentGuildId)) {
+    select.value = currentGuildId;
+  }
+
+  if (status) {
+    status.textContent = "Loaded " + guilds.length + " server" + (guilds.length === 1 ? "" : "s") + ". Select one to manage it.";
+  }
+}
+
+async function loadGuilds({ autoLoad = false } = {}) {
+  saveLocal();
+  if (!$("#apiToken").value.trim()) {
+    setStatus("Add dashboard token first.");
+    return [];
+  }
+
+  const status = $("#serverSelectStatus");
+  if (status) {
+    status.textContent = "Loading servers from the running bot...";
+  }
+  setStatus("Loading bot servers...");
+
+  const data = await api("/api/dashboard/guilds");
+  const guilds = Array.isArray(data.guilds) ? data.guilds : [];
+  renderGuilds(guilds);
+  $("#apiState").textContent = "Loaded " + guilds.length + " servers";
+
+  let guildId = $("#guildId").value.trim();
+  if (!guildId && guilds.length === 1) {
+    guildId = String(guilds[0].id);
+    $("#guildId").value = guildId;
+    $("#serverSelect").value = guildId;
+    $("#statGuild").textContent = guildId;
+    saveLocal();
+    await loadConfig();
+    return guilds;
+  }
+
+  if (autoLoad && guildId) {
+    await loadConfig();
+    return guilds;
+  }
+
+  setStatus(guilds.length ? "Select a server to manage, or keep the current Guild ID." : "No servers returned by the bot.");
+  return guilds;
+}
 async function loadConfig() {
   saveLocal();
   const guildId = $("#guildId").value.trim();
   if (!guildId) {
     setStatus("Add a guild ID first.");
     return;
+  }
+  const select = $("#serverSelect");
+  if (select && [...select.options].some((option) => option.value === guildId)) {
+    select.value = guildId;
   }
   setStatus("Loading config...");
   const data = await api(`/api/dashboard/config?guildId=${encodeURIComponent(guildId)}`);
@@ -944,26 +1030,26 @@ async function loadConfig() {
 
 function collectSettings() {
   const settings = {};
-  $('[data-setting-id]').forEach((input) => {
+  $$('[data-setting-id]').forEach((input) => {
     settings[input.dataset.settingId] = input.value.trim();
   });
-  $('[data-setting-bool]').forEach((input) => {
+  $$('[data-setting-bool]').forEach((input) => {
     settings[input.dataset.settingBool] = input.checked;
   });
-  $('[data-setting-text]').forEach((input) => {
+  $$('[data-setting-text]').forEach((input) => {
     settings[input.dataset.settingText] = input.value.trim();
   });
-  $('[data-setting-number]').forEach((input) => {
+  $$('[data-setting-number]').forEach((input) => {
     const value = input.value.trim();
     settings[input.dataset.settingNumber] = value === "" ? 0 : Number(value);
   });
-  $('[data-setting-list]').forEach((input) => {
+  $$('[data-setting-list]').forEach((input) => {
     settings[input.dataset.settingList] = parseIds(input.value);
   });
-  $('[data-setting-id-list]').forEach((input) => {
+  $$('[data-setting-id-list]').forEach((input) => {
     settings[input.dataset.settingIdList] = parseIds(input.value);
   });
-  $('[data-setting-text-list]').forEach((input) => {
+  $$('[data-setting-text-list]').forEach((input) => {
     settings[input.dataset.settingTextList] = parseTextList(input.value);
   });
   settings.roleTriggerRules = parseTriggers();
@@ -972,7 +1058,7 @@ function collectSettings() {
 
 function collectTickets() {
   const tickets = {};
-  $(".ticket-card").forEach((card) => {
+  $$(".ticket-card").forEach((card) => {
     const key = card.dataset.ticket;
     tickets[key] = {
       enabled: $("[data-ticket-field='enabled']", card).checked,
@@ -1007,7 +1093,7 @@ async function saveConfig() {
 }
 
 function setupNav() {
-  const links = $(".side-nav a");
+  const links = $$(".side-nav a");
   const sections = links.map((link) => $(link.getAttribute("href"))).filter(Boolean);
   links.forEach((link) => {
     link.addEventListener("click", () => {
@@ -1028,6 +1114,16 @@ function setupNav() {
 
 function bindActions() {
   $("#saveLocal").addEventListener("click", saveLocal);
+  $("#loadServers").addEventListener("click", () => loadGuilds({ autoLoad: true }).catch((error) => setStatus("Server load failed: " + error.message)));
+  $("#serverSelect").addEventListener("change", () => {
+    const guildId = $("#serverSelect").value.trim();
+    $("#guildId").value = guildId;
+    $("#statGuild").textContent = guildId || "-";
+    saveLocal();
+    if (guildId) {
+      loadConfig().catch((error) => setStatus("Load failed: " + error.message));
+    }
+  });
   $("#loadConfig").addEventListener("click", () => loadConfig().catch((error) => setStatus(`Load failed: ${error.message}`)));
   $("#reloadConfig").addEventListener("click", () => loadConfig().catch((error) => setStatus(`Reload failed: ${error.message}`)));
   $("#bottomReload").addEventListener("click", () => loadConfig().catch((error) => setStatus(`Reload failed: ${error.message}`)));
@@ -1043,7 +1139,11 @@ setupNav();
 bindActions();
 renderTickets({});
 loadLinksOnly();
-setStatus("Ready. Add token and load a guild config.");
+if ($("#apiToken").value.trim()) {
+  loadGuilds({ autoLoad: false }).catch((error) => setStatus("Server load failed: " + error.message));
+} else {
+  setStatus("Ready. Add token and load servers from the bot.");
+}
 
 </script>
 </body>
