@@ -39,6 +39,13 @@ function envFlag(name, fallback = false) {
   return String(raw).trim().toLowerCase() === "true";
 }
 
+function startupMutationAllowed(masterEnabled, featureFlagName) {
+  if (!masterEnabled) {
+    return false;
+  }
+  return envFlag(featureFlagName, true);
+}
+
 function syncBotPresence(clientReady) {
   const activityText = String(process.env.BOT_ACTIVITY_TEXT || "Tickets + Marketplace").trim();
   if (!activityText) {
@@ -323,10 +330,7 @@ async execute(clientReady) {
       false
     );
 
-    if (
-      startupServerMutationsEnabled ||
-      envFlag("SYNC_LEVEL_ROLE_PERMS_ON_READY", false)
-    ) {
+    if (startupMutationAllowed(startupServerMutationsEnabled, "SYNC_LEVEL_ROLE_PERMS_ON_READY")) {
       syncLevelRolePermissionsForAllGuilds(clientReady).catch((error) => {
         console.error("Level role permission sync failed:", error);
       });
@@ -334,10 +338,7 @@ async execute(clientReady) {
       console.log("[StartupMutations] Level role permission sync skipped.");
     }
 
-    if (
-      startupServerMutationsEnabled ||
-      envFlag("SYNC_BOT_NICKNAME_ON_READY", false)
-    ) {
+    if (startupMutationAllowed(startupServerMutationsEnabled, "SYNC_BOT_NICKNAME_ON_READY")) {
       syncBotNicknamesForAllGuilds(clientReady).catch((error) => {
         console.error("Bot nickname sync failed:", error);
       });
@@ -345,10 +346,7 @@ async execute(clientReady) {
       console.log("[StartupMutations] Bot nickname sync skipped.");
     }
 
-    if (
-      startupServerMutationsEnabled ||
-      envFlag("LOG_CHANNEL_PROTECTION_ON_READY", false)
-    ) {
+    if (startupMutationAllowed(startupServerMutationsEnabled, "LOG_CHANNEL_PROTECTION_ON_READY")) {
       enforceProtectedLogChannelsForAllGuilds(clientReady).catch((error) => {
         console.error("Protected log channel lock sync failed:", error);
       });
@@ -356,10 +354,7 @@ async execute(clientReady) {
       console.log("[StartupMutations] Protected log channel sync skipped.");
     }
 
-    if (
-      startupServerMutationsEnabled ||
-      envFlag("AUTO_ROLE_THEME_ENABLED", false)
-    ) {
+    if (startupMutationAllowed(startupServerMutationsEnabled, "AUTO_ROLE_THEME_ENABLED")) {
       syncRoleThemeForConfiguredGuilds(clientReady)
         .then((outcome) => {
           if (outcome?.skipped) {
@@ -382,10 +377,7 @@ async execute(clientReady) {
       console.log("[StartupMutations] Role theme sync skipped.");
     }
 
-    if (
-      startupServerMutationsEnabled ||
-      envFlag("AUTO_CHANNEL_THEME_ENABLED", false)
-    ) {
+    if (startupMutationAllowed(startupServerMutationsEnabled, "AUTO_CHANNEL_THEME_ENABLED")) {
       syncChannelThemeForConfiguredGuilds(clientReady)
         .then((outcome) => {
           if (outcome?.skipped) {
@@ -408,10 +400,7 @@ async execute(clientReady) {
       console.log("[StartupMutations] Channel theme sync skipped.");
     }
 
-    if (
-      startupServerMutationsEnabled ||
-      envFlag("AUTO_TICKET_PANEL_PLACEMENT_ENABLED", false)
-    ) {
+    if (startupMutationAllowed(startupServerMutationsEnabled, "AUTO_TICKET_PANEL_PLACEMENT_ENABLED")) {
       syncTicketPanelPlacementForConfiguredGuilds(clientReady)
         .then((outcome) => {
           if (outcome?.skipped) {
@@ -461,8 +450,7 @@ async execute(clientReady) {
 
     const lockRecheckMinutes = Number(process.env.LOG_CHANNEL_LOCK_RECHECK_MINUTES || 0);
     if (
-      (startupServerMutationsEnabled ||
-        envFlag("LOG_CHANNEL_PROTECTION_ON_READY", false)) &&
+      startupMutationAllowed(startupServerMutationsEnabled, "LOG_CHANNEL_PROTECTION_ON_READY") &&
       lockRecheckMinutes > 0 &&
       Number.isFinite(lockRecheckMinutes)
     ) {
