@@ -531,7 +531,7 @@
   "autoresponderRules": [],
   "ticketPanel": {
     "color": "#2ecc71",
-    "title": "Welcome to the Ticket System!",
+    "title": "Welcome to Vault Tickets!",
     "description": "Please choose the type of ticket you want by clicking one of the buttons below:\r\n\r\nÃ°Å¸â€™Â¬ **Support Ticket**\r\nUse this ticket if you need help with the server or questions.\r\n\r\nÃ°Å¸Â¤Â **Trade / Middleman Ticket**\r\nUse this ticket for secure trades. Both parties must confirm first.\r\n\r\nÃ°Å¸â€œÅ  **Index Ticket**\r\nUse this ticket to request your base to be reviewed and indexed.",
     "footer": "One open ticket per type per user"
   },

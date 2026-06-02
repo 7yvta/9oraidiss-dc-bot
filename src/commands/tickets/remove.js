@@ -145,7 +145,7 @@ module.exports = {
             { name: "Ticket", value: `${channel}` },
             { name: "User", value: `${targetUser} (${targetUser.id})` }
           ],
-          footer: "Ticket System"
+          footer: "Vault Ticket Service"
         })
       ],
       flags: MessageFlags.Ephemeral

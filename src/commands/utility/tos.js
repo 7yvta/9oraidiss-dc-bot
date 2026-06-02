@@ -34,7 +34,7 @@ module.exports = {
           "Using this service means you agree to these terms."
         ].join("\n")
       )
-      .setFooter({ text: "Powered by 9oraidiss Middleman Service" })
+      .setFooter({ text: "Powered by Vault Middleman Service" })
       .setTimestamp();
 
     await interaction.reply({

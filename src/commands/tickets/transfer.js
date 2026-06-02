@@ -248,7 +248,7 @@ module.exports = {
             { name: "Previous Owner", value: ownerId ? `<@${ownerId}> (${ownerId})` : "Unknown" },
             { name: "New Owner", value: `${targetUser} (${targetUser.id})` }
           ],
-          footer: "Ticket System"
+          footer: "Vault Ticket Service"
         })
       ],
       flags: MessageFlags.Ephemeral

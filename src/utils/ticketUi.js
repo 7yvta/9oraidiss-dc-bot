@@ -54,9 +54,9 @@ function getTicketOpenTitle(ticketType) {
 function getTicketFooterText(ticketType) {
   const normalizedType = String(ticketType || "").toLowerCase();
   if (normalizedType === "middleman") {
-    return "Powered by 9oraidiss Middleman Service";
+    return "Powered by Vault Middleman Service";
   }
-  return "Powered by 9oraidiss Ticket System";
+  return "Powered by Vault Ticket Service";
 }
 
 function applyTicketMessageTemplate(rawText, openerId) {

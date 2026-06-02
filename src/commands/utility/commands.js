@@ -102,7 +102,7 @@ module.exports = {
           value: line(["8ball"])
         }
       )
-      .setFooter({ text: "Powered by 9oraidiss Ticket System" })
+      .setFooter({ text: "Powered by Vault Service" })
       .setTimestamp();
 
     await interaction.reply({

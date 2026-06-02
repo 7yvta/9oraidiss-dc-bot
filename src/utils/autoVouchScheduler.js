@@ -503,7 +503,7 @@ async function sendAutoVouchMessage({
       { name: "💬 Reason", value: reason },
       { name: "🔢 Total Vouches", value: String(totalVouches) }
     )
-    .setFooter({ text: "Powered by 9oraidiss Vouch System" })
+    .setFooter({ text: "Powered by Vault Vouch System" })
     .setTimestamp();
 
   const sentMessage = await channel
@@ -652,7 +652,7 @@ async function triggerSubmittedVouch(
             ? { name: "🚫 Scam Vouch Counter", value: String(totalScamVouches || 1) }
             : { name: "🔢 Total Vouches", value: String(totalVouches || 1) }
         )
-        .setFooter({ text: "Powered by 9oraidiss Vouch System" })
+        .setFooter({ text: "Powered by Vault Vouch System" })
         .setTimestamp();
 
       const sentMessage = await channel

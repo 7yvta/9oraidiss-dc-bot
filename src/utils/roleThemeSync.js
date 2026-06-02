@@ -38,9 +38,9 @@ const ROLE_THEME_RULES = Object.freeze([
   { match: "index division", name: "[ I ] Index Seller 💰", color: "#F59E0B" },
   { match: "trade sentinel", name: "[ MM ] Middleman �", color: "#22C55E" },
   { match: "middleman team", name: "[ MM ] Middleman �", color: "#22C55E" },
-  { match: "report staff iii", name: "\u2726 Shadow Sentinel", color: "#F97316" },
-  { match: "report staff ii", name: "\u2726 Shadow Marshal", color: "#EA580C" },
-  { match: "report staff i", name: "\u2726 Shadow Regent", color: "#DC2626" },
+  { match: "report staff iii", name: "\u2726 Vault Sentinel", color: "#F97316" },
+  { match: "report staff ii", name: "\u2726 Vault Marshal", color: "#EA580C" },
+  { match: "report staff i", name: "\u2726 Vault Regent", color: "#DC2626" },
   { match: "role request staff", name: "\u2726 Access Warden", color: "#A855F7" },
   { match: "co founder", name: "\u2726 Co-Founder", color: "#A78BFA" },
   {

@@ -414,7 +414,7 @@ const runtimeConfigPath = path.join(dataDir, "runtime-config.json");
 
 const defaultTicketPanel = {
   color: 0x2ecc71,
-  title: "Welcome to the Ticket System!",
+  title: "Welcome to Vault Tickets!",
   description: [
     "Please choose the type of ticket you want by clicking one of the buttons below:",
     "",

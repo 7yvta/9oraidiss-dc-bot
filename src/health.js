@@ -1,7 +1,7 @@
 const express = require('express');
 const config = require('./config');
 
-const BOT_NAME = process.env.PUBLIC_BOT_NAME || 'Shadow';
+const BOT_NAME = process.env.PUBLIC_BOT_NAME || 'Vault';
 const SERVICE_NAME = process.env.PUBLIC_SERVICE_NAME || 'Vault Marketplace';
 const CONTACT_TEXT =
   process.env.PUBLIC_CONTACT_TEXT ||

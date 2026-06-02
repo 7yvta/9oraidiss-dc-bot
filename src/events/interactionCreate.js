@@ -316,9 +316,9 @@ function resolveTicketTypeFromPanelMessage(interaction) {
 function getTicketTranscriptFooterText(ticketType) {
   const normalizedType = String(ticketType || "").toLowerCase();
   if (normalizedType === "middleman") {
-    return "Powered by 9oraidiss Middleman Service";
+    return "Powered by Vault Middleman Service";
   }
-  return "Powered by 9oraidiss Ticket System";
+  return "Powered by Vault Ticket Service";
 }
 
 async function ensureHiddenTicketCategory(category, guild) {
