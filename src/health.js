@@ -486,11 +486,44 @@ function buildPrivacyPage() {
   });
 }
 
+function buildAppealPage() {
+  const serverUrl = resolveServerUrl();
+  return legalPage({
+    title: `${BOT_NAME} Ban Appeal`,
+    subtitle: `Use this page if you received a ban DM from ${BOT_NAME} and need to submit an appeal for ${SERVICE_NAME}.`,
+    sections: [
+      {
+        title: 'How To Submit',
+        body: [
+          serverUrl
+            ? 'Join the Discord server from the button above, then use the /appeal command with your reason.'
+            : 'Contact server staff or the bot owner, then use the /appeal command in a server where the bot is available.',
+          'Include clear context, proof if needed, and the reason you believe the ban should be reviewed.'
+        ]
+      },
+      {
+        title: 'What Happens Next',
+        body: [
+          'Staff review submitted appeals in the configured applications and appeals channel.',
+          'If approved, the bot can unban you and send a DM with the result. If rejected, you may submit another appeal later if staff allow it.'
+        ]
+      },
+      {
+        title: 'Important',
+        body: [
+          'Do not spam appeals, submit fake proof, or harass staff. Abuse can make the appeal process slower or cause staff to ignore repeat requests.',
+          CONTACT_TEXT
+        ]
+      }
+    ]
+  });
+}
+
 function createHealthCheck() {
   const app = express();
 
   app.get('/', (req, res) => {
-    const baseUrl = process.env.PUBLIC_BASE_URL || `${req.protocol}://${req.get('host')}`;
+    const baseUrl = config.publicBaseUrl || process.env.PUBLIC_BASE_URL || `${req.protocol}://${req.get('host')}`;
     const safeBaseUrl = escapeHtml(baseUrl);
     const safeBotName = escapeHtml(BOT_NAME);
     const serverUrl = resolveServerUrl();
@@ -550,6 +583,10 @@ function createHealthCheck() {
 
   app.get('/privacy', (req, res) => {
     res.type('html').send(buildPrivacyPage());
+  });
+
+  app.get('/appeal', (req, res) => {
+    res.type('html').send(buildAppealPage());
   });
 
   app.get('/server', (req, res) => {

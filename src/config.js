@@ -56,6 +56,9 @@ function isRailwayPublicUrl(url) {
 }
 
 function resolvePublicBaseUrl() {
+  const fallbackPublicUrl = normalizePublicBaseUrl(
+    process.env.DEFAULT_PUBLIC_BASE_URL || "https://shadow.up.railway.app"
+  );
   const explicit =
     process.env.PUBLIC_BASE_URL ||
     process.env.APP_BASE_URL ||
@@ -83,8 +86,7 @@ function resolvePublicBaseUrl() {
     return railwayUrl;
   }
 
-  const port = process.env.PORT || "3000";
-  return `http://localhost:${port}`;
+  return fallbackPublicUrl;
 }
 
 function mergeUniqueIdLists(...lists) {
@@ -820,4 +822,3 @@ const config = {
 applyRuntimeConfig(config, readRuntimeConfigSync(runtimeConfigPath) || null);
 
 module.exports = config;
-
