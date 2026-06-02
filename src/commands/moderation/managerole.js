@@ -41,59 +41,40 @@ function buildRoleManageFailureEmbed(targetUser, role, reasonText) {
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("managerole")
-    .setDescription("Manage member roles")
+    .setDescription("Add or remove a role from a user")
     .setDMPermission(false)
-    .addSubcommand((subcommand) =>
-      subcommand
-        .setName("add")
-        .setDescription("Give a role to a user")
-        .addUserOption((option) =>
-          option
-            .setName("target_user")
-            .setDescription("Target user")
-            .setRequired(true)
-        )
-        .addRoleOption((option) =>
-          option
-            .setName("role")
-            .setDescription("Role to add")
-            .setRequired(true)
-        )
-        .addStringOption((option) =>
-          option
-            .setName("reason")
-            .setDescription("Reason for adding the role")
-            .setRequired(true)
-            .setMaxLength(300)
+    .addUserOption((option) =>
+      option
+        .setName("target_user")
+        .setDescription("Target user")
+        .setRequired(true)
+    )
+    .addRoleOption((option) =>
+      option
+        .setName("role")
+        .setDescription("Role to add or remove")
+        .setRequired(true)
+    )
+    .addStringOption((option) =>
+      option
+        .setName("action")
+        .setDescription("Choose whether to add or remove the role")
+        .setRequired(true)
+        .addChoices(
+          { name: "Add", value: "add" },
+          { name: "Remove", value: "remove" }
         )
     )
-    .addSubcommand((subcommand) =>
-      subcommand
-        .setName("remove")
-        .setDescription("Remove a role from a user")
-        .addUserOption((option) =>
-          option
-            .setName("target_user")
-            .setDescription("Target user")
-            .setRequired(true)
-        )
-        .addRoleOption((option) =>
-          option
-            .setName("role")
-            .setDescription("Role to remove")
-            .setRequired(true)
-        )
-        .addStringOption((option) =>
-          option
-            .setName("reason")
-            .setDescription("Reason for removing the role")
-            .setRequired(true)
-            .setMaxLength(300)
-        )
+    .addStringOption((option) =>
+      option
+        .setName("reason")
+        .setDescription("Reason for this role change")
+        .setRequired(true)
+        .setMaxLength(300)
     ),
 
   async execute(interaction) {
-    const action = interaction.options.getSubcommand();
+    const action = interaction.options.getString("action", true);
     const targetUser =
       interaction.options.getUser("target_user") ||
       interaction.options.getUser("user");

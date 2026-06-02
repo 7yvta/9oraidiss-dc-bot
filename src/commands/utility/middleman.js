@@ -1,27 +1,16 @@
-﻿const path = require("node:path");
-const fs = require("node:fs");
-const { SlashCommandBuilder, AttachmentBuilder, EmbedBuilder } = require("discord.js");
+const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
 
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("middleman")
-    .setDescription("Post middleman information with rich style")
+    .setDescription("Post Vault middleman information")
     .setDMPermission(false),
 
   async execute(interaction) {
-    const imagePath = path.join(
-      __dirname,
-      "..",
-      "..",
-      "..",
-      "assets",
-      "middleman-flow.webp"
-    );
-
     const embed = new EmbedBuilder()
-      .setColor(0x5865f2)
-      .setTitle("Middleman System (Hold Both Method)")
-      .setDescription("Our middleman staff secures both sides before completing the trade.")
+      .setColor(0xff6a00)
+      .setTitle("Vault Middleman System (Hold Both Method)")
+      .setDescription("Vault staff secures both sides before completing the trade.")
       .addFields(
         {
           name: "How it works",
@@ -44,23 +33,15 @@ module.exports = {
           name: "Important Rules",
           value: [
             "Do not send anything before the middleman says so",
-            "Only send to official middleman staff",
+            "Only send to official Vault middleman staff",
             "Stay inside the ticket",
             "No DMs for trade handling",
             "This method protects both sides from scams"
           ].join("\n")
         }
       )
-      .setFooter({ text: "Safe Trading Protocol" })
+      .setFooter({ text: "Vault Safe Trading Protocol" })
       .setTimestamp();
-
-    if (fs.existsSync(imagePath)) {
-      await interaction.reply({
-        files: [new AttachmentBuilder(imagePath, { name: "middleman-flow.webp" })],
-        embeds: [embed]
-      });
-      return;
-    }
 
     await interaction.reply({ embeds: [embed] });
   }
