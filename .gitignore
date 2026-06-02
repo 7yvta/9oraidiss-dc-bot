@@ -24,3 +24,6 @@ desktop.ini
 publish.err.log
 publish.out.log
 
+
+deploy/*.local.txt
+deploy/*.zip
