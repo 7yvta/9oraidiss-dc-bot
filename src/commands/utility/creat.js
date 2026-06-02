@@ -25,6 +25,17 @@ function formatBoolean(value) {
   return value ? "Yes" : "No";
 }
 
+function resolveDiscordRolePosition(botMember, requestedVisiblePosition) {
+  if (requestedVisiblePosition == null) {
+    return null;
+  }
+
+  const botTopPosition = Number(botMember?.roles?.highest?.position || 0);
+  const highestAllowedPosition = Math.max(1, botTopPosition - 1);
+  const offset = Math.max(0, Number(requestedVisiblePosition) - 1);
+  return Math.max(1, highestAllowedPosition - offset);
+}
+
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("creat")
@@ -48,6 +59,14 @@ module.exports = {
             .setDescription("Hex color, example #ff9900")
             .setRequired(false)
             .setMaxLength(7)
+        )
+        .addIntegerOption((option) =>
+          option
+            .setName("position")
+            .setDescription("Role order under the bot role. 1 = highest possible")
+            .setRequired(false)
+            .setMinValue(1)
+            .setMaxValue(250)
         )
         .addBooleanOption((option) =>
           option
@@ -150,6 +169,8 @@ module.exports = {
     const hoist = interaction.options.getBoolean("hoist") || false;
     const mentionable = interaction.options.getBoolean("mentionable") || false;
     const administrator = interaction.options.getBoolean("administrator") || false;
+    const requestedPosition = interaction.options.getInteger("position");
+    const discordPosition = resolveDiscordRolePosition(botMember, requestedPosition);
     const reason =
       interaction.options.getString("reason")?.trim() ||
       `Role created by ${interaction.user.tag} (${interaction.user.id})`;
@@ -167,6 +188,9 @@ module.exports = {
       if (parsedColor != null) {
         roleData.color = parsedColor;
       }
+      if (discordPosition != null) {
+        roleData.position = discordPosition;
+      }
 
       const role = await interaction.guild.roles.create(roleData);
 
@@ -181,6 +205,14 @@ module.exports = {
               parsedColor == null
                 ? "Default"
                 : `#${parsedColor.toString(16).padStart(6, "0")}`,
+            inline: true
+          },
+          {
+            name: "Position",
+            value:
+              requestedPosition == null
+                ? "Default"
+                : `#${requestedPosition} under the bot role`,
             inline: true
           },
           { name: "Hoist", value: formatBoolean(hoist), inline: true },
@@ -203,6 +235,14 @@ module.exports = {
           fields: [
             { name: "Role", value: `${role.name} (${role.id})`, inline: false },
             { name: "Created By", value: `${interaction.user.tag} (${interaction.user.id})`, inline: false },
+            {
+              name: "Position",
+              value:
+                requestedPosition == null
+                  ? "Default"
+                  : `Requested #${requestedPosition}; Discord position ${role.position}`,
+              inline: false
+            },
             { name: "Reason", value: reason, inline: false }
           ],
           footer: "Role Log"
