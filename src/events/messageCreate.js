@@ -1123,55 +1123,7 @@ function canUsePrefixModeration(member, commandName) {
 }
 
 async function ensureCmdsOnly(message, commandName, commandPrefix = null) {
-  const settings = getGuildSettingsSync(message.guild?.id);
-  if (isCmdsChannel(message.channel)) {
-    return true;
-  }
-  if (
-    message.member?.permissions?.has?.(PermissionFlagsBits.Administrator) ||
-    message.member?.permissions?.has?.(PermissionFlagsBits.ManageGuild) ||
-    message.member?.permissions?.has?.(PermissionFlagsBits.ManageMessages)
-  ) {
-    return true;
-  }
-  if (hasAnyRoleInList(message.member, settings?.fullCommandRoleIds || [])) {
-    return true;
-  }
-  if (hasAnyRoleInList(message.member, settings?.timeoutOnlyRoleIds || [])) {
-    return true;
-  }
-  if (canUsePrefixAnywhere(message.member, commandName, settings)) {
-    return true;
-  }
-
-  const cmdsChannel = findCmdsChannel(message.guild);
-  const displayPrefix = (() => {
-    const direct = String(commandPrefix || "").trim();
-    if (direct) {
-      return direct;
-    }
-    const configured = String(config.prefix || "!").trim();
-    return configured || "!";
-  })();
-  await sendDedupedPrefixReply(message, {
-    allowedMentions: { parse: [] },
-    embeds: [
-      buildResultEmbed({
-        title: "Wrong Channel",
-        color: 0xed4245,
-        fields: [
-          {
-            name: "Use",
-            value: cmdsChannel
-              ? `Use \`${displayPrefix}${commandName}\` in ${cmdsChannel}.`
-              : `Use \`${displayPrefix}${commandName}\` in your cmds channel.`
-          }
-        ],
-        footer: "Prefix Commands"
-      })
-    ]
-  });
-  return false;
+  return true;
 }
 
 async function handlePrefixRank(message, args, commandPrefix = null) {
