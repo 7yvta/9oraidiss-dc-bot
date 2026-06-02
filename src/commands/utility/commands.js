@@ -17,10 +17,10 @@ module.exports = {
   async execute(interaction) {
     const embed = new EmbedBuilder()
       .setColor(0x5865f2)
-      .setTitle("?? Bot Commands")
+      .setTitle("Bot Commands")
       .addFields(
         {
-          name: "?? Utility",
+          name: "Utility",
           value: line([
             "ping",
             "help",
@@ -29,23 +29,19 @@ module.exports = {
             "rank",
             "leaderboard",
             "invites",
-            "fixinvites",
             "rules",
             "terms",
             "tos",
-            "ticketstats",
             "botinfo",
             "channelinfo",
             "snipe",
             "middleman",
             "confirmation",
-            "poll",
-            "say",
-            "massdm"
+            "poll"
           ])
         },
         {
-          name: "?? Moderation",
+          name: "Moderation",
           value: line([
             "warn",
             "warnings",
@@ -57,13 +53,11 @@ module.exports = {
             "unmute",
             "purge",
             "managerole",
-            "roleall",
-            "rolefilter",
             "setlevel"
           ])
         },
         {
-          name: "?? Tickets",
+          name: "Tickets",
           value: line([
             "add",
             "remove",
@@ -74,11 +68,11 @@ module.exports = {
           ])
         },
         {
-          name: "?? Applications",
-          value: line(["apply", "applypanel", "roleapply", "reviewapps"])
+          name: "Applications",
+          value: line(["apply", "roleapply", "reviewapps"])
         },
         {
-          name: "?? Economy",
+          name: "Economy",
           value: line([
             "balance",
             "daily",
@@ -89,33 +83,23 @@ module.exports = {
             "rob",
             "coinflip",
             "economylb",
-            "givemoney",
-            "setmoney",
             "afk"
           ])
         },
         {
-          name: "?? Crypto Prices",
+          name: "Crypto Prices",
           value: line(["btcprice", "ethprice", "solprice", "xmrprice", "crypto"])
         },
         {
-          name: "? Vouches",
+          name: "Vouches",
           value: line([
-            "vouchpanel",
-            "autovouchnow",
-            "vouch_add",
             "vouchcount",
-            "vouchlb",
-            "remove_vouches"
+            "vouchlb"
           ])
         },
         {
-          name: "?? Fun / Misc",
+          name: "Fun / Misc",
           value: line(["8ball"])
-        },
-        {
-          name: "?? Owner / Setup",
-          value: line(["backup create", "teamroles", "ticketconfig", "ticketpanel", "panel1"])
         }
       )
       .setFooter({ text: "Powered by 9oraidiss Ticket System" })

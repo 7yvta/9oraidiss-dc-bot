@@ -568,11 +568,6 @@
     "host": {
       "enabled": true,
       "buttonLabel": "Open Host Giveaway Ticket"
-    },
-    "service": {
-      "enabled": true,
-      "buttonLabel": "Request Service Team",
-      "introMessage": "Service Ticket\n\n{user}, Thank you for using our service team.\n\nPlease wait for a service staff member to assist you.\n\nIf you have any questions, please let a staff member know."
     }
   },
   "reportHandlerRoleIds": [
@@ -597,13 +592,7 @@
   "hostGiveawayTicketCategoryId": "1505582187112697898",
   "supportTicketPanelChannelId": "1480002919737589861",
   "middlemanTicketPanelChannelId": "1506055902048944360",
-  "serviceTicketPanelChannelId": "1505526246623150180",
   "indexTicketPanelChannelId": "1505526250763190486",
   "roleRequestTicketPanelChannelId": "1505526254458372226",
-  "serviceTicketCategoryId": "1506034008222339242",
-  "serviceTeamRoleIds": [
-    "1505637024588234993"
-  ],
-  "middlemanTicketRoleId": "1499837044237537460",
-  "serviceTicketRoleId": "1505637024588234993"
+  "middlemanTicketRoleId": "1499837044237537460"
 }

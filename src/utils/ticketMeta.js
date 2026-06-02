@@ -37,9 +37,6 @@ function inferTicketTypeFromName(channelName) {
   ) {
     return "middleman"
   }
-  if (name.startsWith("service-") || name.startsWith("srv-")) {
-    return "middleman"
-  }
   if (name.startsWith("index-") || name.startsWith("idx-")) {
     return "index"
   }

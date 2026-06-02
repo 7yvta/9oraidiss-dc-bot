@@ -1,5 +1,5 @@
 const { SlashCommandBuilder, MessageFlags } = require("discord.js");
-const { getAllAppeals, getAppeal, addAppealNote } = require("../../utils/appealStore");
+const { getAllAppeals } = require("../../utils/appealStore");
 const { buildResultEmbed } = require("../../utils/logger");
 const {
   canReviewAppeal,
@@ -59,35 +59,6 @@ module.exports = {
             .setDescription("Response message for the user")
             .setRequired(true)
         )
-    )
-    .addSubcommand((subcommand) =>
-      subcommand
-        .setName("note")
-        .setDescription("Add an internal staff note to an appeal")
-        .addStringOption((option) =>
-          option
-            .setName("appeal_id")
-            .setDescription("Appeal ID")
-            .setRequired(true)
-        )
-        .addStringOption((option) =>
-          option
-            .setName("note")
-            .setDescription("Note content")
-            .setRequired(true)
-            .setMaxLength(1200)
-        )
-    )
-    .addSubcommand((subcommand) =>
-      subcommand
-        .setName("history")
-        .setDescription("Show appeal history and notes")
-        .addStringOption((option) =>
-          option
-            .setName("appeal_id")
-            .setDescription("Appeal ID")
-            .setRequired(true)
-        )
     ),
 
   async execute(interaction) {
@@ -127,12 +98,6 @@ module.exports = {
           break;
         case "reject":
           await handleReject(interaction, appeals);
-          break;
-        case "note":
-          await handleNote(interaction);
-          break;
-        case "history":
-          await handleHistory(interaction);
           break;
       }
     } catch (error) {
@@ -358,108 +323,6 @@ async function handleReject(interaction, appeals) {
           { name: "User", value: appeal.userId },
           { name: "Response", value: decision.response },
           { name: "DM Sent", value: decision.dmSent ? "Yes" : "No" }
-        ]
-      })
-    ],
-    flags: MessageFlags.Ephemeral
-  });
-}
-
-async function handleNote(interaction) {
-  const appealId = interaction.options.getString("appeal_id", true);
-  const note = interaction.options.getString("note", true);
-
-  try {
-    const entry = await addAppealNote({
-      guildId: "global",
-      appealId,
-      authorId: interaction.user.id,
-      note
-    });
-
-    await interaction.reply({
-      embeds: [
-        buildResultEmbed({
-          title: "Appeal Note Added",
-          color: 0x57f287,
-          fields: [
-            { name: "Appeal ID", value: appealId },
-            { name: "Note ID", value: String(entry?.id || "unknown") },
-            { name: "Note", value: String(entry?.note || note).slice(0, 1024) }
-          ]
-        })
-      ],
-      flags: MessageFlags.Ephemeral
-    });
-  } catch (error) {
-    await interaction.reply({
-      embeds: [
-        buildResultEmbed({
-          title: "Appeal Note Failed",
-          color: 0xed4245,
-          fields: [{ name: "Reason", value: String(error?.message || "Appeal not found") }]
-        })
-      ],
-      flags: MessageFlags.Ephemeral
-    });
-  }
-}
-
-async function handleHistory(interaction) {
-  const appealId = interaction.options.getString("appeal_id", true);
-  const appeal = await getAppeal({
-    guildId: "global",
-    appealId
-  });
-
-  if (!appeal) {
-    await interaction.reply({
-      embeds: [
-        buildResultEmbed({
-          title: "Appeal Not Found",
-          color: 0xed4245,
-          fields: [{ name: "Appeal ID", value: appealId }]
-        })
-      ],
-      flags: MessageFlags.Ephemeral
-    });
-    return;
-  }
-
-  const historyText =
-    Array.isArray(appeal.history) && appeal.history.length > 0
-      ? appeal.history
-          .slice(-10)
-          .map(
-            (entry) =>
-              `${entry.at || "Unknown time"} | ${entry.type || "update"} | ${
-                entry.actorId || "system"
-              } | ${entry.note || "-"}`
-          )
-          .join("\n")
-      : "No history.";
-  const notesText =
-    Array.isArray(appeal.notes) && appeal.notes.length > 0
-      ? appeal.notes
-          .slice(-5)
-          .map(
-            (entry) =>
-              `${entry.createdAt || "Unknown time"} | ${entry.authorId || "staff"}: ${entry.note || "-"}`
-          )
-          .join("\n")
-      : "No notes.";
-
-  await interaction.reply({
-    embeds: [
-      buildResultEmbed({
-        title: `Appeal History #${appealId}`,
-        color: 0x5865f2,
-        fields: [
-          { name: "Status", value: String(appeal.status || "unknown"), inline: true },
-          { name: "User", value: String(appeal.userId || "unknown"), inline: true },
-          { name: "Decision", value: String(appeal.decision || "pending"), inline: true },
-          { name: "History", value: historyText.slice(0, 1024) },
-          { name: "Notes", value: notesText.slice(0, 1024) }
         ]
       })
     ],

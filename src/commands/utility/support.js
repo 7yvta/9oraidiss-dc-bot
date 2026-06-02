@@ -87,7 +87,7 @@ module.exports = {
           },
           {
             name: "Quick Commands",
-            value: "`/help`, `/ticketpanel`, `/panel1`, `/commands`, `/backup create`"
+            value: "`/help`, `/commands`, `/apply`, `/roleapply`, `/ticketstats`, `/terms`"
           },
           {
             name: "Badge",
@@ -107,12 +107,12 @@ module.exports = {
           {
             name: "Moderation",
             value:
-              "`/manageban`, `/kick`, `/warn`, `/warnings`, `/clearwarnings`, `/timeout`, `/unmute`, `/unban`, `/purge`, `/managerole`, `/roleall`, `/rolefilter`"
+              "`/manageban`, `/kick`, `/warn`, `/warnings`, `/clearwarnings`, `/timeout`, `/unmute`, `/unban`, `/purge`, `/managerole`"
           },
           {
             name: "Tickets",
             value:
-              "`/ticketpanel`, `/panel1`, `/add`, `/remove`, `/transfer`, `/forceclaim`, `/unclaim`"
+              "`/add`, `/remove`, `/transfer`, `/forceclaim`, `/unclaim`, `/ticketstats`"
           },
           {
             name: "Utility",

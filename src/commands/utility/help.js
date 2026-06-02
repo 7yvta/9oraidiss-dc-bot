@@ -13,7 +13,7 @@ module.exports = {
           title: "Bot Systems",
           color: 0x5865f2,
           description:
-            "Systems active: support/middleman/index/role-request tickets (ticket management: /add, /remove, /transfer, claim/unclaim; restricted roles: /forceclaim), warns/mod actions, anti-nuke protection, auto-role + role triggers (automatic + /roleall, /rolefilter), leveling (/rank, /leaderboard), polls (/poll), backups (/backup create), ticket analytics (/ticketstats), trade confirmation (/confirmation), middleman info (/middleman), rules (/rules), and role manager (/managerole add|remove). Use /ticketpanel or /panel1 to post panels."
+            "Systems active: support/middleman/index/role-request/report/host tickets, ticket management (/add, /remove, /transfer, /unclaim, /forceclaim), warnings and moderation, anti-nuke protection, auto-role triggers, leveling (/rank, /leaderboard), economy, polls (/poll), trade confirmation (/confirmation), middleman info (/middleman), rules (/rules), vouches, and role management (/managerole add|remove). Setup/debug commands are hidden from normal command help."
         })
       ],
       flags: MessageFlags.Ephemeral
