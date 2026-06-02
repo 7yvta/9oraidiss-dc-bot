@@ -33,6 +33,30 @@ function resolvePrivacyUrl() {
   return baseUrl ? `${baseUrl}/privacy` : "Not configured";
 }
 
+function resolveServerUrl() {
+  const explicit = String(
+    process.env.PUBLIC_SERVER_URL ||
+      process.env.DISCORD_SERVER_URL ||
+      process.env.SERVER_INVITE_URL ||
+      ""
+  ).trim();
+  return explicit || "Not configured";
+}
+
+function resolveContactProfileUrl() {
+  const explicit = String(
+    process.env.PUBLIC_CONTACT_PROFILE_URL ||
+      process.env.DISCORD_PROFILE_URL ||
+      process.env.CONTACT_PROFILE_URL ||
+      ""
+  ).trim();
+  if (explicit) {
+    return explicit;
+  }
+  const ownerId = String(process.env.BOT_OWNER_ID || config.botOwnerId || "").trim();
+  return ownerId ? `https://discord.com/users/${ownerId}` : "Not configured";
+}
+
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("terms")
@@ -40,6 +64,8 @@ module.exports = {
   async execute(interaction) {
     const termsUrl = resolveTermsUrl();
     const privacyUrl = resolvePrivacyUrl();
+    const serverUrl = resolveServerUrl();
+    const contactProfileUrl = resolveContactProfileUrl();
 
     await interaction.reply({
       embeds: [
@@ -60,6 +86,20 @@ module.exports = {
                 privacyUrl === "Not configured"
                   ? "Not configured."
                   : `[Open Privacy Policy](${privacyUrl})`
+            },
+            {
+              name: "Server",
+              value:
+                serverUrl === "Not configured"
+                  ? "Not configured."
+                  : `[Open Server](${serverUrl})`
+            },
+            {
+              name: "Contact",
+              value:
+                contactProfileUrl === "Not configured"
+                  ? "Not configured."
+                  : `[Open Profile](${contactProfileUrl})`
             }
           ],
           footer: "Bot Legal"

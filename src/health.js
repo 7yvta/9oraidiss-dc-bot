@@ -8,6 +8,34 @@ const CONTACT_TEXT =
   'Contact the server owner or bot operator in the Discord server where this bot is installed.';
 const LAST_UPDATED = 'June 2, 2026';
 
+function trimUrl(value) {
+  return String(value || '').trim().replace(/\/+$/, '');
+}
+
+function resolveServerUrl() {
+  return trimUrl(
+    process.env.PUBLIC_SERVER_URL ||
+      process.env.DISCORD_SERVER_URL ||
+      process.env.SERVER_INVITE_URL ||
+      ''
+  );
+}
+
+function resolveContactProfileUrl() {
+  const explicit = trimUrl(
+    process.env.PUBLIC_CONTACT_PROFILE_URL ||
+      process.env.DISCORD_PROFILE_URL ||
+      process.env.CONTACT_PROFILE_URL ||
+      ''
+  );
+  if (explicit) {
+    return explicit;
+  }
+
+  const ownerId = String(process.env.BOT_OWNER_ID || config.botOwnerId || '').trim();
+  return ownerId ? `https://discord.com/users/${ownerId}` : '';
+}
+
 function escapeHtml(value) {
   return String(value ?? '')
     .replace(/&/g, '&amp;')
@@ -18,6 +46,8 @@ function escapeHtml(value) {
 }
 
 function legalPage({ title, subtitle, sections }) {
+  const serverUrl = resolveServerUrl();
+  const contactProfileUrl = resolveContactProfileUrl();
   const sectionHtml = sections
     .map(
       (section) => `
@@ -140,7 +170,8 @@ function legalPage({ title, subtitle, sections }) {
         <nav>
           <a href="/terms">Terms of Service</a>
           <a href="/privacy">Privacy Policy</a>
-          <a href="/health">Health</a>
+          ${serverUrl ? `<a href="${escapeHtml(serverUrl)}" rel="noopener noreferrer">Join Server</a>` : ''}
+          ${contactProfileUrl ? `<a href="${escapeHtml(contactProfileUrl)}" rel="noopener noreferrer">Contact Profile</a>` : ''}
         </nav>
       </header>
       ${sectionHtml}
@@ -190,7 +221,7 @@ function buildTermsPage() {
       {
         title: '5. Tickets, Transcripts, And Panels',
         body: [
-          'Ticket panels may create private channels for support, middleman, service, index, role request, report, host giveaway, or other configured ticket types.',
+          'Ticket panels may create private channels for support, middleman, index, role request, report, host giveaway, or other configured ticket types.',
           'Ticket staff may claim, unclaim, add users, remove users, transfer, close, or review tickets when they have permission.',
           'When a ticket closes, the bot may create a transcript or summary containing the ticket creator, claimed staff, closing staff, timestamps, and ticket messages where available.',
           'Members should not open spam tickets, fake reports, scam reports without context, or tickets unrelated to the panel purpose.'
@@ -215,7 +246,7 @@ function buildTermsPage() {
       {
         title: '8. Vouches And Reputation',
         body: [
-          'Vouch features are used for community reputation and service feedback. Vouches may include the vouched user, author, reason, type, count, timestamps, and optional scam-vouch classification.',
+          'Vouch features are used for community reputation and feedback. Vouches may include the vouched user, author, reason, type, count, timestamps, and optional scam-vouch classification.',
           'Fake vouches, spam vouches, harassment, impersonation, or manipulated reputation activity may be removed or moderated by staff.',
           'The bot may post automated vouches or vouch-style records only when enabled by the server configuration.'
         ]
@@ -284,7 +315,15 @@ function buildTermsPage() {
       },
       {
         title: '17. Contact',
-        body: [CONTACT_TEXT]
+        body: [
+          CONTACT_TEXT,
+          resolveServerUrl()
+            ? `Server link: ${resolveServerUrl()}`
+            : 'Server link: not configured yet.',
+          resolveContactProfileUrl()
+            ? `Contact profile: ${resolveContactProfileUrl()}`
+            : 'Contact profile: not configured yet.'
+        ]
       }
     ]
   });
@@ -433,7 +472,15 @@ function buildPrivacyPage() {
       },
       {
         title: '18. Contact',
-        body: [CONTACT_TEXT]
+        body: [
+          CONTACT_TEXT,
+          resolveServerUrl()
+            ? `Server link: ${resolveServerUrl()}`
+            : 'Server link: not configured yet.',
+          resolveContactProfileUrl()
+            ? `Contact profile: ${resolveContactProfileUrl()}`
+            : 'Contact profile: not configured yet.'
+        ]
       }
     ]
   });
@@ -446,6 +493,8 @@ function createHealthCheck() {
     const baseUrl = process.env.PUBLIC_BASE_URL || `${req.protocol}://${req.get('host')}`;
     const safeBaseUrl = escapeHtml(baseUrl);
     const safeBotName = escapeHtml(BOT_NAME);
+    const serverUrl = resolveServerUrl();
+    const contactProfileUrl = resolveContactProfileUrl();
     res.type('html').send(`<!doctype html>
 <html lang="en">
 <head>
@@ -484,7 +533,8 @@ function createHealthCheck() {
     <p>Discord bot service page.</p>
     <a href="${safeBaseUrl}/terms">Terms of Service</a>
     <a href="${safeBaseUrl}/privacy">Privacy Policy</a>
-    <a href="${safeBaseUrl}/health">Health</a>
+    ${serverUrl ? `<a href="${escapeHtml(serverUrl)}" rel="noopener noreferrer">Join Server</a>` : ''}
+    ${contactProfileUrl ? `<a href="${escapeHtml(contactProfileUrl)}" rel="noopener noreferrer">Contact Profile</a>` : ''}
   </main>
 </body>
 </html>`);
@@ -500,6 +550,24 @@ function createHealthCheck() {
 
   app.get('/privacy', (req, res) => {
     res.type('html').send(buildPrivacyPage());
+  });
+
+  app.get('/server', (req, res) => {
+    const serverUrl = resolveServerUrl();
+    if (!serverUrl) {
+      res.status(404).type('text').send('Server URL is not configured.');
+      return;
+    }
+    res.redirect(302, serverUrl);
+  });
+
+  app.get('/contact', (req, res) => {
+    const contactProfileUrl = resolveContactProfileUrl();
+    if (!contactProfileUrl) {
+      res.status(404).type('text').send('Contact profile URL is not configured.');
+      return;
+    }
+    res.redirect(302, contactProfileUrl);
   });
   
   // Health check endpoint
