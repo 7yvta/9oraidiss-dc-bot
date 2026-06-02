@@ -17,7 +17,7 @@ const deployScope = String(process.env.COMMAND_DEPLOY_SCOPE || "guild").toLowerC
 const allowGlobalDeploy =
   String(process.env.ALLOW_GLOBAL_COMMAND_DEPLOY || "false").toLowerCase() === "true";
 const deployAllGuilds =
-  String(process.env.DEPLOY_ALL_GUILD_COMMANDS || "false").toLowerCase() === "true" ||
+  String(process.env.DEPLOY_ALL_GUILD_COMMANDS || "true").toLowerCase() !== "false" ||
   String(process.env.DEPLOY_COMMANDS_ALL_GUILDS || "false").toLowerCase() === "true";
 
 if (!token || !clientId) {
